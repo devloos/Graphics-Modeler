@@ -1,7 +1,12 @@
 #include "main.h"
 
-int main() {
-  std::cout << "Hello World!\n";
-  return 0;
-}
+#include <QtWidgets/QtWidgets>
 
+int main(int argc, char* argv[]) {
+  QApplication app(argc, argv);
+  QWidget window;
+  window.resize(320, 240);
+  window.show();
+  window.setWindowTitle(QApplication::translate("toplevel", "Top-level widget"));
+  return app.exec();
+}

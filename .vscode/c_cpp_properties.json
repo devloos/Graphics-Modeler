@@ -5,7 +5,8 @@
       "includePath": [
         "${workspaceFolder}",
         "${workspaceFolder}/include",
-        "${workspaceFolder}/src"
+        "${workspaceFolder}/src",
+        "/opt/homebrew/include"
       ]
     }
   ],
