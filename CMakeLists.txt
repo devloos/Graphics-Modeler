@@ -7,7 +7,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-project(main)
+project(gm)
 
 find_package(Qt6 COMPONENTS Core Widgets REQUIRED)
 
