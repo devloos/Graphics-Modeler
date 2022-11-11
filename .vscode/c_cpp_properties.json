@@ -1,7 +1,7 @@
 {
   "configurations": [
     {
-      "name": "{PROJECT_NAME}",
+      "name": "Graphics Modeler",
       "includePath": [
         "${workspaceFolder}",
         "${workspaceFolder}/include",
