@@ -23,7 +23,7 @@ if (APPLE)
 endif (APPLE)
 
 if (WIN32)
-  target_include_directories(${PROJECT_NAME} PUBLIC /opt/homebrew/include)
+  # target_include_directories(${PROJECT_NAME} PUBLIC /opt/homebrew/include)
 endif (WIN32)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
