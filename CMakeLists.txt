@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_BUILD_TYPE Debug)
 
@@ -9,7 +9,7 @@ set(CMAKE_AUTOUIC ON)
 
 project(gm)
 
-find_package(Qt6 COMPONENTS Core Widgets REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
 # Graphics Modelers
 add_executable(${PROJECT_NAME} src/core/main.cpp)
@@ -20,10 +20,10 @@ target_include_directories(
 
 if (APPLE)
   target_include_directories(${PROJECT_NAME} PUBLIC /opt/homebrew/include)
-  target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core Qt6::Widgets)
 endif (APPLE)
 
 if (WIN32)
   target_include_directories(${PROJECT_NAME} PUBLIC /opt/homebrew/include)
-  target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core Qt6::Widgets)
 endif (WIN32)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)

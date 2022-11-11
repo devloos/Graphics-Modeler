@@ -7,7 +7,9 @@
         "${workspaceFolder}/include",
         "${workspaceFolder}/src",
         "/opt/homebrew/include"
-      ]
+      ],
+      "cppStandard": "c++17",
+      "compilerPath": "/usr/bin/clang"
     }
   ],
   "version": 4
