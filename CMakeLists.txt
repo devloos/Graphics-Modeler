@@ -23,6 +23,7 @@ if (APPLE)
 endif (APPLE)
 
 if (WIN32)
+  # Not in use rn
   # target_include_directories(${PROJECT_NAME} PUBLIC /opt/homebrew/include)
 endif (WIN32)
 
