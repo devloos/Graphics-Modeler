@@ -9,7 +9,7 @@ set(CMAKE_AUTOUIC ON)
 
 project(gm)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets Gui)
 
 # Graphics Modelers
 add_executable(${PROJECT_NAME} src/core/main.cpp)
@@ -27,4 +27,4 @@ if (WIN32)
   # target_include_directories(${PROJECT_NAME} PUBLIC /opt/homebrew/include)
 endif (WIN32)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core Qt6::Widgets Qt6::Gui)

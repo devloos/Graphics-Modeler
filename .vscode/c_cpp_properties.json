@@ -9,7 +9,9 @@
         "/opt/homebrew/include"
       ],
       "cppStandard": "c++17",
-      "compilerPath": "/usr/bin/clang"
+      "compilerPath": "/usr/bin/clang",
+      "cStandard": "c17",
+      "intelliSenseMode": "macos-clang-arm64"
     }
   ],
   "version": 4
