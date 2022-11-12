@@ -20,7 +20,7 @@ such as inheritance, aggregation, polymorphism, exception handling,
 templates, operator overloading, and move semantics. There is a 
 Shape class interface that allows all other shapes to derive from it.
 To store these shapes, a custom vector class is implemented using a
-basic iterator member type with `begin()` and `end()` operations.
+basic iterator member type with `begin()` and `end()` methods.
 To sort the vector of shape objects, a custom selection sort algorithm
 is implemented using templated functions to compare perimeter and area.
 
