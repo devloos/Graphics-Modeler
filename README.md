@@ -1,5 +1,6 @@
-# 2D Graphics Modeler
-
+<div align=center>
+     <h1>2D Graphics Modeler</h1>
+</div>
 
 ## Contributors
 | Member           | Roles          | 
@@ -11,7 +12,6 @@
 | jbobby0__        | Team Member    |
 
 <br/>
-
 
 ## Overview 
 This project models as a library for basic 2D graphical objects.
@@ -35,7 +35,6 @@ Our team has strongly enforced an agile development methodology. These methods i
 - Following a scrum procress of assigning a scrum master, product owner and team member role
 - Creating user stories to help with the implementation of features
 - Creating UML class diagrams, both use case and state diagrams
-
 
 ## User Interface Design
 The following image shows an early design of the graphical user interface. Features include:
