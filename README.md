@@ -33,8 +33,8 @@ and location.
 
 Our team has strongly enforced an agile development methodology. These methods include:
 - Following a scrum procress of assigning a scrum master, product owner and team member role
-- creating user stories to help with the implementation of features
-- creating UML class diagrams, both use case and state diagrams
+- Creating user stories to help with the implementation of features
+- Creating UML class diagrams, both use case and state diagrams
 
 
 ## Early Idea of User Interface Design
