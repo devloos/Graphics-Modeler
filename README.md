@@ -2,13 +2,13 @@
 
 
 ## Contributors
-| Member         | Roles          | 
-|----------------|----------------|
-| connor-darling | Product Owner  |
-| Puwya          | SCRUM Master   |
-| Supernova1114  | Team Member    |
-| Catatonic2003  | Team Member    |
-| jbobby0__      | Team Member    |
+| Member           | Roles          | 
+|------------------|----------------|
+| Connor Darling   | Product Owner  |
+| Carlos Aguilera  | SCRUM Master   |
+| Supernova1114    | Team Member    |
+| Catatonic2003    | Team Member    |
+| jbobby0__        | Team Member    |
 
 <br/>
 
