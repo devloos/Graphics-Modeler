@@ -1,17 +1,17 @@
-# 2D Graphics Modeler
-
+<div align=center>
+     <h1>2D Graphics Modeler</h1>
+</div>
 
 ## Contributors
-| Member           | Roles          | 
-|------------------|----------------|
-| Connor Darling   | Product Owner  |
-| Carlos Aguilera  | SCRUM Master   |
-| Supernova1114    | Team Member    |
-| Catatonic2003    | Team Member    |
-| jbobby0__        | Team Member    |
+| Member            | Roles          | 
+|-------------------|----------------|
+| Connor Darling    | Product Owner  |
+| Carlos Aguilera   | SCRUM Master   |
+| Cameron Rosenthal | Team Member    |
+| Liam Eastwood     | Team Member    |
+| jbobby0__         | Team Member    |
 
 <br/>
-
 
 ## Overview 
 This project models as a library for basic 2D graphical objects.
@@ -20,11 +20,11 @@ such as inheritance, aggregation, polymorphism, exception handling,
 templates, operator overloading, and move semantics. There is a 
 Shape class interface that allows all other shapes to derive from it.
 To store these shapes, a custom vector class is implemented using a
-basic iterator member type with `begin()` and `end()` operations.
+basic iterator member type with `begin()` and `end()` methods.
 To sort the vector of shape objects, a custom selection sort algorithm
 is implemented using templated functions to compare perimeter and area.
 
-The program is created using the gui library `Qt`. Specifically `QPainter` 
+The program is created using the gui library [Qt](https://github.com/qt). Specifically `QPainter` 
 and `QWidgets` are used to render shapes and text on the screen. The user
 interface is designed to be readable and simple, while still being able to handle
 contingencies such as invalid input. In addition to output of text
@@ -33,11 +33,10 @@ and location.
 
 Our team has strongly enforced an agile development methodology. These methods include:
 - Following a scrum procress of assigning a scrum master, product owner and team member role
-- creating user stories to help with the implementation of features
-- creating UML class diagrams, both use case and state diagrams
+- Creating user stories to help with the implementation of features
+- Creating UML class diagrams, both use case and state diagrams
 
-
-## Early Idea of User Interface Design
+## User Interface Design
 The following image shows an early design of the graphical user interface. Features include:
 - Choose demo shapes using a header pane
 - A collapsable side navigation bar to modify any default attribute of a given shape
