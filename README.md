@@ -23,7 +23,6 @@ To store these shapes, a custom vector class is implemented using a
 basic iterator member type with `begin()` and `end()` operations.
 To sort the vector of shape objects, a custom selection sort algorithm
 is implemented using templated functions to compare perimeter and area.
-<br>
 
 The program is created using the gui library `Qt`. Specifically `QPainter` 
 and `QWidgets` are used to render shapes and text on the screen. The user
@@ -31,14 +30,12 @@ interface is designed to be readable and simple, while still being able to handl
 contingencies such as invalid input. In addition to output of text
 and shapes in the window, the program allows a user to manipulate size, color,
 and location.
-<br>
 
 Our team has strongly enforced an agile development methodology. These methods include:
 - Following a scrum procress of assigning a scrum master, product owner and team member role
 - creating user stories to help with the implementation of features
 - creating UML class diagrams, both use case and state diagrams
 
-<br/>
 
 ## Early Idea of User Interface Design
 The following image shows an early design of the graphical user interface. Features include:
@@ -50,8 +47,6 @@ The following image shows an early design of the graphical user interface. Featu
      alt="Early Interface Design"
      width="414" height="332"/>
 
-<br/>
-
 ## Sprints
 
   | (Sprint #1) Estimated Time: 3 weeks |
@@ -61,8 +56,6 @@ The following image shows an early design of the graphical user interface. Featu
 - [ ] begin implementation of shape abc interface & inheritance hierarchy (line, polyline ...) 
 - [ ] investigate/understand qt qpainter demo project 
 - [ ] build basic 2d modeler qt project with login screen 
-  
-<br/>
 
   | (Sprint #2) Estimated Time: 3 weeks |
   | :---------------------------------: |
