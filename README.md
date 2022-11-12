@@ -10,7 +10,9 @@ templates, operator overloading, and move semantics. The software
 is created using the Graphical User Inferace library `Qt`. 
 Specifically QPainter and QWidgets are used to render shapes 
 and text on the screen. A custom vector class is implemented to 
-store 2D graphics objects. The interface is designed to be readable
+store 2D graphics objects. In addition this custom vector class,
+a selection sort algorithm is implemented to sort shapes in the 
+vector by area and perimeter. The interface is designed to be readable
 and simple, why still handling contingencies such as invalid input.
 In addition to an output of text and shapes in the window, the program
 allows a user to manipulate size, color, and location.
