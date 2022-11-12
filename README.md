@@ -37,7 +37,7 @@ Our team has strongly enforced an agile development methodology. These methods i
 - Creating UML class diagrams, both use case and state diagrams
 
 
-## Early Idea of User Interface Design
+## User Interface Design
 The following image shows an early design of the graphical user interface. Features include:
 - Choose demo shapes using a header pane
 - A collapsable side navigation bar to modify any default attribute of a given shape
