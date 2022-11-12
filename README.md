@@ -24,7 +24,7 @@ basic iterator member type with `begin()` and `end()` methods.
 To sort the vector of shape objects, a custom selection sort algorithm
 is implemented using templated functions to compare perimeter and area.
 
-The program is created using the gui library `Qt`. Specifically `QPainter` 
+The program is created using the gui library [Qt](https://github.com/qt). Specifically `QPainter` 
 and `QWidgets` are used to render shapes and text on the screen. The user
 interface is designed to be readable and simple, while still being able to handle
 contingencies such as invalid input. In addition to output of text
