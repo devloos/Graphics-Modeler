@@ -4,8 +4,8 @@
 ## Contributors
 | Member         | Roles          | 
 |----------------|----------------|
-| Puwya          | Scrum Master   |
 | connor-darling | Product Owner  |
+| Puwya          | SCRUM Master   |
 | Supernova1114  | Team Member    |
 | Catatonic2003  | Team Member    |
 | jbobby0__      | Team Member    |
