@@ -45,20 +45,24 @@ The following image shows an early design of the graphical user interface. Featu
 
 <img src="assets/readme-images/EarlyInterfaceDesign.jpeg"
      alt="Early Interface Design"
-     width="414" height="332"/>
+     width=65% />
 
 ## Sprints
 
   | (Sprint #1) Estimated Time: 3 weeks |
   | :---------------------------------: |
+  
 - [ ] implement shapes.txt parser object/logic  
 - [ ] implement vector container 
 - [ ] begin implementation of shape abc interface & inheritance hierarchy (line, polyline ...) 
 - [ ] investigate/understand qt qpainter demo project 
 - [ ] build basic 2d modeler qt project with login screen 
 
+<br />
+
   | (Sprint #2) Estimated Time: 3 weeks |
   | :---------------------------------: |
+  
 - [ ] complete implementation of shape abc interface & inheritance hierarchy (line, polyline ...)
 - [ ] ability to render 2d shapes (2d modeler qt project)
 - [ ] renderarea widget (inherits from qwidget like qt 2d rendering demo project) can dislpay all geometric shapes
@@ -66,4 +70,3 @@ The following image shows an early design of the graphical user interface. Featu
 - [ ] reports to display shapes, shape perimeter & area (2d modeler qt project)
 - [ ] update 2d shapes (i.e. add, remove or move) via rendering widget forms (2d modeler qt project)
 - [ ] persist changes to shapes.txt file
-
