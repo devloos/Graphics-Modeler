@@ -8,7 +8,7 @@
 | Connor Darling    | Product Owner  |
 | Carlos Aguilera   | SCRUM Master   |
 | Cameron Rosenthal | Team Member    |
-| Catatonic2003     | Team Member    |
+| Liam Eastwood     | Team Member    |
 | jbobby0__         | Team Member    |
 
 <br/>
