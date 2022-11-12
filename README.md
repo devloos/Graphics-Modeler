@@ -3,13 +3,13 @@
 </div>
 
 ## Contributors
-| Member           | Roles          | 
-|------------------|----------------|
-| Connor Darling   | Product Owner  |
-| Carlos Aguilera  | SCRUM Master   |
-| Supernova1114    | Team Member    |
-| Catatonic2003    | Team Member    |
-| jbobby0__        | Team Member    |
+| Member            | Roles          | 
+|-------------------|----------------|
+| Connor Darling    | Product Owner  |
+| Carlos Aguilera   | SCRUM Master   |
+| Cameron Rosenthal | Team Member    |
+| Catatonic2003     | Team Member    |
+| jbobby0__         | Team Member    |
 
 <br/>
 
