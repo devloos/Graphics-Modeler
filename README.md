@@ -1,21 +1,56 @@
 # 2D Graphics Modeler
 
-__Contributers: Puwya, connor-darling, Supernova1114, Catatonic2003, jbobby0__
+
+## Contributors
+| Member         | Roles          | 
+|----------------|----------------|
+| Puwya          | Scrum Master   |
+| connor-darling | Product Owner  |
+| Supernova1114  | Team Member    |
+| Catatonic2003  | Team Member    |
+| jbobby0__      | Team Member    |
+
+<br/>
+
 
 ## Overview 
 This project models as a library for basic 2D graphical objects.
-The goal is exercise C++ fundamentals to construct this project
+The goal is to exercise C++ fundamentals to construct this project
 such as inheritance, aggregation, polymorphism, exception handling,
-templates, operator overloading, and move semantics. The software 
-is created using the Graphical User Inferace library `Qt`. 
-Specifically QPainter and QWidgets are used to render shapes 
-and text on the screen. A custom vector class is implemented to 
-store 2D graphics objects. In addition this custom vector class,
-a selection sort algorithm is implemented to sort shapes in the 
-vector by area and perimeter. The interface is designed to be readable
-and simple, why still handling contingencies such as invalid input.
-In addition to an output of text and shapes in the window, the program
-allows a user to manipulate size, color, and location.
+templates, operator overloading, and move semantics. There is a 
+Shape class interface that allows all other shapes to derive from it.
+To store these shapes, a custom vector class is implemented using a
+basic iterator member type with `begin()` and `end()` operations.
+To sort the vector of shape objects, a custom selection sort algorithm
+is implemented using templated functions to compare perimeter and area.
+<br>
+
+The program is created using the gui library `Qt`. Specifically `QPainter` 
+and `QWidgets` are used to render shapes and text on the screen. The user
+interface is designed to be readable and simple, while still being able to handle
+contingencies such as invalid input. In addition to output of text
+and shapes in the window, the program allows a user to manipulate size, color,
+and location.
+<br>
+
+Our team has strongly enforced an agile development methodology. These methods include:
+- Following a scrum procress of assigning a scrum master, product owner and team member role
+- creating user stories to help with the implementation of features
+- creating UML class diagrams, both use case and state diagrams
+
+<br/>
+
+## Early Idea of User Interface Design
+The following image shows an early design of the graphical user interface. Features include:
+- Choose demo shapes using a header pane
+- A collapsable side navigation bar to modify any default attribute of a given shape
+- Settings header pane for user settings, contact information, and save and exit
+
+<img src="assets/readme-images/EarlyInterfaceDesign.jpeg"
+     alt="Early Interface Design"
+     width="414" height="332"/>
+
+<br/>
 
 ## Sprints
 
@@ -38,3 +73,4 @@ allows a user to manipulate size, color, and location.
 - [ ] reports to display shapes, shape perimeter & area (2d modeler qt project)
 - [ ] update 2d shapes (i.e. add, remove or move) via rendering widget forms (2d modeler qt project)
 - [ ] persist changes to shapes.txt file
+
