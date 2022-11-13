@@ -13,7 +13,7 @@ class Vector {
  public:
   Vector() {}
   explicit Vector(const int &capacity) {
-    assert(capacity <= 0);
+    assert(capacity > 0);
     capacity_ = capacity;
     data_ = new T[capacity];
   }
@@ -46,30 +46,30 @@ class Vector {
     data_ = nullptr;
   }
 
-  T &operator[](const int &index);
-  const T &operator[](const int &index) const;
+  // T &operator[](const int &index);
+  // const T &operator[](const int &index) const;
 
-  int size() const;
-  int capacity() const;
+  // int size() const;
+  // int capacity() const;
 
-  void resize(const int &newSize = DEFAULT);
-  void push_back(const T &data);
-  void reserve(const int &allocSize);
+  // void resize(const int &newSize = DEFAULT);
+  // void push_back(const T &data);
+  // void reserve(const int &allocSize);
 
-  typedef T* iterator;
-  typedef const T* const_iterator;
+  // typedef T* iterator;
+  // typedef const T* const_iterator;
 
-  iterator begin();
-  iterator end();
-  const_iterator begin() const;
-  const_iterator end() const;
+  // iterator begin();
+  // iterator end();
+  // const_iterator begin() const;
+  // const_iterator end() const;
 
-  iterator insert(iterator it, const T &data);
-  iterator erase(iterator it);
+  // iterator insert(iterator it, const T &data);
+  // iterator erase(iterator it);
 
  private:
   void veccpy(const Vector &src) {
-    assert(src.capacity_ <= 0 || src.size_ <= 0);
+    assert(src.capacity_ > 0 || src.size_ > 0);
     size_ = src.size_;
     capacity_ = src.capacity_;
     data_ = new T[capacity_];
