@@ -14,7 +14,6 @@ class Vector {
   Vector();
   explicit Vector(const int &capacity);
 
-  // Rule of 5
   Vector(const Vector &rhs);
   Vector &operator=(const Vector &rhs);
   Vector(Vector &&rhs);
