@@ -1,6 +1,8 @@
 #pragma once
 
 namespace GM {
+static const int DEFAULT = 0;
+
 template <typename T>
 class Vector {
  private:
@@ -20,12 +22,12 @@ class Vector {
   ~Vector() noexcept;
 
   T &operator[](const int &index);
-  const T &operator[](const int &index);
+  const T &operator[](const int &index) const;
 
   int size() const;
   int capacity() const;
 
-  void resize(const int &newSize = size_);
+  void resize(const int &newSize = DEFAULT);
   void push_back(const T &data);
   void reserve(const int &allocSize);
 
