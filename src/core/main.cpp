@@ -1,6 +1,9 @@
 #include "main.h"
 
 #include <QtWidgets/QtWidgets>
+#include <vector>
+
+#include "stl/vector.h"
 
 int main(int argc, char* argv[]) {
   QApplication app(argc, argv);
