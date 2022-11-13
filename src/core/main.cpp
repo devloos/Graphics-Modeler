@@ -9,5 +9,4 @@ int main(int argc, char* argv[]) {
   window.show();
   window.setWindowTitle(QApplication::translate("toplevel", "Top-level widget"));
   return app.exec();
-  std::cout << "\n";
 }
