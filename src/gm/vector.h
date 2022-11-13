@@ -62,6 +62,7 @@ class Vector {
   int size() const {
     return size_;
   }
+
   int capacity() const {
     return capacity_;
   }
@@ -105,7 +106,11 @@ class Vector {
     data_[size_++] = value;
   }
 
-  void reserve(const int &allocSize);
+  void reserve(const int &newCap) {
+    if (newCap > capacity_) {
+      reAlloc(newCap);
+    }
+  }
 
   typedef T* iterator;
   typedef const T* const_iterator;
