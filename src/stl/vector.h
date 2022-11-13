@@ -1,4 +1,6 @@
 #pragma once
+#include <cassert>
+#include <cstring>
 
 namespace GM {
 static const int DEFAULT = -1;
@@ -46,26 +48,26 @@ class Vector {
     data_ = nullptr;
   }
 
-  // T &operator[](const int &index);
-  // const T &operator[](const int &index) const;
+  T &operator[](const int &index);
+  const T &operator[](const int &index) const;
 
-  // int size() const;
-  // int capacity() const;
+  int size() const;
+  int capacity() const;
 
-  // void resize(const int &newSize = DEFAULT);
-  // void push_back(const T &data);
-  // void reserve(const int &allocSize);
+  void resize(const int &newSize = DEFAULT);
+  void push_back(const T &data);
+  void reserve(const int &allocSize);
 
-  // typedef T* iterator;
-  // typedef const T* const_iterator;
+  typedef T* iterator;
+  typedef const T* const_iterator;
 
-  // iterator begin();
-  // iterator end();
-  // const_iterator begin() const;
-  // const_iterator end() const;
+  iterator begin();
+  iterator end();
+  const_iterator begin() const;
+  const_iterator end() const;
 
-  // iterator insert(iterator it, const T &data);
-  // iterator erase(iterator it);
+  iterator insert(iterator it, const T &data);
+  iterator erase(iterator it);
 
  private:
   void veccpy(const Vector &src) {
