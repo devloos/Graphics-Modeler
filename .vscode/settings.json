@@ -30,6 +30,7 @@
     "type_traits": "cpp",
     "typeinfo": "cpp",
     "__node_handle": "cpp",
-    "*.inc": "cpp"
+    "*.inc": "cpp",
+    "iostream": "cpp"
   }
 }
