@@ -275,10 +275,6 @@ class Vector {
     block = nullptr;
   }
 
-  bool atLastElem() const {
-    return size_ == 1;
-  }
-
  private:
   T* data_ = nullptr;
   int capacity_ = 0;
