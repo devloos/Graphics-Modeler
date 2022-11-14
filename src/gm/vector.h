@@ -80,7 +80,7 @@ class Vector {
 
   // THIS IS NOT DONE
   iterator insert(iterator it, const T &value) {
-    if (size_ == capacity_) {
+    if (size_ >= capacity_) {
       Vector::realloc((capacity_ + 1) + (capacity_ / 2));
     }
 
@@ -198,7 +198,7 @@ class Vector {
       Vector::realloc((capacity_ + 1) + (capacity_ / 2));
     }
 
-    return new (&data_[size_++]) T(std::forward<Args>(args)...);
+    return data_[size_++] = T(std::forward<Args>(args)...);
   }
 
   void push_back(const T &value) {
