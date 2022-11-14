@@ -2,15 +2,48 @@
 #include <cassert>
 #include <cstring>
 #include <iostream>
+#include <optional>
 #include <vector>
 
 namespace GM {
+template <typename Vector>
+class Iterator {
+ private:
+  using PointerType = typename Vector::Type*;
+
+ public:
+  Iterator(PointerType it) : it_(it) {}
+
+ private:
+  PointerType it_ = nullptr;
+};
+
 template <typename T>
 class Vector {
- private:
-  T* data_ = nullptr;
-  int capacity_ = 0;
-  int size_ = 0;
+ public:
+  using iterator = Iterator<Vector<T>>;
+  using const_iterator = const Iterator<Vector<T>>;
+  using Type = T;
+
+ public:
+  iterator begin() {
+    return iterator(data_);
+  }
+
+  iterator end() {
+    return iterator(data_ + size_);
+  }
+
+  const_iterator begin() const {
+    return const_iterator(data_);
+  }
+
+  const_iterator end() const {
+    return const_iterator(data_);
+  }
+
+  iterator insert(iterator it, const T &data);
+  iterator erase(iterator it);
 
  public:
   Vector() {}
@@ -72,9 +105,9 @@ class Vector {
     T* block = new T[count];
 
     if (count <= size_) {
-      deepCpy(block, data_, count);
+      deepcpy(block, data_, count);
     } else {
-      deepCpy(block, data_, size_);
+      deepcpy(block, data_, size_);
       for (int i = size_; i < count; i++) {
         block[i] = value;
       }
@@ -108,41 +141,19 @@ class Vector {
     data_[size_++] = value;
   }
 
+  std::optional<T> pop_back() {
+    if (isEmpty()) {
+      return {};
+    }
+
+    return data[--size_];
+  }
+
   void reserve(const int &newCap) {
     if (newCap > capacity_) {
       reAlloc(newCap);
     }
   }
-
-  using iterator = T*;
-  using const_iterator = const T*;
-
-  iterator begin() {
-    return data_;
-  }
-
-  iterator end() {
-    if (data_ == nullptr) {
-      return data_;
-    }
-
-    return &data_[size_];
-  }
-
-  const_iterator begin() const {
-    return data_;
-  }
-
-  const_iterator end() const {
-    if (data_ == nullptr) {
-      return data_;
-    }
-
-    return &data_[size_];
-  }
-
-  iterator insert(iterator it, const T &data);
-  iterator erase(iterator it);
 
  private:
   void veccpy(const Vector &src) {
@@ -168,7 +179,7 @@ class Vector {
     src.data_ = nullptr;
   }
 
-  void deepCpy(T* dest, const T* src, const int &size) {
+  void deepcpy(T* dest, const T* src, const int &size) {
     for (int i = 0; i < size; i++) {
       dest[i] = src[i];
     }
@@ -178,12 +189,17 @@ class Vector {
     assert(count > capacity_);
 
     T* block = new T[count];
-    deepCpy(block, data_, size_);
+    deepcpy(block, data_, size_);
 
     capacity_ = count;
     delete[] data_;
     data_ = block;
     block = nullptr;
   }
+
+ private:
+  T* data_ = nullptr;
+  int capacity_ = 0;
+  int size_ = 0;
 };
 }  // namespace GM
