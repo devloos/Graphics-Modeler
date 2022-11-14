@@ -27,6 +27,16 @@ class Iterator {
     return it;
   }
 
+  Iterator operator+(const int &count) {
+    assert(it_ != nullptr);
+    return it_ + count;
+  }
+
+  Iterator operator-(const int &count) {
+    assert(it_ != nullptr);
+    return it_ - count;
+  }
+
   ReferenceType operator*() {
     assert(it_ != nullptr);
     return *it_;
@@ -68,8 +78,31 @@ class Vector {
     return const_iterator(data_);
   }
 
-  iterator insert(iterator it, const T &data);
-  iterator erase(iterator it);
+  // THIS IS NOT DONE
+  iterator insert(iterator it, const T &value) {
+    if (size_ == capacity_) {
+      Vector::realloc((capacity_ + 1) + (capacity_ / 2));
+    }
+
+    T _tp = *it;
+    T __tp = T();
+    for (iterator kt = it + 1; kt != end(); kt++) {
+      __tp = *(kt - 1);
+      _tp = *(kt + 1);
+      *kt = _tp;
+    }
+
+    *it = value;
+    ++size_;
+    return it;
+  }
+
+  iterator erase(iterator it) {
+    for (iterator kt = it + 1; kt != end(); kt++) {
+      *(kt - 1) = *kt;
+    }
+    --size_;
+  }
 
  public:
   Vector() {}
@@ -148,6 +181,16 @@ class Vector {
 
   bool isEmpty() {
     return size_ == 0;
+  }
+
+  // Not true emplacing
+  template <typename... Args>
+  T &emplace(Args &&... args) {
+    if (size_ >= capacity_) {
+      Vector::realloc((capacity_ + 1) + (capacity_ / 2));
+    }
+
+    return data_[size_++] = T(std::forward<Args>(args)...);
   }
 
   void push_back(const T &value) {
