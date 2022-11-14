@@ -91,12 +91,14 @@ class Vector {
     return size_ == 0;
   }
 
+#ifndef NDEBUG
   void print() {
     for (int i = 0; i < size_; i++) {
       std::cout << data_[i] << " ";
     }
     std::cout << "\n";
   }
+#endif
 
   void push_back(const T &value) {
     if (size_ >= capacity_) {
@@ -112,13 +114,32 @@ class Vector {
     }
   }
 
-  typedef T* iterator;
-  typedef const T* const_iterator;
+  using iterator = T*;
+  using const_iterator = const T*;
 
-  iterator begin();
-  iterator end();
-  const_iterator begin() const;
-  const_iterator end() const;
+  iterator begin() {
+    return data_;
+  }
+
+  iterator end() {
+    if (data_ == nullptr) {
+      return data_;
+    }
+
+    return &data_[size_];
+  }
+
+  const_iterator begin() const {
+    return data_;
+  }
+
+  const_iterator end() const {
+    if (data_ == nullptr) {
+      return data_;
+    }
+
+    return &data_[size_];
+  }
 
   iterator insert(iterator it, const T &data);
   iterator erase(iterator it);
