@@ -75,7 +75,7 @@ class Vector {
   }
 
   const_iterator end() const {
-    return const_iterator(data_);
+    return const_iterator(data_ + size_);
   }
 
   // THIS IS NOT DONE
@@ -98,10 +98,18 @@ class Vector {
   }
 
   iterator erase(iterator it) {
+    assert(it != iterator(data_ + size_));
+
+    if (it == iterator(data_ + (size_ - 1))) {
+      return iterator(data_ + (--size_));
+    }
+
     for (iterator kt = it + 1; kt != end(); kt++) {
       *(kt - 1) = *kt;
     }
+
     --size_;
+    return it;
   }
 
  public:
@@ -183,14 +191,14 @@ class Vector {
     return size_ == 0;
   }
 
-  // Not true emplacing
+  // Reference: https://en.cppreference.com/w/cpp/container/vector/emplace_back
   template <typename... Args>
-  T &emplace(Args &&... args) {
+  T &emplace_back(Args &&... args) {
     if (size_ >= capacity_) {
       Vector::realloc((capacity_ + 1) + (capacity_ / 2));
     }
 
-    return data_[size_++] = T(std::forward<Args>(args)...);
+    return new (&data_[size_++]) T(std::forward<Args>(args)...);
   }
 
   void push_back(const T &value) {
@@ -265,6 +273,10 @@ class Vector {
     delete[] data_;
     data_ = block;
     block = nullptr;
+  }
+
+  bool atLastElem() const {
+    return size_ == 1;
   }
 
  private:
