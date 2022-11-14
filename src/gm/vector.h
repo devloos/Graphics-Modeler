@@ -10,9 +10,35 @@ template <typename Vector>
 class Iterator {
  private:
   using PointerType = typename Vector::Type*;
+  using ReferenceType = typename Vector::Type &;
 
  public:
   Iterator(PointerType it) : it_(it) {}
+
+  Iterator &operator++() {
+    assert(it_ != nullptr);
+    ++it_;
+    return *this;
+  }
+
+  Iterator operator++(int) {
+    Iterator it = *this;
+    ++(*this);
+    return it;
+  }
+
+  ReferenceType operator*() {
+    assert(it_ != nullptr);
+    return *it_;
+  }
+
+  bool operator==(const Iterator &rhs) {
+    return it_ == rhs.it_;
+  }
+
+  bool operator!=(const Iterator &rhs) {
+    return !(*this == rhs);
+  }
 
  private:
   PointerType it_ = nullptr;
@@ -124,18 +150,9 @@ class Vector {
     return size_ == 0;
   }
 
-#ifndef NDEBUG
-  void print() {
-    for (int i = 0; i < size_; i++) {
-      std::cout << data_[i] << " ";
-    }
-    std::cout << "\n";
-  }
-#endif
-
   void push_back(const T &value) {
     if (size_ >= capacity_) {
-      reAlloc((capacity_ + 1) + (capacity_ / 2));
+      Vector::realloc((capacity_ + 1) + (capacity_ / 2));
     }
 
     data_[size_++] = value;
@@ -146,14 +163,24 @@ class Vector {
       return {};
     }
 
-    return data[--size_];
+    return data_[--size_];
   }
 
   void reserve(const int &newCap) {
     if (newCap > capacity_) {
-      reAlloc(newCap);
+      Vector::realloc(newCap);
     }
   }
+
+ public:
+#ifndef NDEBUG
+  void print() {
+    for (int i = 0; i < size_; i++) {
+      std::cout << data_[i] << " ";
+    }
+    std::cout << "\n";
+  }
+#endif
 
  private:
   void veccpy(const Vector &src) {
@@ -185,7 +212,7 @@ class Vector {
     }
   }
 
-  void reAlloc(const int &count) {
+  void realloc(const int &count) {
     assert(count > capacity_);
 
     T* block = new T[count];
