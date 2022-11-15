@@ -69,3 +69,20 @@ The following image shows an early design of the graphical user interface. Featu
 - [ ] reports to display shapes, shape perimeter & area (2d modeler qt project)
 - [ ] update 2d shapes (i.e. add, remove or move) via rendering widget forms (2d modeler qt project)
 - [ ] persist changes to shapes.txt file
+
+<br />
+
+  | General Requirement List |
+  | :---------------------------------: |
+  
+- [ ] Use inheritance
+- [ ] Use aggregation
+- [ ] Use exception handling
+- [ ] Use a virtual function
+- [ ] Use at least two overload operators
+- [ ] At least one class using templates
+- [ ] At least one class must contain a pointer (write copy constructor and test it)
+- [ ] Invalid inputs should be addressed.
+- [ ] Doxygen documentation
+- [ ] Valgrind memory leak check
+  
