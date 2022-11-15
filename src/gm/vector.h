@@ -37,6 +37,14 @@ class Iterator {
     return it_ - count;
   }
 
+  int operator+(const Iterator &rhs) {
+    return it_ + rhs.it_;
+  }
+
+  int operator-(const Iterator &rhs) {
+    return it_ - rhs.it_;
+  }
+
   ReferenceType operator*() {
     assert(it_ != nullptr);
     return *it_;
@@ -80,8 +88,9 @@ class Vector {
 
   iterator insert(iterator it, const T &value) {
     if (size_ == capacity_) {
-      // TODO: dead iterator
+      int diff = it - begin();
       Vector::realloc((capacity_ + 1) + (capacity_ / 2));
+      it = iterator(data_ + diff);
     }
 
     if (it == end()) {
