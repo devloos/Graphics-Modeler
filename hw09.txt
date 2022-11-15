@@ -105,4 +105,4 @@
   d) Assignee:
   e) Estimation:
   f) Priority: 
-  g) Done:
+  g) Done: .
