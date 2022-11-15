@@ -235,8 +235,6 @@ class Vector {
 
  private:
   void veccpy(const Vector &src) {
-    assert(src.capacity_ > 0 || src.size_ > 0);
-
     size_ = src.size_;
     capacity_ = src.capacity_;
     data_ = new T[capacity_];
