@@ -52,7 +52,7 @@ The following image shows an early design of the graphical user interface. Featu
   | :---------------------------------: |
   
 - [ ] implement shapes.txt parser object/logic  
-- [ ] implement vector container 
+- [X] implement vector container 
 - [ ] begin implementation of shape abc interface & inheritance hierarchy (line, polyline ...) 
 - [ ] investigate/understand qt qpainter demo project 
 - [ ] build basic 2d modeler qt project with login screen 
