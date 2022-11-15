@@ -78,22 +78,28 @@ class Vector {
     return const_iterator(data_ + size_);
   }
 
-  // THIS IS NOT DONE
   iterator insert(iterator it, const T &value) {
-    if (size_ >= capacity_) {
+    if (size_ == capacity_) {
+      // TODO: dead iterator
       Vector::realloc((capacity_ + 1) + (capacity_ / 2));
+    }
+
+    if (it == end()) {
+      *it = value;
+      size_++;
+      return it;
     }
 
     T _tp = *it;
     T __tp = T();
+    ++size_;
     for (iterator kt = it + 1; kt != end(); kt++) {
-      __tp = *(kt - 1);
-      _tp = *(kt + 1);
+      __tp = *kt;
       *kt = _tp;
+      _tp = __tp;
     }
 
     *it = value;
-    ++size_;
     return it;
   }
 
