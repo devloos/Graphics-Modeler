@@ -98,11 +98,27 @@
 
 
 ---- USER STORY #10----
-#10 As a <user role> I <want/need/can/etc.> <goal> so that <reason>
-  a) Description:
+#10 As a user I can sort my shapes in the demo.
+  a) Description: 
+    - Custom selection_sort algorithm and two custom
+      comparison functions compare_shape_perimeter, compare_shape_area. 
+    - All functions are templated. 
+    - The comparison functions are called via a function pointer passed to
+      selection_sort. 
+    - This allows the algorithm to sort shapes by perimeter and area respectively.
+    - Selection_sort must sort a vector of shapes by id (default) or alternatively 
+      via custom comparison functions.
   b) Tasks:
+    - Create a selection sort function that sorts shapes in a vector by id
+    - Create a templated selection sort that takes in a vector and a function pointer
+    - Create two custom functions compare_shape_perimeter and compare_shape_area
   c) Tests:
-  d) Assignee:
-  e) Estimation:
-  f) Priority: 
-  g) Done: .
+    - Verify each function has successfully and properly sorted by id, shape area,
+      and shape perimeter
+  d) Assignee: Connor Darling
+  e) Estimation: 3 hours 
+  f) Priority: 5
+  g) Done:
+    - User is able to successfully sort a vector by id
+    - User is able to successfully sort a vector by shape area
+    - User is able to successfully sort a vector by shape perimeter
