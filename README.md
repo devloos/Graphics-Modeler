@@ -85,4 +85,6 @@ The following image shows an early design of the graphical user interface. Featu
 - [ ] Invalid inputs should be addressed.
 - [ ] Doxygen documentation
 - [ ] Valgrind memory leak check
+- [ ] Guests should be able to enter "satisfied customer" testimonials that persist between executions.
+- [ ] Provide "Contact us" method with team name and logo
   
