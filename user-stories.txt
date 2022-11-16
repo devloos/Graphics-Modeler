@@ -1,113 +1,286 @@
 ---- USER STORY #1----
-#1 As a <user role> I <want/need/can/etc.> <goal> so that <reason>
+#1 As a potential customer, I want to see a fully functional 2d 
+   graphics modeler, I also want to see the ability to modify the 
+   data while using the UI. Finally, I want to have an understanding 
+   of the company, this would include a contact us and about us section.
   a) Description:
+    - This is our bread and butter of our necessary tasks, this user 
+      story forms as an epic to our project. We are to implement all 
+      required tasks that will make up our 2d modeler, this will be 
+      done in an agile environment. Given limited time and resources 
+      we need an agile methodology to successfully carry out this project. 
+      We will need to use test driven development to insure that said 
+      tasks will work together as a whole
   b) Tasks:
+    - [Liam] Implement shapes.txt parser object/logic
+    - [Carlos] Implement vector container
+    - [Liam] Begin implementation of shape abc interface & inheritance hierarchy (line, polyline ...)
+    - [Everyone] Investigate/understand qt qpainter demo project
+    - [Carlos] Build basic 2d modeler qt project with login screen
+    - [Camaron] Complete implementation of shape abc interface & inheritance hierarchy (line, polyline ...)
+    - [Carlos] Ability to render 2d shapes (2d modeler qt project)
+    - [Carlos] Renderarea widget (inherits from qwidget like qt 2d rendering demo project) can dislpay all geometric shapes
+    - [Carlos] Ability to render all shapes from shapes.txt in renderarea widget (2d modeler qt project)
+    - [Camaron] Reports to display shapes, shape perimeter & area (2d modeler qt project)
+    - [Connor] Update 2d shapes (i.e. add, remove or move) via rendering widget forms (2d modeler qt project)
+    - [Joseph] Persist changes to shapes.txt file
+    - [Joseph] UML Diagram
+    - [Joseph] Modify Shape Properties
+    - [Connor] Selection Sort with custom sorting
   c) Tests:
-  d) Assignee:
-  e) Estimation:
-  f) Priority: 
+    - [Liam] Parser works and is able to parse shape.txt
+    - [Carlos] Vector can hold all primitive and user-defined types
+    - [Liam] Shape interface is able to extend easily
+    - [Carlos] Allow user to successfully login and view contact information
+    - [Camaron] Have a successful hierarchy about the Shape class using things like polymorphism
+    - [Carlos] Rendering successfully geometric shapes in our qt window
+    - [Camaron] All reports about the current shape to be assessable in the window
+    - [Connor] Be able to change shapes in the qt window
+    - [Joseph] persist changes to shapes.txt file
+    - [Joseph] UML Diagram completed for customer
+    - [Joseph] Able to modify shapes properties on the fly in demo window
+    - [Connor] Shapes are sorted properly with given conditions
+  d) Assignee: Every Team Member
+  e) Estimation: 100
+  f) Priority: 1
   g) Done:
+    - Admin is able to carry out a full 2d graphics demo for a client, this will 
+      include being able to render all required demo shapes, report shape 
+      properties in the window, present completed UML diagram to customer, 
+      the ability to sort shapes by id, user login in with proper safety measures, 
+      and display information about the project and the team.
 
 
 ---- USER STORY #2----
-#2 As a <user role> I <want/need/can/etc.> <goal> so that <reason>
+#2 As a group member I want to investiagte QT so that I have a 
+   good understadning of the GUI library.
   a) Description:
+    - To get an understadning of the QT GUI Library I must
+      investiagte the different aspects of QT relating to 
+      Graphics Modeler project. This means investigating 
+      QWidgets and QPainter
   b) Tasks:
+    - Read through QT documentation from QWidgets
+    - Read through QT documentation from QPainter
+    - Read through general QT documentation
+    - Watch examples of QT on YouTube
   c) Tests:
-  d) Assignee:
-  e) Estimation:
-  f) Priority: 
-  g) Done:
+    - Implement a small QT program to test features of QT
+  d) Assignee: Every Team Member
+  e) Estimation: 75
+  f) Priority: 1
+  g) Done: 
+    - Each group member is able to have a solid understadning of
+      navigating, reading, and writing code relating to QWidgets and
+      QPainter
+
 
 
 ---- USER STORY #3----
-#3 As a <user role> I <want/need/can/etc.> <goal> so that <reason>
+#3 As a programmer I need a abstract base shape class so that I can create 
+  the child classes for shape implementation and functionality.
   a) Description:
+    - The user will be able to use the base class in order to 
+      derive child classes using the abstract base class.
+    - The base class will be used to create a shape hierarchy
+    - This base class will have methods to manipulate shapes 
+      from base class function calls
   b) Tasks:
+    - Create base class
+    - Create base class methods 
   c) Tests:
-  d) Assignee:
-  e) Estimation:
-  f) Priority: 
+    - Verify base class methods are being properly called
+    - Verify and test polymorphism 
+  d) Assignee: Liam Eastwood
+  e) Estimation: 35
+  f) Priority: 2
   g) Done:
+    - Class is able to be implemented
+    - Classes may be derived from this base shape class
 
 
 ---- USER STORY #4----
-#4 As a <user role> I <want/need/can/etc.> <goal> so that <reason>
+#4 As a programmer I need an input file parser to properly take input data 
+   from a formatted input file into a input class.
   a) Description:
+    - User will be able to enter a formatted text file to be parsed
+    - Get the input from the submitted file
+    - Data will be properly parsed and stored in new input class
   b) Tasks:
+    - Create input data class
+    - Manage the parsing and input into the objects
+    - Manage different inputs into respective inputs
+    - Gets input from n points if needed
+    - Create logic for getting input of different shapes
   c) Tests:
-  d) Assignee:
-  e) Estimation:
-  f) Priority: 
+    - Verify input data class works
+    - Make sure parsing is properly formatted
+    - Make sure inputs are in proper allocations respective to shapes
+    - Make sure class gets n points as needed
+    - Make sure shape logic is placing input in proper containers
+  d) Assignee: Liam Eastwood
+  e) Estimation: 15
+  f) Priority: 2
   g) Done:
+    - Class is able to output data
+    - Input is read into proper containers
+    - Objects are created with proper inputs
 
 
 ---- USER STORY #5----
-#5 As a <user role> I <want/need/can/etc.> <goal> so that <reason>
+#5 As a digital artist I would like to be able to have access to create default 
+   reproducible shapes so that I do not have to paint inconsistent shapes.
   a) Description:
+    - An implementation of the shape hierarchy so that the artist may 
+      have default shapes to work with. This means deriving from this
+      shape class to specify unique shape properties depending on each
+      shape (line, polygon, polyline, etc.)
   b) Tasks:
+    - Create classes and subclasses for shapes
+    - For example: triangle inherits from shape. Circle inherits from 
+      shape, ellipsis inherits from shape
+    - Add data members for each implemented shape to work with QPainter 
+      draw shape functions
   c) Tests:
-  d) Assignee:
-  e) Estimation:
-  f) Priority: 
+    - Test to make sure overrides and other forms of polmorphism work
+    - Test draw functions passing in shape class
+  d) Assignee: Cameron Rosenthal
+  e) Estimation: 55
+  f) Priority: 3
   g) Done:
+    - The artist should be able to have access to many default shapes listed 
+      in the project requirements
 
 
 ---- USER STORY #6----
-#6 As a <user role> I <want/need/can/etc.> <goal> so that <reason>
+#6 As a programmer I need a dynamic array container to store the 
+   shapes needed in the program, this is because we will utilize shape.txt 
+   to load our shapes and store them in the vector.
   a) Description:
+    - We will be using this vector to store any data needed to run our 
+      program. It should be implemented similar to the STL's vector class, 
+      it should also be used in place of the STL vector class
   b) Tasks:
+    - This vector should follow strict memory management
+    - It should be implemented using templates
+    - Vector also supports a basic iterator member type and member 
+      function begin() and end() operations
+    - Should support all operations given in the class project write up
   c) Tests:
-  d) Assignee:
-  e) Estimation:
-  f) Priority: 
+    - All primitive types work in container
+    - User-defined types work in the container
+    - Classes that implement RAII properly work in the container
+    - 2D Vectors work in the container
+  d) Assignee: Carlos Aguilera
+  e) Estimation: 30
+  f) Priority: 3
   g) Done:
+    - Developer is successfully able to use container with primitive types
+    - Developer is successfully able to work with user-defined types in container
+    - Container is able to handle a class that properly implements RAII
+    - Developer is able to use 2D Vector
 
 
 ---- USER STORY #7----
-#7 As a <user role> I <want/need/can/etc.> <goal> so that <reason>
+#7 As a user, I want to be able to login in easily to demo the 2d graphics modeler.
   a) Description:
+    - This should be a login screen that the user interfaces with to be able to 
+      login. It should allow for user input and check for any invalid username or 
+      password. It should also display the team logo, along side a contact model pop-up
   b) Tasks:
+    - Render a window that display basic input
+    - Allow for user to advance passed the login screen if conditions met
+    - Render logo and contact us information
+    - Validate user information
   c) Tests:
-  d) Assignee:
-  e) Estimation:
-  f) Priority: 
+    - Check whether input is validated properly
+    - User is able to flow directly into graphics demo
+    - Logo visually looks pleasing and contact us information is visible
+  d) Assignee: Carlos Aguilera
+  e) Estimation: 60
+  f) Priority: 3
   g) Done:
+    - User is able to successfully move passed the login screen if conditions are met
+    - Successful validation on user input, this included valid credentials and valid input
+    - Logo is centered correctly and contact us button is properly working
 
 
 ---- USER STORY #8----
-#8 As a <user role> I <want/need/can/etc.> <goal> so that <reason>
+#8 As an administrator, I can modify all shape properties.
   a) Description:
+    - The administrator can modify the shape, increase or decrease the amount of space
+	    the shape takes up on the display
+	  - This includes shape dimensions; for both pen and brush color, width and style
+	  - A regular user cannot modify shape properties
   b) Tasks:
+    - Upon login the admin will have a Modify Shape button to the graphical interface
+	  - Display a list of shapes that can be modified once button is pressed
+	  - Upon pressing the shape needed provide all the values of properties that can be changed
+	  - If there is no shapes, the button is disabled
   c) Tests:
-  d) Assignee:
-  e) Estimation:
-  f) Priority: 
-  g) Done:
+    - Verify that only the administrator can select the modify shape button.
+    - Verify that when values are changed the shape selected will be altered.
+    - Ensure that the maximum values of the shapes properties can be rendered 
+	    to display. 
+    - Upon finishing ensure the modify shape button stays rendered and can be 
+      used as intended.
+  d) Assignee: Joseph Bobby
+  e) Estimation: 30
+  f) Priority: 4
+  g) Done: 
+    - Administrator is able to click on "Modify Shape" button, when there is at least
+	    one shape in the canvas
+    - When pressed: administrator can select which shape to modify
+    - After Shape is selected: admin can modify the values of the specifications
+	    of that specific shape selected
+    - Upon submitting the modifications form, the user should see the changes created
+	    in the canvas
 
 
 ---- USER STORY #9----
-#9 As a <user role> I <want/need/can/etc.> <goal> so that <reason>
-  a) Description:
+#9 As a client, I should be able to understand a roadmap to understand what 
+   is being devloped.
+  a) Description: 
+    - The client should be able to visually see a roadmap of each piece of software 
+      being developed
+		- Additionally to find a heirarchy of what can be considered "core" or important 
+      to the development
+		- Provides the first planning stage of what to include or cut out of the project
   b) Tasks:
+    - After the client deciedes the scope of the project, the catagorization of 
+      features will be grouped together like objects
+    - Once the catagories are created they will be laid out into a flow chart, with 
+      like features being related
+    - The client will be questioned if they prefer which order of objects to come 
+      before or after eachother
+    - An arrow will point from input, processing and output from the users persecptive
   c) Tests:
-  d) Assignee:
-  e) Estimation:
-  f) Priority: 
-  g) Done:
-
+    - The flow from input and output will be considered, if there is a discrepancy 
+      objects will need to be reorderd
+    - The client will be asked again if they have any perfer a certain order of objects
+    - Attemp to use the diagram to explain the project to another party to see if 
+      it is clear and concise
+  d) Assignee: Joseph Bobby
+  e) Estimation: 25
+  f) Priority: 4
+  g) Done: 
+    - An accessible diagram will be created that will reflect all of the asks of 
+      the client
+	  - The project team is able to understand a heirarchy of what objects need work, 
+      and in what order
+		
 
 ---- USER STORY #10----
 #10 As a user I can sort my shapes in the demo.
   a) Description: 
     - Custom selection_sort algorithm and two custom
-      comparison functions compare_shape_perimeter, compare_shape_area. 
-    - All functions are templated. 
+      comparison functions compare_shape_perimeter, compare_shape_area.
+    - All functions are templated
     - The comparison functions are called via a function pointer passed to
-      selection_sort. 
+      selection_sort
     - This allows the algorithm to sort shapes by perimeter and area respectively.
     - Selection_sort must sort a vector of shapes by id (default) or alternatively 
-      via custom comparison functions.
+      via custom comparison functions
   b) Tasks:
     - Create a selection sort function that sorts shapes in a vector by id
     - Create a templated selection sort that takes in a vector and a function pointer
@@ -116,7 +289,7 @@
     - Verify each function has successfully and properly sorted by id, shape area,
       and shape perimeter
   d) Assignee: Connor Darling
-  e) Estimation: 3 hours 
+  e) Estimation: 30
   f) Priority: 5
   g) Done:
     - User is able to successfully sort a vector by id
