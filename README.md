@@ -9,7 +9,7 @@
 | Carlos Aguilera   | SCRUM Master   |
 | Cameron Rosenthal | Team Member    |
 | Liam Eastwood     | Team Member    |
-| jbobby0__         | Team Member    |
+| Joesph Bobby      | Team Member    |
 
 <br/>
 
@@ -51,21 +51,40 @@ The following image shows an early design of the graphical user interface. Featu
   | (Sprint #1) Estimated Time: 3 weeks |
   | :---------------------------------: |
   
-- [ ] implement shapes.txt parser object/logic  
-- [ ] implement vector container 
-- [ ] begin implementation of shape abc interface & inheritance hierarchy (line, polyline ...) 
-- [ ] investigate/understand qt qpainter demo project 
-- [ ] build basic 2d modeler qt project with login screen 
+- [ ] Implement shapes.txt parser object/logic  
+- [X] Implement vector container 
+- [ ] Begin implementation of shape abc interface & inheritance hierarchy (line, polyline ...) 
+- [ ] Investigate/understand qt qpainter demo project 
+- [ ] Build basic 2d modeler qt project with login screen 
 
 <br />
 
   | (Sprint #2) Estimated Time: 3 weeks |
   | :---------------------------------: |
   
-- [ ] complete implementation of shape abc interface & inheritance hierarchy (line, polyline ...)
-- [ ] ability to render 2d shapes (2d modeler qt project)
-- [ ] renderarea widget (inherits from qwidget like qt 2d rendering demo project) can dislpay all geometric shapes
-- [ ] ability to render all shapes from shapes.txt in renderarea widget (2d modeler qt project)
-- [ ] reports to display shapes, shape perimeter & area (2d modeler qt project)
-- [ ] update 2d shapes (i.e. add, remove or move) via rendering widget forms (2d modeler qt project)
-- [ ] persist changes to shapes.txt file
+- [ ] Complete implementation of shape abc interface & inheritance hierarchy (line, polyline ...)
+- [ ] Ability to render 2d shapes (2d modeler qt project)
+- [ ] Renderarea widget (inherits from qwidget like qt 2d rendering demo project) can dislpay all geometric shapes
+- [ ] Ability to render all shapes from shapes.txt in renderarea widget (2d modeler qt project)
+- [ ] Reports to display shapes, shape perimeter & area (2d modeler qt project)
+- [ ] Update 2d shapes (i.e. add, remove or move) via rendering widget forms (2d modeler qt project)
+- [ ] Persist changes to shapes.txt file
+
+<br />
+
+  | General Requirement List |
+  | :---------------------------------: |
+  
+- [ ] Use inheritance
+- [ ] Use aggregation
+- [ ] Use exception handling
+- [ ] Use a virtual function
+- [ ] Use at least two overload operators
+- [ ] At least one class using templates
+- [ ] At least one class must contain a pointer (write copy constructor and test it)
+- [ ] Invalid inputs should be addressed.
+- [ ] Doxygen documentation
+- [ ] Valgrind memory leak check
+- [ ] Guests should be able to enter "satisfied customer" testimonials that persist between executions.
+- [ ] Provide "Contact us" method with team name and logo
+  
