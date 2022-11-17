@@ -64,6 +64,10 @@ class shape {
     return pointVect[x];
   }
 
+  GM::Vector<QPoint> getWholeVector() {
+    return pointVect;
+  }
+
   int getId() {
     return shapeId;
   }
