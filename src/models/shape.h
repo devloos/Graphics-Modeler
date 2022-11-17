@@ -60,6 +60,18 @@ class shape {
     pointVect.pop_back();
   }
 
+  QPoint getPointAt(int x) {
+    return pointVect[x];
+  }
+
+  int getId() {
+    return shapeId;
+  }
+
+  QString getName() {
+    return shapeName;
+  }
+
   virtual ~shape();
 
  private:
