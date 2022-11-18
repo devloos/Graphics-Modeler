@@ -2,8 +2,11 @@
 #include <QtCore/QString>
 #include <QtGui/QAction>
 #include <QtWidgets/QtWidgets>
+#include <functional>
+#include <string>
 
 #include "gm/vector.h"
+#include "utility/utility.h"
 
 static const int WIDTH = 640;
 static const int HEIGHT = 480;

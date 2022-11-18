@@ -1,7 +1,7 @@
 #include "main-window.h"
 
 MainWindow::MainWindow() {
-  this->resize(WIDTH, HEIGHT);
+  this->setFixedSize(QSize(WIDTH, HEIGHT));
 
   QPushButton* button = new QPushButton("New Window", this);
   button->setGeometry(QRect(QPoint((WIDTH / 2) - 45, (HEIGHT / 2) - 20), QSize(90, 40)));
@@ -11,6 +11,8 @@ MainWindow::MainWindow() {
 
 void MainWindow::login() {
   QDialog dialog(this);
+  dialog.setFixedSize(QSize(280, 170));
+
   QFormLayout form(&dialog);
 
   form.addRow(new QLabel(QObject::tr("<div align='center'>Login</div>")));
@@ -27,10 +29,26 @@ void MainWindow::login() {
 
   QPushButton* button = new QPushButton("Login", &dialog);
   form.addRow(button);
-  QObject::connect(
-      button, &QPushButton::clicked, &dialog, [&dialog]() { dialog.accept(); });
+  QObject::connect(button, &QPushButton::clicked, &dialog, [&dialog, &fields]() {
+    std::size_t hash =
+        std::hash<std::string>{}((fields[0]->text() + fields[1]->text()).toStdString());
+    if (Utility::Login::isValid(hash)) {
+      dialog.accept();
+    }
 
-  dialog.exec();
+    bool shakeSwitch = true;
+    QPoint offset(10, 0);
+    for (int i = 0; i < 9; i++) {
+      QTimer::singleShot(100, &dialog, [&]() {
+        dialog.move(((shakeSwitch) ? dialog.pos() + offset : dialog.pos() - offset));
+        shakeSwitch = !shakeSwitch;
+      });
+    }
+  });
+
+  if (dialog.exec() == QDialog::Rejected) {
+    this->close();
+  }
 }
 
 void MainWindow::closeEvent(QCloseEvent* event) {}
