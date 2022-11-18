@@ -1,8 +1,14 @@
 #pragma once
+#include <cstddef>
+#include <fstream>
 #include <functional>
+#include <iostream>
 #include <string>
 
 namespace Utility {
+namespace Parser {
+std::size_t parsePasswordHash(const std::string &raw);
+}
 namespace Login {
 bool isValid(const std::size_t &hash);
 }
