@@ -7,15 +7,13 @@
 
 #include "gm/vector.h"
 
-class shape {
+class Shape {
  public:
-  shape();
+  Shape();
 
-  shape(
+  Shape(
       int id, QString name, GM::Vector<QPoint> point, QColor color, int width,
       Qt::PenStyle style, Qt::PenCapStyle cap, Qt::PenJoinStyle join);
-
-  void setPenWidth(int width);
 
   void setPenStyle(Qt::PenStyle style);
 
@@ -27,9 +25,9 @@ class shape {
 
   void setPenWidth(int width);
 
-  void pointPush_Back(QPoint newPoint);
+  void pointPushBack(QPoint newPoint);
 
-  void pointPop_Back();
+  void pointPopBack();
 
   void setShapeName(QString name);
 
@@ -39,15 +37,15 @@ class shape {
 
   GM::Vector<QPoint> &getPoints();
 
-  int getShapeId();
+  int getShapeId() const;
 
-  QString getShapeName();
+  QString getShapeName() const;
 
-  virtual ~shape();
+  virtual ~Shape() noexcept;
 
  private:
   GM::Vector<QPoint> points;
-  int shapeId;
+  int shapeId = 0;
   QString shapeName;
   QPen shapePen;
 };
