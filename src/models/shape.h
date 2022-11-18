@@ -9,10 +9,7 @@
 
 class shape {
  public:
-  shape() {
-    shapeId = -1;
-    shapeName = "NO_VALUE";
-  }
+  shape();
 
   shape(
       int id, QString name, GM::Vector<QPoint> point, QColor color, int width,
