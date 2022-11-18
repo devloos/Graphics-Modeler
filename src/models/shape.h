@@ -51,8 +51,7 @@ class shape {
     shapePen.setWidth(width);
   }
 
-  void pointPush_Back(int x, int y) {
-    QPoint newPoint(x, y);
+  void pointPush_Back(QPoint newPoint) {
     pointVect.push_back(newPoint);
   }
 
@@ -60,7 +59,15 @@ class shape {
     pointVect.pop_back();
   }
 
-  QPoint getPointAt(int x) {
+  void setName(QString name) {
+    shapeName = name;
+  }
+
+  void setshapeId(int id) {
+    shapeId = id;
+  }
+
+  QPoint &getPointAt(int x) {
     return pointVect[x];
   }
 
