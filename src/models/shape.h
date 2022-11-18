@@ -68,11 +68,11 @@ class shape {
     return pointVect;
   }
 
-  int getId() {
+  int getShapeId() {
     return shapeId;
   }
 
-  QString getName() {
+  QString getShapeName() {
     return shapeName;
   }
 
