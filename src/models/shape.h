@@ -64,7 +64,7 @@ class shape {
     return pointVect[x];
   }
 
-  GM::Vector<QPoint> getWholeVector() {
+  GM::Vector<QPoint> &getPoints() {
     return pointVect;
   }
 
