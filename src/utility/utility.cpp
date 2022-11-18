@@ -11,12 +11,22 @@ namespace Login {
 bool isValid(const std::size_t &hash) {
   std::fstream fin("../src/db/users.db", std::ios::in);
 
+  if (!fin.is_open()) {
+    std::cout << "File was not able to be opened.\n";
+    return false;
+  }
+
   std::string key;
   std::getline(fin, key);
   std::getline(fin, key);
   fin.close();
 
-  if (Parser::parsePasswordHash(key) != hash) {
+  try {
+    if (Parser::parsePasswordHash(key) != hash) {
+      return false;
+    }
+  } catch (const std::invalid_argument &e) {
+    std::cout << e.what() + std::string(".\n");
     return false;
   }
 
