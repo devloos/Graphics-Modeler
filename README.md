@@ -13,6 +13,10 @@
 
 <br/>
 
+### IMPORTANT
+> Username: admin
+> Password: password123
+
 ## Overview 
 This project models as a library for basic 2D graphical objects.
 The goal is to exercise C++ fundamentals to construct this project
