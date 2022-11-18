@@ -16,72 +16,35 @@ class shape {
 
   shape(
       int id, QString name, GM::Vector<QPoint> point, QColor color, int width,
-      Qt::PenStyle style, Qt::PenCapStyle cap, Qt::PenJoinStyle join) {
-    shapeId = id;
-    shapeName = name;
-    points = point;
-    shapePen.setColor(color);
-    shapePen.setWidth(width);
-    shapePen.setStyle(style);
-    shapePen.setCapStyle(cap);
-    shapePen.setJoinStyle(join);
-  }
+      Qt::PenStyle style, Qt::PenCapStyle cap, Qt::PenJoinStyle join);
 
-  void setPenWidth(int width) {
-    shapePen.setWidth(width);
-  }
+  void setPenWidth(int width);
 
-  void setPenStyle(Qt::PenStyle style) {
-    shapePen.setStyle(style);
-  }
+  void setPenStyle(Qt::PenStyle style);
 
-  void setPenCap(Qt::PenCapStyle cap) {
-    shapePen.setCapStyle(cap);
-  }
+  void setPenCap(Qt::PenCapStyle cap);
 
-  void setPenColor(QColor color) {
-    shapePen.setColor(color);
-  }
+  void setPenColor(QColor color);
 
-  void setPenJoin(Qt::PenJoinStyle joinStyle) {
-    shapePen.setJoinStyle(joinStyle);
-  }
+  void setPenJoin(Qt::PenJoinStyle joinStyle);
 
-  void setPenWidth(int width) {
-    shapePen.setWidth(width);
-  }
+  void setPenWidth(int width);
 
-  void pointPush_Back(QPoint newPoint) {
-    points.push_back(newPoint);
-  }
+  void pointPush_Back(QPoint newPoint);
 
-  void pointPop_Back() {
-    points.pop_back();
-  }
+  void pointPop_Back();
 
-  void setShapeName(QString name) {
-    shapeName = name;
-  }
+  void setShapeName(QString name);
 
-  void setShapeId(int id) {
-    shapeId = id;
-  }
+  void setShapeId(int id);
 
-  QPoint &getPointAt(int x) {
-    return points[x];
-  }
+  QPoint &getPointAt(int x);
 
-  GM::Vector<QPoint> &getPoints() {
-    return points;
-  }
+  GM::Vector<QPoint> &getPoints();
 
-  int getShapeId() {
-    return shapeId;
-  }
+  int getShapeId();
 
-  QString getShapeName() {
-    return shapeName;
-  }
+  QString getShapeName();
 
   virtual ~shape();
 
