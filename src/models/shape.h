@@ -12,7 +12,7 @@ class Shape {
   Shape();
 
   Shape(
-      int id, QString name, GM::Vector<QPoint> point, QColor color, int width,
+      int id, const QString &name, GM::Vector<QPoint> point, QColor color, int width,
       Qt::PenStyle style, Qt::PenCapStyle cap, Qt::PenJoinStyle join);
 
   void setPenStyle(Qt::PenStyle style);
@@ -29,7 +29,7 @@ class Shape {
 
   void pointPopBack();
 
-  void setShapeName(QString name);
+  void setShapeName(const QString &name);
 
   void setShapeId(int id);
 

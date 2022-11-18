@@ -12,7 +12,7 @@ project(gm)
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets Gui)
 
 # Graphics Modelers
-add_executable(${PROJECT_NAME} src/core/main.cpp)
+add_executable(${PROJECT_NAME} src/core/main.cpp src/qt/main-window.cpp)
 
 target_include_directories(
   ${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/include)

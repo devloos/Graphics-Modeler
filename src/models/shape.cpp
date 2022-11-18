@@ -4,7 +4,7 @@ Shape::Shape() {}
 Shape::~Shape() noexcept {}
 
 Shape::Shape(
-    int id, QString name, GM::Vector<QPoint> point, QColor color, int width,
+    int id, const QString &name, GM::Vector<QPoint> point, QColor color, int width,
     Qt::PenStyle style, Qt::PenCapStyle cap, Qt::PenJoinStyle join) {
   this->shapeId = id;
   this->shapeName = name;
@@ -44,7 +44,7 @@ void Shape::pointPopBack() {
   this->points.pop_back();
 }
 
-void Shape::setShapeName(QString name) {
+void Shape::setShapeName(const QString &name) {
   this->shapeName = name;
 }
 
