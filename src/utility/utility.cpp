@@ -1,6 +1,12 @@
 #include "utility.h"
 
 namespace Utility {
+namespace Debug {
+void log(const std::string &msg) {
+  std::cout << msg << "\n";
+}
+}  // namespace Debug
+
 namespace Model {}
 
 namespace Parser {
@@ -15,13 +21,16 @@ bool isValid(const std::size_t &hash) {
   std::fstream fin("../src/db/users.db", std::ios::in);
 
   if (!fin.is_open()) {
-    std::cout << "File was not able to be opened.\n";
+    Debug::log("File was not able to be opened.");
     return false;
   }
 
   std::string key;
-  std::getline(fin, key);
-  std::getline(fin, key);
+  for (int i = 0; i < 2; i++) {
+    if (!fin.eof()) {
+      std::getline(fin, key);
+    }
+  }
   fin.close();
 
   try {
@@ -29,7 +38,7 @@ bool isValid(const std::size_t &hash) {
       return false;
     }
   } catch (const std::invalid_argument &e) {
-    std::cout << e.what() + std::string(".\n");
+    Debug::log(e.what() + std::string("."));
     return false;
   }
 

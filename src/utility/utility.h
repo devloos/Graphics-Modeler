@@ -7,6 +7,9 @@
 #include <string>
 
 namespace Utility {
+namespace Debug {
+void log(const std::string &msg);
+}  // namespace Debug
 namespace Model {
 class Exception {};
 }  // namespace Model
