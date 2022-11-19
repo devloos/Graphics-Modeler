@@ -7,6 +7,11 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
+if (APPLE)
+  SET(CMAKE_CXX_FLAGS "-mmacosx-version-min=13.0")
+endif (APPLE)
+
+
 project(gm)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets Gui)

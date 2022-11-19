@@ -35,15 +35,6 @@ void MainWindow::login() {
     if (Utility::Login::isValid(hash)) {
       dialog.accept();
     }
-
-    bool shakeSwitch = true;
-    QPoint offset(10, 0);
-    for (int i = 0; i < 9; i++) {
-      QTimer::singleShot(100, &dialog, [&]() {
-        dialog.move(((shakeSwitch) ? dialog.pos() + offset : dialog.pos() - offset));
-        shakeSwitch = !shakeSwitch;
-      });
-    }
   });
 
   if (dialog.exec() == QDialog::Rejected) {

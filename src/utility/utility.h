@@ -7,6 +7,9 @@
 #include <string>
 
 namespace Utility {
+namespace Model {
+class Exception {};
+}  // namespace Model
 namespace Parser {
 std::size_t parsePasswordHash(const std::string &raw);
 }

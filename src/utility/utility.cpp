@@ -1,12 +1,15 @@
 #include "utility.h"
 
 namespace Utility {
+namespace Model {}
+
 namespace Parser {
 std::size_t parsePasswordHash(const std::string &raw) {
   std::string clean = raw.substr(raw.find(":") + 2);
   return std::stoul(clean);
 }
 }  // namespace Parser
+
 namespace Login {
 bool isValid(const std::size_t &hash) {
   std::fstream fin("../src/db/users.db", std::ios::in);
