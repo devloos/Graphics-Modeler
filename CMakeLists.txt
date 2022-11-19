@@ -8,7 +8,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
 if (APPLE)
-  SET(CMAKE_CXX_FLAGS "-mmacosx-version-min=13.0")
+  set(CMAKE_OSX_DEPLOYMENT_TARGET 13.0)
 endif (APPLE)
 
 
