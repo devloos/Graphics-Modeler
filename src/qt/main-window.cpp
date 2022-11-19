@@ -2,11 +2,20 @@
 
 MainWindow::MainWindow() {
   this->setFixedSize(QSize(WIDTH, HEIGHT));
-
   QPushButton* button = new QPushButton("New Window", this);
   button->setGeometry(QRect(QPoint((WIDTH / 2) - 45, (HEIGHT / 2) - 20), QSize(90, 40)));
 
   MainWindow::connect(button, &QPushButton::clicked, this, &MainWindow::login);
+}
+
+void stInvalid(QDialog &dialog) {
+  QMessageBox qm(&dialog);
+  qm.setGeometry(QRect(0, 125, 60, 20));
+  qm.setWindowFlags(Qt::WindowCloseButtonHint);
+  qm.setStandardButtons(QMessageBox::NoButton);
+  qm.setText("Incorrect Username or Password.");
+  QTimer::singleShot(2000, &dialog, [&qm]() { qm.done(0); });
+  qm.exec();
 }
 
 void MainWindow::login() {
@@ -15,7 +24,8 @@ void MainWindow::login() {
 
   QFormLayout form(&dialog);
 
-  form.addRow(new QLabel(QObject::tr("<div align='center'>Login</div>")));
+  form.addRow(
+      new QLabel(QObject::tr("<div align='center'><strong>Login</strong></div>")));
 
   GM::Vector<QLineEdit*> fields;
 
@@ -35,6 +45,8 @@ void MainWindow::login() {
     if (Utility::Login::isValid(hash)) {
       dialog.accept();
     }
+
+    stInvalid(dialog);
   });
 
   if (dialog.exec() == QDialog::Rejected) {

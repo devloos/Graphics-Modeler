@@ -14,7 +14,6 @@ int main(int argc, char* argv[]) {
   QCoreApplication::setApplicationVersion(QT_VERSION_STR);
 
   MainWindow window;
-
   window.show();
 
   return app.exec();

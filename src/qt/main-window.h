@@ -1,4 +1,5 @@
 #pragma once
+#include <QtCore/QPropertyAnimation>
 #include <QtCore/QString>
 #include <QtGui/QAction>
 #include <QtWidgets/QtWidgets>
