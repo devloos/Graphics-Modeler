@@ -1,9 +1,14 @@
 #pragma once
+#include <algorithm>
+#include <cctype>
 #include <cstddef>
 #include <fstream>
 #include <functional>
 #include <iostream>
+#include <limits>
+#include <locale>
 #include <memory>
+#include <sstream>
 #include <stdexcept>
 #include <string>
 #include <unordered_map>
@@ -73,6 +78,12 @@ void log(const std::string &msg);
 namespace Parser {
 std::size_t parseHashKey(const std::string &raw);
 void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes);
+void deduceSpecifics(
+    std::vector<std::unique_ptr<Shape>> &shapes, std::fstream &fin, const std::string &id,
+    const std::string &type, const int &index);
+void deduceFields(
+    std::vector<std::unique_ptr<Shape>> &shapes, std::fstream &fin,
+    const std::string &type, const int &index);
 }  // namespace Parser
 
 namespace Login {

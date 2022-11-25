@@ -13,6 +13,132 @@ std::size_t parseHashKey(const std::string &raw) {
   return std::hash<std::string>{}(clean);
 }
 
+void deduceSpecifics(
+    std::vector<std::unique_ptr<Shape>> &shapes, std::fstream &fin, const std::string &id,
+    const std::string &type, const int &index) {
+  std::string cursor;
+
+  std::getline(fin, cursor);
+  cursor = cursor.substr(cursor.find(':') + 2);
+  std::stringstream sstream(cursor);
+
+  auto nXY = [&]() {
+    while (!sstream.eof()) {
+      QPoint point;
+      std::string x;
+      std::string y;
+
+      std::getline(sstream, x, ',');
+      std::getline(sstream, y, ',');
+
+      point.setX(std::stoi(x));
+      point.setY(std::stoi(y));
+      shapes[index]->pushPoint(point);
+    }
+  };
+
+  auto setXY = [&]() {
+    QPoint point;
+    std::string x;
+    std::string y;
+
+    std::getline(sstream, x, ',');
+    std::getline(sstream, y, ',');
+
+    point.setX(std::stoi(x));
+    point.setY(std::stoi(y));
+    shapes[index]->pushPoint(point);
+  };
+
+  switch (strToShapeType.at(type)) {
+    case GM::ShapeType::Line: {
+      shapes.push_back(std::make_unique<Shape>());
+      nXY();
+      break;
+    }
+    case GM::ShapeType::Polyline: {
+      shapes.push_back(std::make_unique<Shape>());
+      nXY();
+      break;
+    }
+    case GM::ShapeType::Polygon: {
+      shapes.push_back(std::make_unique<Shape>());
+      nXY();
+      break;
+    }
+    case GM::ShapeType::Rectangle: {
+      shapes.push_back(std::make_unique<Shape>());
+      setXY();
+      // Read rectangle specifics
+      break;
+    }
+    case GM::ShapeType::Square: {
+      shapes.push_back(std::make_unique<Shape>());
+      setXY();
+      // Read square specifics
+      break;
+    }
+    case GM::ShapeType::Ellipse: {
+      shapes.push_back(std::make_unique<Shape>());
+      setXY();
+      // Read ellipse specifics
+      break;
+    }
+    case GM::ShapeType::Circle: {
+      shapes.push_back(std::make_unique<Shape>());
+      setXY();
+      // Read circle specifics
+      break;
+    }
+    default: {
+      Debug::log("Shape type invalid.");
+      break;
+    }
+  }
+}
+
+void deduceFields(
+    std::vector<std::unique_ptr<Shape>> &shapes, std::fstream &fin,
+    const std::string &type, const int &index) {
+  std::string cursor;
+  auto parse = [](std::string &raw) { return raw.substr(raw.find(':') + 2); };
+
+  std::getline(fin, cursor);
+  cursor = parse(cursor);
+  shapes[index]->setPenColor(QColor(cursor.c_str()));
+
+  std::getline(fin, cursor);
+  cursor = parse(cursor);
+  shapes[index]->setPenWidth(std::stoi(cursor));
+
+  std::getline(fin, cursor);
+  cursor = parse(cursor);
+  shapes[index]->setPenStyle(strToPenStyle.at(cursor));
+
+  std::getline(fin, cursor);
+  cursor = parse(cursor);
+  shapes[index]->setPenCap(strToPenCapStyle.at(cursor));
+
+  std::getline(fin, cursor);
+  cursor = parse(cursor);
+  shapes[index]->setPenJoin(strToPenJoinStyle.at(cursor));
+
+  if (strToShapeType.at(type) != GM::ShapeType::Line &&
+      strToShapeType.at(type) != GM::ShapeType::Polyline) {
+    QBrush brush;
+
+    std::getline(fin, cursor);
+    cursor = parse(cursor);
+    brush.setColor(QColor(cursor.c_str()));
+
+    std::getline(fin, cursor);
+    cursor = parse(cursor);
+    brush.setStyle(strToBrushStyle.at(cursor));
+
+    shapes[index]->setPenBrush(brush);
+  }
+}
+
 void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes) {
   std::fstream fin("../src/db/shapes.db", std::ios::in);
 
@@ -34,79 +160,10 @@ void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes) {
     std::getline(fin, type);
     type = parse(type);
 
-    switch (strToShapeType.at(type)) {
-      case GM::ShapeType::Line: {
-        shapes.push_back(std::make_unique<Shape>());
-        break;
-      }
-      case GM::ShapeType::Polyline: {
-        shapes.push_back(std::make_unique<Shape>());
-        break;
-      }
-      case GM::ShapeType::Polygon: {
-        shapes.push_back(std::make_unique<Shape>());
-        break;
-      }
-      case GM::ShapeType::Rectangle: {
-        shapes.push_back(std::make_unique<Shape>());
-        break;
-      }
-      case GM::ShapeType::Square: {
-        shapes.push_back(std::make_unique<Shape>());
-        break;
-      }
-      case GM::ShapeType::Ellipse: {
-        shapes.push_back(std::make_unique<Shape>());
-        break;
-      }
-      case GM::ShapeType::Circle: {
-        shapes.push_back(std::make_unique<Shape>());
-        break;
-      }
-      default: {
-        Debug::log("Shape type invalid.");
-        break;
-      }
-    }
-    // reading dimensions
-    std::getline(fin, cursor);
+    deduceSpecifics(shapes, fin, id, type, index);
+    deduceFields(shapes, fin, type, index);
 
-    std::getline(fin, cursor);
-    cursor = parse(cursor);
-    shapes[index]->setPenColor(QColor(cursor.c_str()));
-
-    std::getline(fin, cursor);
-    cursor = parse(cursor);
-    shapes[index]->setPenWidth(std::stoi(cursor));
-
-    std::getline(fin, cursor);
-    cursor = parse(cursor);
-    shapes[index]->setPenStyle(strToPenStyle.at(cursor));
-
-    std::getline(fin, cursor);
-    cursor = parse(cursor);
-    shapes[index]->setPenCap(strToPenCapStyle.at(cursor));
-
-    std::getline(fin, cursor);
-    cursor = parse(cursor);
-    shapes[index]->setPenJoin(strToPenJoinStyle.at(cursor));
-
-    if (strToShapeType.at(type) != GM::ShapeType::Line &&
-        strToShapeType.at(type) != GM::ShapeType::Polyline) {
-      QBrush brush;
-
-      std::getline(fin, cursor);
-      cursor = parse(cursor);
-      brush.setColor(QColor(cursor.c_str()));
-      Debug::log(cursor);
-
-      std::getline(fin, cursor);
-      cursor = parse(cursor);
-      brush.setStyle(strToBrushStyle.at(cursor));
-
-      shapes[index]->setPenBrush(brush);
-    }
-    std::getline(fin, cursor);
+    fin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     ++index;
   }
