@@ -3,67 +3,68 @@
 Shape::Shape() {}
 Shape::~Shape() noexcept {}
 
-Shape::Shape(
-    int id, const QString &name, GM::Vector<QPoint> point, QColor color, int width,
-    Qt::PenStyle style, Qt::PenCapStyle cap, Qt::PenJoinStyle join) {
-  this->shapeId = id;
-  this->shapeName = name;
-  this->points = point;
-  this->shapePen.setColor(color);
-  this->shapePen.setWidth(width);
-  this->shapePen.setStyle(style);
-  this->shapePen.setCapStyle(cap);
-  this->shapePen.setJoinStyle(join);
+Shape::Shape(int id, const QString &name, const QPen &pen_) {
+  this->id_ = id;
+  this->name_ = name;
+  this->pen_ = pen_;
 }
 
 void Shape::setPenStyle(Qt::PenStyle style) {
-  this->shapePen.setStyle(style);
+  this->pen_.setStyle(style);
 }
 
 void Shape::setPenCap(Qt::PenCapStyle cap) {
-  this->shapePen.setCapStyle(cap);
+  this->pen_.setCapStyle(cap);
 }
 
 void Shape::setPenColor(QColor color) {
-  this->shapePen.setColor(color);
+  this->pen_.setColor(color);
 }
 
 void Shape::setPenJoin(Qt::PenJoinStyle joinStyle) {
-  this->shapePen.setJoinStyle(joinStyle);
+  this->pen_.setJoinStyle(joinStyle);
 }
 
 void Shape::setPenWidth(int width) {
-  this->shapePen.setWidth(width);
-}
-
-void Shape::pointPushBack(QPoint newPoint) {
-  this->points.push_back(newPoint);
-}
-
-void Shape::pointPopBack() {
-  this->points.pop_back();
+  this->pen_.setWidth(width);
 }
 
 void Shape::setShapeName(const QString &name) {
-  this->shapeName = name;
+  this->name_ = name;
 }
 
 void Shape::setShapeId(int id) {
-  this->shapeId = id;
+  this->id_ = id;
 }
 
 QPoint &Shape::getPointAt(int x) {
-  return this->points[x];
+  return this->points_[x];
 }
 
 GM::Vector<QPoint> &Shape::getPoints() {
-  return this->points;
+  return this->points_;
 }
 
 int Shape::getShapeId() const {
-  return this->shapeId;
+  return this->id_;
 }
 
 QString Shape::getShapeName() const {
-  return this->shapeName;
+  return this->name_;
+}
+
+void Shape::pushPoint(QPoint newPoint) {
+  this->points_.push_back(newPoint);
+}
+
+void Shape::popPoint() {
+  this->points_.pop_back();
+}
+
+void Shape::setPenBrush(const QBrush &brush) {
+  this->pen_.setBrush(brush);
+}
+
+QBrush Shape::getPenBrush() const {
+  return this->pen_.brush();
 }

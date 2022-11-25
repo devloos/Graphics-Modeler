@@ -10,42 +10,33 @@
 class Shape {
  public:
   Shape();
-
-  Shape(
-      int id, const QString &name, GM::Vector<QPoint> point, QColor color, int width,
-      Qt::PenStyle style, Qt::PenCapStyle cap, Qt::PenJoinStyle join);
-
-  void setPenStyle(Qt::PenStyle style);
-
-  void setPenCap(Qt::PenCapStyle cap);
-
-  void setPenColor(QColor color);
-
-  void setPenJoin(Qt::PenJoinStyle joinStyle);
-
-  void setPenWidth(int width);
-
-  void pointPushBack(QPoint newPoint);
-
-  void pointPopBack();
-
-  void setShapeName(const QString &name);
-
-  void setShapeId(int id);
-
-  QPoint &getPointAt(int x);
-
-  GM::Vector<QPoint> &getPoints();
-
-  int getShapeId() const;
-
-  QString getShapeName() const;
-
+  Shape(int id, const QString &name, const QPen &pen);
   virtual ~Shape() noexcept;
 
+ public:
+  void setPenStyle(Qt::PenStyle style);
+  void setPenCap(Qt::PenCapStyle cap);
+  void setPenColor(QColor color);
+  void setPenJoin(Qt::PenJoinStyle joinStyle);
+  void setPenWidth(int width);
+  void setPenBrush(const QBrush &brush);
+  void setShapeName(const QString &name);
+  void setShapeId(int id);
+
+ public:
+  QPoint &getPointAt(int x);
+  GM::Vector<QPoint> &getPoints();
+  int getShapeId() const;
+  QString getShapeName() const;
+  QBrush getPenBrush() const;
+
+ public:
+  void pushPoint(QPoint newPoint);
+  void popPoint();
+
  private:
-  GM::Vector<QPoint> points;
-  int shapeId = 0;
-  QString shapeName;
-  QPen shapePen;
+  int id_ = 0;
+  QString name_;
+  QPen pen_;
+  GM::Vector<QPoint> points_;
 };
