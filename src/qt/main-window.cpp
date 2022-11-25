@@ -40,8 +40,8 @@ void MainWindow::login() {
   QPushButton* button = new QPushButton("Login", &dialog);
   form.addRow(button);
   QObject::connect(button, &QPushButton::clicked, &dialog, [&dialog, &fields]() {
-    std::size_t hash =
-        std::hash<std::string>{}((fields[0]->text() + fields[1]->text()).toStdString());
+    std::string raw = (fields[0]->text() + fields[1]->text()).toStdString();
+    std::size_t hash = std::hash<std::string>{}(raw);
     if (Utility::Login::isValid(hash)) {
       dialog.accept();
     }

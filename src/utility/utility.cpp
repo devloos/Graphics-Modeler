@@ -10,10 +10,12 @@ void log(const std::string &msg) {
 namespace Model {}
 
 namespace Parser {
-std::size_t parsePasswordHash(const std::string &raw) {
+std::size_t parseHashKey(const std::string &raw) {
   std::string clean = raw.substr(raw.find(":") + 2);
-  return std::stoul(clean);
+  return std::hash<std::string>{}(clean);
 }
+
+void parseShapes(GM::Vector<Shape> &shapes) {}
 }  // namespace Parser
 
 namespace Login {
@@ -34,7 +36,7 @@ bool isValid(const std::size_t &hash) {
   fin.close();
 
   try {
-    if (Parser::parsePasswordHash(key) != hash) {
+    if (Parser::parseHashKey(key) != hash) {
       return false;
     }
   } catch (const std::invalid_argument &e) {
