@@ -69,6 +69,10 @@
     "system_error": "cpp",
     "tuple": "cpp",
     "variant": "cpp",
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "deque": "cpp",
+    "filesystem": "cpp",
+    "fstream": "cpp",
+    "stack": "cpp"
   }
 }
