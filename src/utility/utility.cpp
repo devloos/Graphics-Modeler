@@ -149,7 +149,6 @@ void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes) {
 
   std::string id;
   std::string type;
-  std::string cursor;
   int index = 0;
   auto parse = [](std::string &raw) { return raw.substr(raw.find(':') + 2); };
 
