@@ -193,11 +193,8 @@ bool isValid(const std::size_t &hash) {
   }
 
   std::string key;
-  for (int i = 0; i < 2; i++) {
-    if (!fin.eof()) {
-      std::getline(fin, key);
-    }
-  }
+  std::getline(fin, key);
+  std::getline(fin, key);
   fin.close();
 
   try {
