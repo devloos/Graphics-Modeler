@@ -56,11 +56,11 @@ The following image shows an early design of the graphical user interface. Featu
   | (Sprint #1) Estimated Time: 3 weeks |
   | :---------------------------------: |
   
-- [ ] Implement shapes.txt parser object/logic  
+- [X] Implement shapes.txt parser object/logic  
 - [X] Implement vector container 
-- [ ] Begin implementation of shape abc interface & inheritance hierarchy (line, polyline ...) 
+- [X] Begin implementation of shape abc interface & inheritance hierarchy (line, polyline ...) 
 - [ ] Investigate/understand qt qpainter demo project 
-- [ ] Build basic 2d modeler qt project with login screen 
+- [X] Build basic 2d modeler qt project with login screen 
 
 <br />
 
