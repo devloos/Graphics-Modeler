@@ -7,15 +7,19 @@
 #include <string>
 
 #include "gm/vector.h"
+#include "login-widget.h"
+#include "main-widget.h"
 #include "utility/utility.h"
-
-static const int WIDTH = 640;
-static const int HEIGHT = 480;
+#include "utility/window.h"
 
 class MainWindow : public QMainWindow {
   Q_OBJECT
  public:
   MainWindow();
+  virtual ~MainWindow() noexcept;
+
+ public:
+  MainWidget* getMainWidget();
 
  protected:
   void closeEvent(QCloseEvent* event) override;
@@ -27,7 +31,6 @@ class MainWindow : public QMainWindow {
 #endif
 
  private:
-  void login();
-
- private:
+  LoginWidget* login_ = nullptr;
+  MainWidget* demo_ = nullptr;
 };
