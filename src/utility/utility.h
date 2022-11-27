@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <cctype>
 #include <cstddef>
+#include <filesystem>
 #include <fstream>
 #include <functional>
 #include <iostream>
@@ -19,7 +20,9 @@
 #include "shapes.h"
 
 namespace Utility {
-const std::unordered_map<std::string, Qt::PenStyle> strToPenStyle(
+static const std::filesystem::path DB_PATH = std::filesystem::absolute("../db");
+
+static const std::unordered_map<std::string, Qt::PenStyle> strToPenStyle(
     {{"NoPen", Qt::PenStyle::NoPen},
      {"SolidLine", Qt::PenStyle::SolidLine},
      {"DashLine", Qt::PenStyle::DashLine},
@@ -28,20 +31,20 @@ const std::unordered_map<std::string, Qt::PenStyle> strToPenStyle(
      {"DashDotDotLine", Qt::PenStyle::DashDotDotLine},
      {"CustomDashLine", Qt::PenStyle::CustomDashLine}});
 
-const std::unordered_map<std::string, Qt::PenCapStyle> strToPenCapStyle(
+static const std::unordered_map<std::string, Qt::PenCapStyle> strToPenCapStyle(
     {{"FlatCap", Qt::PenCapStyle::FlatCap},
      {"SquareCap", Qt::PenCapStyle::SquareCap},
      {"RoundCap", Qt::PenCapStyle::RoundCap},
      {"MPenCapStyle", Qt::PenCapStyle::MPenCapStyle}});
 
-const std::unordered_map<std::string, Qt::PenJoinStyle> strToPenJoinStyle(
+static const std::unordered_map<std::string, Qt::PenJoinStyle> strToPenJoinStyle(
     {{"MiterJoin", Qt::PenJoinStyle::MiterJoin},
      {"BevelJoin", Qt::PenJoinStyle::BevelJoin},
      {"RoundJoin", Qt::PenJoinStyle::RoundJoin},
      {"SvgMiterJoin", Qt::PenJoinStyle::SvgMiterJoin},
      {"MPenJoinStyle", Qt::PenJoinStyle::MPenJoinStyle}});
 
-const std::unordered_map<std::string, Qt::BrushStyle> strToBrushStyle(
+static const std::unordered_map<std::string, Qt::BrushStyle> strToBrushStyle(
     {{"NoBrush", Qt::BrushStyle::NoBrush},
      {"SolidPattern", Qt::BrushStyle::SolidPattern},
      {"Dense1Pattern", Qt::BrushStyle::Dense1Pattern},
@@ -62,7 +65,7 @@ const std::unordered_map<std::string, Qt::BrushStyle> strToBrushStyle(
      {"ConicalGradientPattern", Qt::BrushStyle::ConicalGradientPattern},
      {"TexturePattern", Qt::BrushStyle::TexturePattern}});
 
-const std::unordered_map<std::string, GM::ShapeType> strToShapeType(
+static const std::unordered_map<std::string, GM::ShapeType> strToShapeType(
     {{"Line", GM::ShapeType::Line},
      {"Polyline", GM::ShapeType::Polyline},
      {"Polygon", GM::ShapeType::Polygon},

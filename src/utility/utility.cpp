@@ -101,6 +101,9 @@ void deduceSpecifics(
       break;
     }
   }
+
+  shapes[index]->setShapeName(type.c_str());
+  shapes[index]->setShapeId(std::stoi(id));
 }
 
 void deduceFields(
@@ -146,7 +149,7 @@ void deduceFields(
 }
 
 void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes) {
-  std::fstream fin("../src/db/shapes.db", std::ios::in);
+  std::fstream fin(DB_PATH.string() + "/shapes.db", std::ios::in);
 
   if (!fin.is_open()) {
     Debug::log("File was not able to be opened.");
@@ -182,7 +185,7 @@ void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes) {
 
 namespace Login {
 bool isValid(const std::size_t &hash) {
-  std::fstream fin("../src/db/users.db", std::ios::in);
+  std::fstream fin(DB_PATH.string() + "/users.db", std::ios::in);
 
   if (!fin.is_open()) {
     Debug::log("File was not able to be opened.");
