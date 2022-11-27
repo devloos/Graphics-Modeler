@@ -1,11 +1,11 @@
 #pragma once
 
-#include "shape.h"
+#include "models/shape.h"
 
-class Square : public Shape {
+class Polygon : public Shape {
  public:
-  Square();
-  virtual ~Square() noexcept;
+  Polygon();
+  virtual ~Polygon() noexcept;
 
   float area() const override;
   float perimeter() const override;

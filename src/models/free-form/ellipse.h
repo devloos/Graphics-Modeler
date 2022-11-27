@@ -1,11 +1,11 @@
 #pragma once
 
-#include "shape.h"
+#include "models/shape.h"
 
-class Polyline : public Shape {
+class Ellipse : public Shape {
  public:
-  Polyline();
-  virtual ~Polyline() noexcept;
+  Ellipse();
+  virtual ~Ellipse() noexcept;
 
   float area() const override;
   float perimeter() const override;
