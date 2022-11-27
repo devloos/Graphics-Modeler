@@ -2,7 +2,7 @@
 
 #include "shape.h"
 
-class Text : Shape {
+class Text : public Shape {
  public:
   Text();
   Text(const QString &str);

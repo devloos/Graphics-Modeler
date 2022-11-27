@@ -2,7 +2,7 @@
 
 Line::Line() {}
 
-Line::~Line() {}
+Line::~Line() noexcept {}
 
 float Line::area() const {
   return 0;

@@ -52,42 +52,48 @@ void deduceSpecifics(
 
   switch (strToShapeType.at(type)) {
     case GM::ShapeType::Line: {
-      shapes.push_back(std::make_unique<Shape>());
+      shapes.push_back(std::make_unique<Line>());
       nXY();
       break;
     }
     case GM::ShapeType::Polyline: {
-      shapes.push_back(std::make_unique<Shape>());
+      shapes.push_back(std::make_unique<Polyline>());
       nXY();
       break;
     }
     case GM::ShapeType::Polygon: {
-      shapes.push_back(std::make_unique<Shape>());
+      shapes.push_back(std::make_unique<Polygon>());
       nXY();
       break;
     }
     case GM::ShapeType::Rectangle: {
-      shapes.push_back(std::make_unique<Shape>());
+      shapes.push_back(std::make_unique<Rectangle>());
       setXY();
       // Read rectangle specifics
       break;
     }
     case GM::ShapeType::Square: {
-      shapes.push_back(std::make_unique<Shape>());
+      shapes.push_back(std::make_unique<Square>());
       setXY();
       // Read square specifics
       break;
     }
     case GM::ShapeType::Ellipse: {
-      shapes.push_back(std::make_unique<Shape>());
+      shapes.push_back(std::make_unique<Ellipse>());
       setXY();
       // Read ellipse specifics
       break;
     }
     case GM::ShapeType::Circle: {
-      shapes.push_back(std::make_unique<Shape>());
+      shapes.push_back(std::make_unique<Circle>());
       setXY();
       // Read circle specifics
+      break;
+    }
+    case GM::ShapeType::Text: {
+      shapes.push_back(std::make_unique<Text>());
+      setXY();
+      // Read text specifics
       break;
     }
     default: {
@@ -159,8 +165,11 @@ void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes) {
     std::getline(fin, type);
     type = parse(type);
 
+    // TODO: read text specifics
     deduceSpecifics(shapes, fin, id, type, index);
-    deduceFields(shapes, fin, type, index);
+    if (strToShapeType.at(type) != GM::ShapeType::Text) {
+      deduceFields(shapes, fin, type, index);
+    }
 
     fin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 

@@ -2,7 +2,7 @@
 
 Rectangle::Rectangle() {}
 
-Rectangle::~Rectangle() {}
+Rectangle::~Rectangle() noexcept {}
 
 float Rectangle::area() const {
   return 0;

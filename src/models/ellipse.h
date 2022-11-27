@@ -2,10 +2,10 @@
 
 #include "shape.h"
 
-class Ellipse : Shape {
+class Ellipse : public Shape {
  public:
   Ellipse();
-  virtual ~Ellipse();
+  virtual ~Ellipse() noexcept;
 
   float area() const override;
   float perimeter() const override;

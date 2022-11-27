@@ -9,5 +9,6 @@ enum struct ShapeType {
   Square,
   Ellipse,
   Circle,
+  Text
 };
 }

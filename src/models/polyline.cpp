@@ -2,7 +2,7 @@
 
 Polyline::Polyline() {}
 
-Polyline::~Polyline() {}
+Polyline::~Polyline() noexcept {}
 
 float Polyline::area() const {
   return 0;

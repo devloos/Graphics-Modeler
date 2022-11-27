@@ -2,7 +2,7 @@
 
 Polygon::Polygon() {}
 
-Polygon::~Polygon() {}
+Polygon::~Polygon() noexcept {}
 
 float Polygon::area() const {
   return 0;

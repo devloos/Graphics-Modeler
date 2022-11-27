@@ -2,7 +2,7 @@
 
 Ellipse::Ellipse() {}
 
-Ellipse::~Ellipse() {}
+Ellipse::~Ellipse() noexcept {}
 
 float Ellipse::area() const {
   return 0;

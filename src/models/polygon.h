@@ -2,10 +2,10 @@
 
 #include "shape.h"
 
-class Polygon : Shape {
+class Polygon : public Shape {
  public:
   Polygon();
-  virtual ~Polygon();
+  virtual ~Polygon() noexcept;
 
   float area() const override;
   float perimeter() const override;

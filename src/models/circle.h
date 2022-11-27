@@ -2,10 +2,10 @@
 
 #include "shape.h"
 
-class Rectangle : public Shape {
+class Circle : public Shape {
  public:
-  Rectangle();
-  virtual ~Rectangle() noexcept;
+  Circle();
+  virtual ~Circle() noexcept;
 
   float area() const override;
   float perimeter() const override;
