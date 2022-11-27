@@ -2,12 +2,12 @@
 
 #include "shape.h"
 
-class Line : Shape
+class Ellipse : Shape
 {
 
 public:
-    Line();
-    virtual ~Line();
+    Ellipse();
+    virtual ~Ellipse();
 
     float area() const override;
     float perimeter() const override;

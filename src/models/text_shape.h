@@ -2,12 +2,12 @@
 
 #include "shape.h"
 
-class Line : Shape
+class Text : Shape
 {
 
 public:
-    Line();
-    virtual ~Line();
+    Text();
+    virtual ~Text();
 
     float area() const override;
     float perimeter() const override;
