@@ -34,6 +34,12 @@ class Shape {
   void pushPoint(QPoint newPoint);
   void popPoint();
 
+ protected:
+  virtual float area() const = 0;
+  virtual float perimeter() const = 0;
+  virtual void draw() const = 0;
+  virtual void move() = 0;
+
  private:
   int id_ = 0;
   QString name_;

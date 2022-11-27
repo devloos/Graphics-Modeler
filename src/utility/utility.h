@@ -16,7 +16,7 @@
 
 #include "gm/gm.h"
 #include "gm/vector.h"
-#include "models/shape.h"
+#include "shapes.h"
 
 namespace Utility {
 const std::unordered_map<std::string, Qt::PenStyle> strToPenStyle(

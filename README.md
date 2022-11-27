@@ -80,10 +80,10 @@ The following image shows an early design of the graphical user interface. Featu
   | General Requirement List |
   | :---------------------------------: |
   
-- [ ] Use inheritance
+- [x] Use inheritance
 - [ ] Use aggregation
 - [ ] Use exception handling
-- [ ] Use a virtual function
+- [x] Use a virtual function
 - [ ] Use at least two overload operators
 - [ ] At least one class using templates
 - [ ] At least one class must contain a pointer (write copy constructor and test it)
