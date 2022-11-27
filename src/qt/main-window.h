@@ -6,11 +6,11 @@
 #include <functional>
 #include <string>
 
+#include "gm/gm.h"
 #include "gm/vector.h"
-#include "login-widget.h"
-#include "main-widget.h"
 #include "utility/utility.h"
-#include "utility/window.h"
+#include "widgets/login-widget.h"
+#include "widgets/main-widget.h"
 
 class MainWindow : public QMainWindow {
   Q_OBJECT

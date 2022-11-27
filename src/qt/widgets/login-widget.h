@@ -7,8 +7,8 @@
 #include <string>
 
 #include "gm/vector.h"
+#include "gm/gm.h"
 #include "utility/utility.h"
-#include "utility/window.h"
 
 class LoginWidget : public QWidget {
  public:

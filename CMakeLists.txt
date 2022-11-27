@@ -19,9 +19,11 @@ find_package(Qt6 REQUIRED COMPONENTS Core Widgets Gui)
 # Graphics Modelers
 add_executable(
   ${PROJECT_NAME} src/core/main.cpp src/qt/main-window.cpp src/utility/utility.cpp
-  src/models/shape.cpp src/models/circle.cpp src/models/ellipse.cpp src/models/line.cpp
-  src/models/polygon.cpp src/models/polyline.cpp src/models/rectangle.cpp
-  src/models/square.cpp src/models/text.cpp src/qt/login-widget.cpp src/qt/main-widget.cpp)
+  src/models/shape.cpp src/models/free-form/circle.cpp 
+  src/models/free-form/ellipse.cpp src/models/line.cpp 
+  src/models/polygon/polygon.cpp src/models/polygon/polyline.cpp 
+  src/models/quadrilateral/rectangle.cpp src/models/quadrilateral/square.cpp 
+  src/models/text.cpp src/qt/widgets/login-widget.cpp src/qt/widgets/main-widget.cpp)
 
 target_include_directories(
   ${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/include)

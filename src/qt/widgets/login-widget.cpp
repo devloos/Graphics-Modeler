@@ -1,6 +1,6 @@
 #include "login-widget.h"
 
-#include "main-window.h"
+#include "qt/main-window.h"
 
 LoginWidget::LoginWidget()
     : form_(new QFormLayout(this)),
@@ -8,7 +8,8 @@ LoginWidget::LoginWidget()
       header_(
           new QLabel(QObject::tr("<div align='center'><strong>Login</strong></div>"))) {
   form_->setGeometry(QRect(
-      QPoint((Window::WIDTH / 2) - 140, (Window::HEIGHT / 2) - 85), QSize(280, 170)));
+      QPoint((GM::Window::WIDTH / 2) - 140, (GM::Window::HEIGHT / 2) - 85),
+      QSize(280, 170)));
 
   form_->addRow(header_);
 
