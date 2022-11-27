@@ -166,6 +166,8 @@ void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes) {
 
     ++index;
   }
+
+  fin.close();
 }
 }  // namespace Parser
 
