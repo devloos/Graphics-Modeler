@@ -32,7 +32,7 @@ class LoginWidget : public QWidget {
   GM::Vector<QLineEdit*> fields_;
   QPushButton* loginBTN_ = nullptr;
 
-  // Contact Widget
+  // Info Widget
   QWidget* infoPaneWidget_ = nullptr;
   QLabel* logo_ = nullptr;
   QMessageBox* infoMsg_ = nullptr;

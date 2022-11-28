@@ -1,4 +1,4 @@
-#include "main-widget.h"
+#include "main.h"
 
 MainWidget::MainWidget() {}
 

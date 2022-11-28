@@ -1,4 +1,4 @@
-#include "login-widget.h"
+#include "login.h"
 
 #include "qt/main-window.h"
 
@@ -12,10 +12,10 @@ LoginWidget::LoginWidget() {
 
 LoginWidget::~LoginWidget() noexcept {
   // Deallocating Form Widget
-  delete loginBTN_;
   for (QLineEdit* edit : fields_) {
     delete edit;
   }
+  delete loginBTN_;
   delete header_;
   delete form_;
   delete formWidget_;

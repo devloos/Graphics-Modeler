@@ -9,8 +9,8 @@
 #include "gm/gm.h"
 #include "gm/vector.h"
 #include "utility/utility.h"
-#include "widgets/login-widget.h"
-#include "widgets/main-widget.h"
+#include "widgets/login.h"
+#include "widgets/main.h"
 
 class MainWindow : public QMainWindow {
   Q_OBJECT
