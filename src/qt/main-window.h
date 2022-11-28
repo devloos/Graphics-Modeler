@@ -31,6 +31,6 @@ class MainWindow : public QMainWindow {
 #endif
 
  private:
-  LoginWidget* login_ = nullptr;
-  MainWidget* demo_ = nullptr;
+  LoginWidget* loginWidget_ = nullptr;
+  MainWidget* demoWidget_ = nullptr;
 };

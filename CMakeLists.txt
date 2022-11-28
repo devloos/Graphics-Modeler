@@ -12,7 +12,7 @@ if (APPLE)
 endif (APPLE)
 
 
-project(gm)
+project(Graphics-Modeler)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets Gui)
 

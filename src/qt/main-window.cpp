@@ -1,16 +1,17 @@
 #include "main-window.h"
 
-MainWindow::MainWindow() : login_(new LoginWidget()), demo_(new MainWidget()) {
+MainWindow::MainWindow()
+    : loginWidget_(new LoginWidget()), demoWidget_(new MainWidget()) {
   this->setFixedSize(QSize(GM::Window::WIDTH, GM::Window::HEIGHT));
 
-  login_->setFixedSize(QSize(GM::Window::WIDTH, GM::Window::HEIGHT));
-  demo_->setFixedSize(QSize(GM::Window::WIDTH, GM::Window::HEIGHT));
+  loginWidget_->setFixedSize(QSize(GM::Window::WIDTH, GM::Window::HEIGHT));
+  demoWidget_->setFixedSize(QSize(GM::Window::WIDTH, GM::Window::HEIGHT));
 
-  this->setCentralWidget(login_);
+  this->setCentralWidget(loginWidget_);
 }
 
 MainWindow::~MainWindow() noexcept {
-  delete demo_;
+  delete demoWidget_;
 }
 
 void MainWindow::closeEvent(QCloseEvent* event) {}
@@ -18,5 +19,5 @@ void MainWindow::closeEvent(QCloseEvent* event) {}
 void MainWindow::commitData(QSessionManager &) {}
 
 MainWidget* MainWindow::getMainWidget() {
-  return demo_;
+  return demoWidget_;
 }
