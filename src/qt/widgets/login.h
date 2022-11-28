@@ -23,6 +23,8 @@ class LoginWidget : public QWidget {
 
  private:
   void initInfoPane();
+  void setInfoFields();
+  void setInfoConnection() noexcept;
 
  private:
   // Form Widget

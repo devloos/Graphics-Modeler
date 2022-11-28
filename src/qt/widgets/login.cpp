@@ -88,13 +88,7 @@ void LoginWidget::initForm() {
   setFormConnection();
 }
 
-void LoginWidget::initInfoPane() {
-  infoPaneWidget_ = new QWidget(this);
-  infoPaneWidget_->setGeometry(
-      QRect(QPoint((GM::Window::WIDTH / 2), 0), QSize(320, GM::Window::HEIGHT)));
-  infoPaneWidget_->setAutoFillBackground(true);
-  infoPaneWidget_->setPalette(QPalette(QColor(102, 102, 102)));
-
+void LoginWidget::setInfoFields() {
   logo_ = new QLabel(infoPaneWidget_);
   logo_->setPixmap(QPixmap((Utility::ASSETS_PATH.string() + "/agile.png").c_str()));
   logo_->setGeometry(QRect(QPoint(130, 110), QSize(58, 58)));
@@ -111,10 +105,13 @@ void LoginWidget::initInfoPane() {
 
   contactBTN_ = new QPushButton(infoPaneWidget_);
   contactBTN_->setGeometry(QRect(QPoint(120, 260), QSize(80, 30)));
-  contactBTN_->setAutoFillBackground(true);
-  contactBTN_->setPalette(QPalette(QColor(85, 118, 171)));
+  contactBTN_->setStyleSheet(
+      "background-color: #62a0bd;"
+      "border-radius: 8px;");
   contactBTN_->setText("Contact us");
+}
 
+void LoginWidget::setInfoConnection() noexcept {
   QObject::connect(contactBTN_, &QPushButton::clicked, infoPaneWidget_, [this]() {
     QMessageBox::information(
         this, "About us",
@@ -125,4 +122,15 @@ void LoginWidget::initInfoPane() {
         "WE ARE THE SCRUMMY BOYS!"
         "</div>");
   });
+}
+
+void LoginWidget::initInfoPane() {
+  infoPaneWidget_ = new QWidget(this);
+  infoPaneWidget_->setGeometry(
+      QRect(QPoint((GM::Window::WIDTH / 2), 0), QSize(320, GM::Window::HEIGHT)));
+  infoPaneWidget_->setAutoFillBackground(true);
+  infoPaneWidget_->setPalette(QPalette(QColor(102, 102, 102)));
+
+  setInfoFields();
+  setInfoConnection();
 }
