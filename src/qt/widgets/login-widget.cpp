@@ -22,13 +22,16 @@ LoginWidget::~LoginWidget() noexcept {
   // Deallocating Form Widget
 
   // Deallocating Info Pane Widget
+  delete contactBTN_;
+  delete infoMsg_;
+  delete logo_;
   delete infoPaneWidget_;
   // Deallocating Info Pane Widget
 }
 
-void LoginWidget::stInvalid() noexcept {
+void LoginWidget::statusInvalid() noexcept {
   QMessageBox qm(this);
-  qm.setGeometry(QRect(20, 250, 60, 20));
+  qm.setGeometry(QRect(17, 260, 60, 20));
   qm.setWindowFlags(Qt::WindowCloseButtonHint);
   qm.setStandardButtons(QMessageBox::NoButton);
   qm.setText("Incorrect Username or Password.");
@@ -61,7 +64,7 @@ void LoginWidget::setFormConnection() noexcept {
       return;
     }
 
-    stInvalid();
+    statusInvalid();
   });
 }
 
@@ -75,7 +78,11 @@ void LoginWidget::initForm() {
 
   form_ = new QFormLayout(formWidget_);
   loginBTN_ = new QPushButton("Login", formWidget_);
-  header_ = new QLabel(QObject::tr("<div align='center'><strong>Login</strong></div>"));
+  header_ =
+      new QLabel(QObject::tr("<div align='center'>"
+                             "<strong>Login</strong>"
+                             "<br />"
+                             "</div>"));
 
   setFormFields();
   setFormConnection();
@@ -87,4 +94,35 @@ void LoginWidget::initInfoPane() {
       QRect(QPoint((GM::Window::WIDTH / 2), 0), QSize(320, GM::Window::HEIGHT)));
   infoPaneWidget_->setAutoFillBackground(true);
   infoPaneWidget_->setPalette(QPalette(QColor(102, 102, 102)));
+
+  logo_ = new QLabel(infoPaneWidget_);
+  logo_->setPixmap(QPixmap((Utility::ASSETS_PATH.string() + "/agile.png").c_str()));
+  logo_->setGeometry(QRect(QPoint(130, 110), QSize(58, 58)));
+
+  infoMsg_ = new QMessageBox(infoPaneWidget_);
+  infoMsg_->setGeometry(QRect(QPoint(20, 170), QSize(80, 120)));
+  infoMsg_->setWindowFlags(Qt::WindowCloseButtonHint);
+  infoMsg_->setStandardButtons(QMessageBox::NoButton);
+  infoMsg_->setText(
+      "<div align='center'>We are here to revolutionize<br/>"
+      "the world, one shape at a time.<br/>"
+      "Critics say, \"The DEMO is out of<br/>"
+      "this world!\"<br/></div>");
+
+  contactBTN_ = new QPushButton(infoPaneWidget_);
+  contactBTN_->setGeometry(QRect(QPoint(120, 260), QSize(80, 30)));
+  contactBTN_->setAutoFillBackground(true);
+  contactBTN_->setPalette(QPalette(QColor(85, 118, 171)));
+  contactBTN_->setText("Contact us");
+
+  QObject::connect(contactBTN_, &QPushButton::clicked, infoPaneWidget_, [this]() {
+    QMessageBox::information(
+        this, "About us",
+        "<div align='center'>"
+        "We are the shadows in the night.<br />"
+        "The ones who are not afraid to fight.<br />"
+        "Fighting only for what is right.<br />"
+        "WE ARE THE SCRUMMY BOYS!"
+        "</div>");
+  });
 }

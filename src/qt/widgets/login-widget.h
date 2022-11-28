@@ -17,7 +17,7 @@ class LoginWidget : public QWidget {
 
  private:
   void initForm();
-  void stInvalid() noexcept;
+  void statusInvalid() noexcept;
   void setFormFields();
   void setFormConnection() noexcept;
 
@@ -34,4 +34,7 @@ class LoginWidget : public QWidget {
 
   // Contact Widget
   QWidget* infoPaneWidget_ = nullptr;
+  QLabel* logo_ = nullptr;
+  QMessageBox* infoMsg_ = nullptr;
+  QPushButton* contactBTN_ = nullptr;
 };

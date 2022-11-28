@@ -21,6 +21,7 @@
 
 namespace Utility {
 static const std::filesystem::path DB_PATH = std::filesystem::absolute("../db");
+static const std::filesystem::path ASSETS_PATH = std::filesystem::absolute("../assets");
 
 static const std::unordered_map<std::string, Qt::PenStyle> strToPenStyle(
     {{"NoPen", Qt::PenStyle::NoPen},
