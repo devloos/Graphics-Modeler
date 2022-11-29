@@ -59,7 +59,7 @@ The following image shows an early design of the graphical user interface. Featu
 - [X] Implement shapes.txt parser object/logic  
 - [X] Implement vector container 
 - [X] Begin implementation of shape abc interface & inheritance hierarchy (line, polyline ...) 
-- [ ] Investigate/understand qt qpainter demo project 
+- [X] Investigate/understand qt qpainter demo project 
 - [X] Build basic 2d modeler qt project with login screen 
 
 <br />
@@ -81,15 +81,15 @@ The following image shows an early design of the graphical user interface. Featu
   | :---------------------------------: |
   
 - [x] Use inheritance
-- [ ] Use aggregation
-- [ ] Use exception handling
+- [X] Use aggregation
+- [X] Use exception handling
 - [x] Use a virtual function
-- [ ] Use at least two overload operators
-- [ ] At least one class using templates
-- [ ] At least one class must contain a pointer (write copy constructor and test it)
+- [X] Use at least two overload operators
+- [X] At least one class using templates
+- [X] At least one class must contain a pointer (write copy constructor and test it)
 - [ ] Invalid inputs should be addressed.
 - [ ] Doxygen documentation
 - [ ] Valgrind memory leak check
 - [ ] Guests should be able to enter "satisfied customer" testimonials that persist between executions.
-- [ ] Provide "Contact us" method with team name and logo
+- [X] Provide "Contact us" method with team name and logo
   
