@@ -185,17 +185,20 @@ void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes) {
 
 namespace Login {
 bool isValid(const std::size_t &hash) {
-  std::fstream fin(DB_PATH.string() + "/users.db", std::ios::in);
+  QFile file(":users.db");
+  file.open(QIODevice::ReadOnly | QIODevice::Text);
 
-  if (!fin.is_open()) {
+  QTextStream in(&file);
+
+  if (!file.isOpen()) {
     Debug::log("File was not able to be opened.");
     return false;
   }
 
-  std::string key;
-  std::getline(fin, key);
-  std::getline(fin, key);
-  fin.close();
+  in.readLine();
+  std::string key = in.readLine().toStdString();
+
+  file.close();
 
   try {
     if (Parser::parseHashKey(key) != hash) {

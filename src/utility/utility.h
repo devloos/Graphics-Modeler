@@ -1,4 +1,8 @@
 #pragma once
+#include <QtCore/QString>
+#include <QtGui/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QtWidgets>
 #include <algorithm>
 #include <cctype>
 #include <cstddef>

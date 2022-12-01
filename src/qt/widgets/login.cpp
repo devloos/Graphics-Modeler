@@ -90,7 +90,7 @@ void LoginWidget::initForm() {
 
 void LoginWidget::setInfoFields() {
   logo_ = new QLabel(infoPaneWidget_);
-  logo_->setPixmap(QPixmap((Utility::ASSETS_PATH.string() + "/agile.png").c_str()));
+  logo_->setPixmap(QPixmap(":agile.png"));
   logo_->setGeometry(QRect(QPoint(130, 110), QSize(58, 58)));
 
   infoMsg_ = new QMessageBox(infoPaneWidget_);

@@ -17,8 +17,8 @@ int main(int argc, char* argv[]) {
   QCoreApplication::setApplicationName("Graphics Modeler");
   QCoreApplication::setApplicationVersion(QT_VERSION_STR);
 
-  std::vector<std::unique_ptr<Shape>> shapes;
-  Utility::Parser::parseShapes(shapes);
+  // std::vector<std::unique_ptr<Shape>> shapes;
+  // Utility::Parser::parseShapes(shapes);
 
   MainWindow window;
   window.show();
