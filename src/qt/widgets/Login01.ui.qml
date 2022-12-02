@@ -16,7 +16,7 @@ Rectangle {
     width: 640
     height: 480
 
-    color: Constants.backgroundColor
+    color: "#c2c2c2"
 
     Material.theme: Material.Dark
     Material.accent: Material.Purple

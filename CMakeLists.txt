@@ -18,7 +18,7 @@ find_package(Qt6 REQUIRED COMPONENTS Core Widgets Gui Qml)
 
 # Graphics Modelers
 qt_add_executable(
-  ${PROJECT_NAME} resources.qrc src/qt/widgets/App.qml src/qt/widgets/Screen01.ui.qml
+  ${PROJECT_NAME} resources.qrc
   src/core/main.cpp src/qt/main-window.cpp
   src/utility/utility.cpp src/models/shape.cpp src/models/free-form/circle.cpp 
   src/models/free-form/ellipse.cpp src/models/line.cpp 
