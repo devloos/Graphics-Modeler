@@ -5,23 +5,41 @@
 #include <memory>
 #include <vector>
 
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
+
 #include "gm/vector.h"
 #include "models/shape.h"
 #include "qt/main-window.h"
 #include "utility/utility.h"
 
 int main(int argc, char* argv[]) {
-  QApplication app(argc, argv);
 
-  QCoreApplication::setOrganizationName("Srummy Boys");
-  QCoreApplication::setApplicationName("Graphics Modeler");
-  QCoreApplication::setApplicationVersion(QT_VERSION_STR);
+    QGuiApplication app(argc, argv);
 
-  std::vector<std::unique_ptr<Shape>> shapes;
-  Utility::Parser::parseShapes(shapes);
+    QQmlApplicationEngine engine;
+    const QUrl url(u"qrc:/App.qml"_qs);
 
-  MainWindow window;
-  window.show();
+    QObject::connect(
+                &engine, &QQmlApplicationEngine::objectCreated, &app,
+                [url](QObject *obj, const QUrl &objUrl) {
+        if (!obj && url == objUrl)
+            QCoreApplication::exit(-1);
+    },
+    Qt::QueuedConnection);
 
-  return app.exec();
+    engine.load(url);
+
+    if (engine.rootObjects().isEmpty()) {
+        return -1;
+    }
+
+    QCoreApplication::setOrganizationName("Scrummy Boys");
+    QCoreApplication::setApplicationName("Graphics Modeler");
+    QCoreApplication::setApplicationVersion(QT_VERSION_STR);
+
+    //std::vector<std::unique_ptr<Shape>> shapes;
+    //Utility::Parser::parseShapes(shapes);
+
+    return app.exec();
 }
