@@ -6,7 +6,6 @@
 #include <algorithm>
 #include <cctype>
 #include <cstddef>
-#include <filesystem>
 #include <fstream>
 #include <functional>
 #include <iostream>
@@ -24,9 +23,6 @@
 #include "shapes.h"
 
 namespace Utility {
-static const std::filesystem::path DB_PATH = std::filesystem::absolute("../db");
-static const std::filesystem::path ASSETS_PATH = std::filesystem::absolute("../assets");
-
 static const std::unordered_map<std::string, Qt::PenStyle> strToPenStyle(
     {{"NoPen", Qt::PenStyle::NoPen},
      {"SolidLine", Qt::PenStyle::SolidLine},
@@ -82,6 +78,10 @@ static const std::unordered_map<std::string, GM::ShapeType> strToShapeType(
 namespace Debug {
 void log(const std::string &msg);
 }  // namespace Debug
+
+namespace QT {
+void getline(QTextStream &fin, std::string &value);
+}
 
 namespace Parser {
 std::size_t parseHashKey(const std::string &raw);

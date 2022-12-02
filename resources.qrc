@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file alias="agile.png">assets/agile.png</file>
         <file alias="users.db">db/users.db</file>
+        <file alias="shapes.db">db/shapes.db</file>
     </qresource>
 </RCC>

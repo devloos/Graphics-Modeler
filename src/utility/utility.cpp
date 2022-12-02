@@ -7,6 +7,12 @@ void log(const std::string &msg) {
 }
 }  // namespace Debug
 
+namespace QT {
+void getline(QTextStream &fin, std::string &value) {
+  value = fin.readLine().toStdString();
+}
+}  // namespace QT
+
 namespace Parser {
 std::size_t parseHashKey(const std::string &raw) {
   std::string clean = raw.substr(raw.find(":") + 2);
@@ -14,11 +20,11 @@ std::size_t parseHashKey(const std::string &raw) {
 }
 
 void deduceSpecifics(
-    std::vector<std::unique_ptr<Shape>> &shapes, std::fstream &fin, const std::string &id,
+    std::vector<std::unique_ptr<Shape>> &shapes, QTextStream &fin, const std::string &id,
     const std::string &type, const int &index) {
   std::string cursor;
 
-  std::getline(fin, cursor);
+  QT::getline(fin, cursor);
   cursor = cursor.substr(cursor.find(':') + 2);
   std::stringstream sstream(cursor);
 
@@ -107,28 +113,28 @@ void deduceSpecifics(
 }
 
 void deduceFields(
-    std::vector<std::unique_ptr<Shape>> &shapes, std::fstream &fin,
+    std::vector<std::unique_ptr<Shape>> &shapes, QTextStream &fin,
     const std::string &type, const int &index) {
   std::string cursor;
   auto parse = [](std::string &raw) { return raw.substr(raw.find(':') + 2); };
 
-  std::getline(fin, cursor);
+  QT::getline(fin, cursor);
   cursor = parse(cursor);
   shapes[index]->setPenColor(QColor(cursor.c_str()));
 
-  std::getline(fin, cursor);
+  QT::getline(fin, cursor);
   cursor = parse(cursor);
   shapes[index]->setPenWidth(std::stoi(cursor));
 
-  std::getline(fin, cursor);
+  QT::getline(fin, cursor);
   cursor = parse(cursor);
   shapes[index]->setPenStyle(strToPenStyle.at(cursor));
 
-  std::getline(fin, cursor);
+  QT::getline(fin, cursor);
   cursor = parse(cursor);
   shapes[index]->setPenCap(strToPenCapStyle.at(cursor));
 
-  std::getline(fin, cursor);
+  QT::getline(fin, cursor);
   cursor = parse(cursor);
   shapes[index]->setPenJoin(strToPenJoinStyle.at(cursor));
 
@@ -136,11 +142,11 @@ void deduceFields(
       strToShapeType.at(type) != GM::ShapeType::Polyline) {
     QBrush brush;
 
-    std::getline(fin, cursor);
+    QT::getline(fin, cursor);
     cursor = parse(cursor);
     brush.setColor(QColor(cursor.c_str()));
 
-    std::getline(fin, cursor);
+    QT::getline(fin, cursor);
     cursor = parse(cursor);
     brush.setStyle(strToBrushStyle.at(cursor));
 
@@ -149,23 +155,25 @@ void deduceFields(
 }
 
 void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes) {
-  std::fstream fin(DB_PATH.string() + "/shapes.db", std::ios::in);
+  QFile file(":shapes.db");
 
-  if (!fin.is_open()) {
+  if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
     Debug::log("File was not able to be opened.");
     return;
   }
+
+  QTextStream fin(&file);
 
   std::string id;
   std::string type;
   int index = 0;
   auto parse = [](std::string &raw) { return raw.substr(raw.find(':') + 2); };
 
-  while (!fin.eof()) {
-    std::getline(fin, id);
+  while (!fin.atEnd()) {
+    QT::getline(fin, id);
     id = parse(id);
 
-    std::getline(fin, type);
+    QT::getline(fin, type);
     type = parse(type);
 
     // TODO: read text specifics
@@ -174,26 +182,25 @@ void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes) {
       deduceFields(shapes, fin, type, index);
     }
 
-    fin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    fin.skipWhiteSpace();
 
     ++index;
   }
 
-  fin.close();
+  file.close();
 }
 }  // namespace Parser
 
 namespace Login {
 bool isValid(const std::size_t &hash) {
   QFile file(":users.db");
-  file.open(QIODevice::ReadOnly | QIODevice::Text);
 
-  QTextStream in(&file);
-
-  if (!file.isOpen()) {
+  if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
     Debug::log("File was not able to be opened.");
     return false;
   }
+
+  QTextStream in(&file);
 
   in.readLine();
   std::string key = in.readLine().toStdString();
