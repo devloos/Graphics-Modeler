@@ -8,15 +8,15 @@ Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on
 */
 import QtQuick 6.4
 import QtQuick.Controls 6.4
-import GraphicsModelerUI
+import QtQuick.Window 6.4
 import QtQuick.Controls.Material 2.3
 
 Rectangle {
     id: rectangle
-    width: Constants.width
-    height: Constants.height
+    width: 640
+    height: 480
 
-    color: Constants.backgroundColor
+    color: "#c2c2c2"
 
     Material.theme: Material.Dark
     Material.accent: Material.Purple

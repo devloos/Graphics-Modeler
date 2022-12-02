@@ -29,18 +29,21 @@
 
 import QtQuick 6.4
 import QtQuick.Window 6.4
-import GraphicsModelerUI
 
 Window {
     width: mainScreen.width
     height: mainScreen.height
 
-    visible: true
-    title: "GraphicsModelerUI"
+    maximumWidth: mainScreen.width
+    maximumHeight: mainScreen.height
+    minimumWidth: mainScreen.width
+    minimumHeight: mainScreen.height
 
-    Screen01 {
+    visible: true
+    title: "Graphics Modeler"
+
+    Login01 {
         id: mainScreen
     }
 
 }
-
