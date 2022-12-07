@@ -21,9 +21,9 @@ Rectangle {
     Material.theme: Material.Dark
     Material.accent: Material.Purple
 
+    property alias button1 : coolButton
     Button
     {
-        property alias button1 : coolButton
         id: coolButton
     }
 }
