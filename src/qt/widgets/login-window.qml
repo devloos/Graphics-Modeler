@@ -30,6 +30,13 @@
 import QtQuick 6.4
 import QtQuick.Window 6.4
 
+//import QtQuick 6.4
+import QtQuick.Controls 6.4
+//import GraphicsModelerUI
+import QtQuick.Controls.Material 2.3
+import My.Items
+import My.Bruh 1.0
+
 Window {
     width: mainScreen.width
     height: mainScreen.height
@@ -44,7 +51,17 @@ Window {
 
     Login01 {
         id: mainScreen
+
+        Rectangle{
+            Button{
+                onClicked:
+                {
+                    console.log(CppInterface.wowStr)
+                }
+            }
+        }
     }
+
 
 }
 

@@ -19,7 +19,7 @@ find_package(Qt6 REQUIRED COMPONENTS Core Widgets Gui Qml Quick)
 # Graphics Modelers
 qt_add_executable(
   ${PROJECT_NAME} resources.qrc
-  src/core/main.cpp src/qt/main-window.cpp src/qt/painted-item
+  src/core/main.cpp src/qt/main-window.cpp src/qt/painted-item src/qt/qtCallTest.h
   src/utility/utility.cpp src/models/shape.cpp src/models/free-form/circle.cpp 
   src/models/free-form/ellipse.cpp src/models/line.cpp 
   src/models/polygon/polygon.cpp src/models/polygon/polyline.cpp 

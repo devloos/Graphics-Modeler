@@ -18,10 +18,10 @@ class PaintedItem : public QQuickPaintedItem
 
         void paint(QPainter *painter) override
         {
-            this->setRenderTarget(QQuickPaintedItem::Image);
-            this->setTextureSize(QSize(1000, 500));
+            //this->setRenderTarget(QQuickPaintedItem::Image);
+            //this->setTextureSize(QSize(1000, 500));
             //this->update(QRect(0,0,1000,500));
-            std::cout << "Bruh" << std::endl;
+            //std::cout << "Bruh" << std::endl;
             QColor white(245,0,255,255);
             QPen pen(white);
             painter->setPen(pen);

@@ -11,6 +11,7 @@ import QtQuick.Controls 6.4
 //import GraphicsModelerUI
 import QtQuick.Controls.Material 2.3
 import My.Items
+import My.Bruh
 
 Rectangle {
     id: rectangle
@@ -22,12 +23,20 @@ Rectangle {
     Material.theme: Material.Dark
     Material.accent: Material.Purple
 
-    EllipseShape {
-        id: bruh
-        z: 2
-        height:1000
-        width:1000
-    }
+
+
+//    EllipseShape {
+//        id: bruh
+//        z: 2
+//        height:1000
+//        width:1000
+
+//    }
+
+//    Button
+//    {
+
+//    }
 }
 
 /*##^##
