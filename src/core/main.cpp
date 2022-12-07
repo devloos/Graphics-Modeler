@@ -7,11 +7,14 @@
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQuickPaintedItem>
 
 #include "gm/vector.h"
 #include "models/shape.h"
 #include "qt/main-window.h"
+#include "qt/painted-item.h"
 #include "utility/utility.h"
+
 
 int main(int argc, char* argv[]) {
 
@@ -28,6 +31,8 @@ int main(int argc, char* argv[]) {
     },
     Qt::QueuedConnection);
 
+    qmlRegisterType<PaintedItem>("My.Items", 1, 0, "EllipseShape");
+
     engine.load(url);
 
     if (engine.rootObjects().isEmpty()) {
@@ -37,6 +42,7 @@ int main(int argc, char* argv[]) {
     QCoreApplication::setOrganizationName("Scrummy Boys");
     QCoreApplication::setApplicationName("Graphics Modeler");
     QCoreApplication::setApplicationVersion(QT_VERSION_STR);
+
 
     //std::vector<std::unique_ptr<Shape>> shapes;
     //Utility::Parser::parseShapes(shapes);
