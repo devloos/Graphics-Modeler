@@ -29,13 +29,10 @@
 
 import QtQuick 6.4
 import QtQuick.Window 6.4
-
-//import QtQuick 6.4
 import QtQuick.Controls 6.4
-//import GraphicsModelerUI
 import QtQuick.Controls.Material 2.3
-import My.Items
-import My.Bruh 1.0
+import My.Shapes
+import My.Singletons
 
 Window {
     width: mainScreen.width
@@ -49,19 +46,19 @@ Window {
     visible: true
     title: "Graphics Modeler"
 
-    Login01 {
+    LoginUI {
         id: mainScreen
-
-        Rectangle{
-            Button{
-                onClicked:
-                {
-                    console.log(CppInterface.wowStr)
-                }
-            }
+        button1.onClicked:{
+            CppInterface.callMe()
         }
+
+//        Item{
+//            EllipseShape {
+
+//            }
+//        }
+
+
     }
-
-
 }
 

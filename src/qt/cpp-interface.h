@@ -1,7 +1,6 @@
+#pragma once
 #include "qqmlengine.h"
 #include "qtmetamacros.h"
-#pragma Singleton
-
 #include "qqmlintegration.h"
 #include <QtCore/QString>
 #include <QtGui/QAction>
@@ -11,32 +10,31 @@
 
 class CppInterface : public QObject
 {
-public:
     Q_OBJECT
     QML_ELEMENT
     QML_SINGLETON
 
+public:
 
-
-    Q_INVOKABLE void bruh()
+    // Call be called from qml
+    Q_INVOKABLE void callMe()
     {
-        std::cout << "dasdasdsdafasddasadasdasdas" << std::endl;
+        std::cout << "Hello_World" << std::endl;
     };
 
-    Q_PROPERTY(QString wowStr MEMBER coolString NOTIFY coolStringChanged)
+    // Member getter and setter access from qml
+    //Q_PROPERTY(QString coolString MEMBER coolString)
+    //Q_PROPERTY(type name READ name WRITE setName NOTIFY nameChanged)
 
-signals:
-    void coolStringChanged();
+//signals:
+    //void coolStringChanged();
 
-
-public:
-    QString coolString = "SDKJALSDJLSKJ";
-
-
-
+//public:
+    //QString coolString = "SDKJALSDJLSKJ";
 };
 
-// Second, define the singleton type provider function (callback).
+
+// definition of the singleton type provider function (callback).
 static QObject *singletonProvider(QQmlEngine *engine, QJSEngine *scriptEngine)
 {
     Q_UNUSED(engine)

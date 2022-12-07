@@ -14,7 +14,7 @@
 #include "qt/main-window.h"
 #include "qt/painted-item.h"
 #include "utility/utility.h"
-#include "qt/qtCallTest.h"
+#include "qt/cpp-interface.h"
 
 
 int main(int argc, char* argv[]) {
@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-    const QUrl url(u"qrc:/login-window.qml"_qs);
+    const QUrl url(u"qrc:/LoginWindow.qml"_qs);
 
     QObject::connect(
                 &engine, &QQmlApplicationEngine::objectCreated, &app,
@@ -32,8 +32,9 @@ int main(int argc, char* argv[]) {
     },
     Qt::QueuedConnection);
 
-    qmlRegisterType<PaintedItem>("My.Items", 1, 0, "EllipseShape");
-    qmlRegisterSingletonType<CppInterface>("My.Bruh", 1, 0, "CppInterface", singletonProvider);
+    // Register C++ interface singleton and shapes to be accessible within qml
+    qmlRegisterType<PaintedItem>("My.Shapes", 1, 0, "EllipseShape");
+    qmlRegisterSingletonType<CppInterface>("My.Singletons", 1, 0, "CppInterface", singletonProvider);
 
     engine.load(url);
 
