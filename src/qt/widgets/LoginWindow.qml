@@ -49,9 +49,9 @@ Window {
     LoginUI {
         id: mainScreen
 
-        button1{
-            onClicked: CppInterface.callMe()
-        }
+//        button1{
+//            onClicked: CppInterface.callMe()
+//        }
     }
 }
 

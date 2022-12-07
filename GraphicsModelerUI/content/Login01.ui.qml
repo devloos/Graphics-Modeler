@@ -151,12 +151,6 @@ Rectangle {
         border.width: 0
         z: 0
     }
-    states: [
-        State {
-            name: "clicked"
-            when: button.checked
-        }
-    ]
 }
 
 /*##^##
