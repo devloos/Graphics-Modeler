@@ -35,23 +35,20 @@ import My.Shapes
 import My.Singletons
 
 Window {
-    width: mainScreen.width
-    height: mainScreen.height
+    width: loginUI.width
+    height: loginUI.height
 
-    maximumWidth: mainScreen.width
-    maximumHeight: mainScreen.height
-    minimumWidth: mainScreen.width
-    minimumHeight: mainScreen.height
+    maximumWidth: loginUI.width
+    maximumHeight: loginUI.height
+    minimumWidth: loginUI.width
+    minimumHeight: loginUI.height
 
     visible: true
     title: "Graphics Modeler"
 
     LoginUI {
-        id: mainScreen
-
-//        button1{
-//            onClicked: CppInterface.callMe()
-//        }
+        id: loginUI
+        login_btn.onClicked: CppInterface.callMe()
     }
 }
 

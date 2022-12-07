@@ -7,7 +7,12 @@
         "${workspaceFolder}/include",
         "${workspaceFolder}/src",
         "/opt/homebrew/include",
-        "/usr/local/include"
+        "/usr/local/include",
+        "/opt/homebrew/include/QtCore",
+        "/opt/homebrew/include/QtGui",
+        "/opt/homebrew/include/QtQml",
+        "/opt/homebrew/include/QtQuick",
+        "/opt/homebrew/include/QtWidgets"
       ],
       "cppStandard": "c++17",
       "compilerPath": "/usr/bin/clang",

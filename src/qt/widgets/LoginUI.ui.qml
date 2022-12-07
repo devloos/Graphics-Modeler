@@ -14,9 +14,8 @@ import QtQuick.Controls.Material 2.3
 
 Rectangle {
     // Alias example
-    // property alias button1 : coolButton
+    property alias login_btn : login_btn
 
-    id: rectangle
     width: 640
     height: 480
 
@@ -46,7 +45,7 @@ Rectangle {
         }
 
         TextField {
-            id: textField
+            id: username
             x: 74
             y: 156
             width: 173
@@ -55,7 +54,7 @@ Rectangle {
         }
 
         TextField {
-            id: textField1
+            id: password
             x: 74
             y: 208
             width: 173
@@ -64,7 +63,7 @@ Rectangle {
         }
 
         Button {
-            id: button
+            id: login_btn
             x: 79
             y: 276
             width: 162
