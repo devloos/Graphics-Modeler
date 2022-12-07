@@ -14,11 +14,12 @@ endif (APPLE)
 
 project(Graphics-Modeler)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Widgets Gui)
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets Gui Qml Quick)
 
 # Graphics Modelers
 qt_add_executable(
-  ${PROJECT_NAME} resources.qrc src/core/main.cpp src/qt/main-window.cpp 
+  ${PROJECT_NAME} resources.qrc
+  src/core/main.cpp src/qt/main-window.cpp src/qt/painted-item src/qt/cpp-interface.h
   src/utility/utility.cpp src/models/shape.cpp src/models/free-form/circle.cpp 
   src/models/free-form/ellipse.cpp src/models/line.cpp 
   src/models/polygon/polygon.cpp src/models/polygon/polyline.cpp 
@@ -39,4 +40,4 @@ if (WIN32)
   # target_include_directories(${PROJECT_NAME} PUBLIC /opt/homebrew/include)
 endif (WIN32)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core Qt6::Widgets Qt6::Gui)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core Qt6::Widgets Qt6::Gui Qt6::Qml Qt6::Quick)
