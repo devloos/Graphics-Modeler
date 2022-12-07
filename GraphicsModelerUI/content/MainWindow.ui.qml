@@ -15,7 +15,7 @@ Rectangle {
     id: rectangle
     width: 640
     height: 480
-    anchors.fill: parent
+
     color: "#c2c2c2"
     border.color: "#ffffff"
 
@@ -24,22 +24,27 @@ Rectangle {
 
     Rectangle {
         id: rectangle1
-        width: 42
-        color: "#ffffff"
+        width: 95
+        color: "#1e1e1e"
+        border.width: 0
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 0
         anchors.leftMargin: 0
+        anchors.bottomMargin: 0
         anchors.topMargin: 0
+        z: 2
 
-        ToolButton {
-            id: toolButton
-            height: 28
-            text: qsTr("Tool Button")
+        ComboBox {
+            id: comboBox
+            height: 26
+            model: ["Select", "Line", "Polyline", "Polygon", "Rectangle", "Square", "Ellipse", "Circle", "Text"]
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.top: parent.top
+            wheelEnabled: false
+            flat: true
+            spacing: 0.1
             anchors.rightMargin: 0
             anchors.leftMargin: 0
             anchors.topMargin: 0
@@ -48,13 +53,56 @@ Rectangle {
 
     ToolBar {
         id: toolBar
-        height: 29
+        height: 26
+        position: ToolBar.Header
         anchors.left: rectangle1.right
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.rightMargin: 0
         anchors.leftMargin: 0
         anchors.topMargin: 0
+
+        ToolButton {
+            id: toolButton
+            x: 0
+            width: 43
+            text: qsTr("File")
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            checked: false
+            checkable: true
+            anchors.bottomMargin: 0
+            anchors.topMargin: 0
+        }
+
+        ToolButton {
+            id: toolButton1
+            width: 43
+            text: qsTr("Edit")
+            anchors.left: toolButton.right
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            highlighted: false
+            flat: false
+            down: false
+            checkable: true
+            anchors.leftMargin: 0
+            anchors.bottomMargin: 0
+            anchors.topMargin: 0
+        }
+
+        ToolButton {
+            id: toolButton2
+            width: 51
+            text: qsTr("AUX")
+            anchors.left: toolButton1.right
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            checkable: true
+            anchors.leftMargin: 0
+            anchors.bottomMargin: 0
+            anchors.topMargin: 0
+        }
     }
 
     ScrollView {
@@ -63,10 +111,20 @@ Rectangle {
         anchors.right: parent.right
         anchors.top: toolBar.bottom
         anchors.bottom: parent.bottom
-        rotation: 0.241
-        anchors.leftMargin: 0
         anchors.rightMargin: 0
+        anchors.leftMargin: 0
         anchors.bottomMargin: 0
         anchors.topMargin: 0
     }
+    states: [
+        State {
+            name: "State1"
+            when: comboBox.currentIndex == 1
+
+            PropertyChanges {
+                target: scrollView
+                visible: true
+            }
+        }
+    ]
 }
