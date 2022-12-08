@@ -20,8 +20,8 @@ Window {
     minimumWidth: _LOGIN_WIDTH
     minimumHeight: _LOGIN_HEIGHT
 
-    x: Screen.width / 2 - width / 2
-    y: Screen.height / 2 - height / 2
+    x: Screen.width / 2 - _LOGIN_WIDTH / 2
+    y: Screen.height / 2 - _LOGIN_HEIGHT / 2
 
     visible: true
     title: "Graphics Modeler"
