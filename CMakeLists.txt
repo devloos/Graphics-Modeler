@@ -24,7 +24,7 @@ qt_add_executable(
   src/models/free-form/ellipse.cpp src/models/line.cpp 
   src/models/polygon/polygon.cpp src/models/polygon/polyline.cpp 
   src/models/quadrilateral/rectangle.cpp src/models/quadrilateral/square.cpp 
-  src/models/text.cpp)
+  src/models/text.cpp src/tests/selection-sort/sort-test.cpp)
 
 target_include_directories(
   ${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/include)

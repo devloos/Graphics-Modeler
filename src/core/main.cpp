@@ -30,6 +30,7 @@ int main(int argc, char* argv[]) {
 
   // std::vector<std::unique_ptr<Shape>> shapes;
   // Utility::Parser::parseShapes(shapes);
+  Test::ints();
 
   return app.exec();
 }
