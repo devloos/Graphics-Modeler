@@ -43,6 +43,7 @@ Rectangle {
             width: 173
             height: 46
             placeholderText: qsTr("Username")
+            onAccepted: window.validate(username.text, password.text)
         }
 
         TextField {
@@ -52,6 +53,7 @@ Rectangle {
             width: 173
             height: 46
             placeholderText: qsTr("Password")
+            onAccepted: window.validate(username.text, password.text)
         }
 
         Button {

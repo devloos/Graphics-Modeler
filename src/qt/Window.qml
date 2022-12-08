@@ -2,7 +2,6 @@ import QtQuick 6.4
 import QtQuick.Window 6.4
 import QtQuick.Controls 6.4
 import QtQuick.Controls.Material 2.3
-import My.Shapes
 import My.Singletons
 
 Window {
@@ -26,24 +25,34 @@ Window {
     visible: true
     title: "Graphics Modeler"
 
+    function validate(username, password) {
+        if (CppInterface.loginConnection(username, password)) {
+            login_ui.visible = false
+
+            window.width = _MAIN_WIDTH
+            window.height = _MAIN_HEIGHT
+
+            window.maximumWidth = _MAIN_WIDTH
+            window.maximumHeight = _MAIN_HEIGHT
+            window.minimumWidth = _MAIN_WIDTH
+            window.minimumHeight = _MAIN_HEIGHT
+
+            window.x = Screen.width / 2 - _MAIN_WIDTH / 2
+            window.y = Screen.height / 2 - _MAIN_HEIGHT / 2
+
+            main_ui.visible = true
+        }
+    }
+
     LoginUI {
         id: login_ui
         visible: true
-        login_btn.onClicked: {
-            if (CppInterface.loginConnection(username.text, password.text)) {
-                visible = false
 
-                window.width = _MAIN_WIDTH
-                window.height = _MAIN_HEIGHT
+        login_btn.onClicked: window.validate(username.text, password.text)
+    }
 
-                window.maximumWidth = _MAIN_WIDTH
-                window.maximumHeight = _MAIN_HEIGHT
-                window.minimumWidth = _MAIN_WIDTH
-                window.minimumHeight = _MAIN_HEIGHT
-
-                x: Screen.width / 2 - _MAIN_WIDTH / 2
-                y: Screen.height / 2 - _MAIN_HEIGHT / 2
-            }
-        }
+    MainUI {
+        id: main_ui
+        visible: false
     }
 }
