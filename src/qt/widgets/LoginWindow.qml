@@ -1,32 +1,3 @@
-/****************************************************************************
-**
-** Copyright (C) 2021 The Qt Company Ltd.
-** Contact: https://www.qt.io/licensing/
-**
-** This file is part of Qt Quick Studio Components.
-**
-** $QT_BEGIN_LICENSE:GPL$
-** Commercial License Usage
-** Licensees holding valid commercial Qt licenses may use this file in
-** accordance with the commercial license agreement provided with the
-** Software or, alternatively, in accordance with the terms contained in
-** a written agreement between you and The Qt Company. For licensing terms
-** and conditions see https://www.qt.io/terms-conditions. For further
-** information use the contact form at https://www.qt.io/contact-us.
-**
-** GNU General Public License Usage
-** Alternatively, this file may be used under the terms of the GNU
-** General Public License version 3 or (at your option) any later version
-** approved by the KDE Free Qt Foundation. The licenses are as published by
-** the Free Software Foundation and appearing in the file LICENSE.GPL3
-** included in the packaging of this file. Please review the following
-** information to ensure the GNU General Public License requirements will
-** be met: https://www.gnu.org/licenses/gpl-3.0.html.
-**
-** $QT_END_LICENSE$
-**
-****************************************************************************/
-
 import QtQuick 6.4
 import QtQuick.Window 6.4
 import QtQuick.Controls 6.4
@@ -35,20 +6,44 @@ import My.Shapes
 import My.Singletons
 
 Window {
-    width: loginUI.width
-    height: loginUI.height
+    readonly property int _LOGIN_WIDTH: 640
+    readonly property int _LOGIN_HEIGHT: 480
+    readonly property int _MAIN_WIDTH: 1440
+    readonly property int _MAIN_HEIGHT: 720
 
-    maximumWidth: loginUI.width
-    maximumHeight: loginUI.height
-    minimumWidth: loginUI.width
-    minimumHeight: loginUI.height
+    id: window
+
+    width: _LOGIN_WIDTH
+    height: _LOGIN_HEIGHT
+    maximumWidth: _LOGIN_WIDTH
+    maximumHeight: _LOGIN_HEIGHT
+    minimumWidth: _LOGIN_WIDTH
+    minimumHeight: _LOGIN_HEIGHT
+
+    x: Screen.width / 2 - width / 2
+    y: Screen.height / 2 - height / 2
 
     visible: true
     title: "Graphics Modeler"
 
     LoginUI {
-        id: loginUI
-        login_btn.onClicked: CppInterface.callMe()
+        id: login_ui
+        visible: true
+        login_btn.onClicked: {
+            if (CppInterface.loginConnection(username.text, password.text)) {
+                visible = false
+
+                window.width = _MAIN_WIDTH
+                window.height = _MAIN_HEIGHT
+
+                window.maximumWidth = _MAIN_WIDTH
+                window.maximumHeight = _MAIN_HEIGHT
+                window.minimumWidth = _MAIN_WIDTH
+                window.minimumHeight = _MAIN_HEIGHT
+
+                x: Screen.width / 2 - _MAIN_WIDTH / 2
+                y: Screen.height / 2 - _MAIN_HEIGHT / 2
+            }
+        }
     }
 }
-

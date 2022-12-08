@@ -12,7 +12,8 @@
         "/opt/homebrew/include/QtGui",
         "/opt/homebrew/include/QtQml",
         "/opt/homebrew/include/QtQuick",
-        "/opt/homebrew/include/QtWidgets"
+        "/opt/homebrew/include/QtWidgets",
+        "/opt/homebrew/include/QtQmlIntegration"
       ],
       "cppStandard": "c++17",
       "compilerPath": "/usr/bin/clang",

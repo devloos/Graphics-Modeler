@@ -1,13 +1,15 @@
 #pragma once
-#include <QtCore/QString>
-#include <QtGui/QAction>
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QtWidgets>
+#include <QAction>
+#include <QApplication>
+#include <QMessageBox>
+#include <QQmlEngine>
+#include <QString>
+#include <QtQmlIntegration>
+#include <QtWidgets>
 #include <iostream>
 
-#include "qqmlengine.h"
-#include "qqmlintegration.h"
 #include "qtmetamacros.h"
+#include "utility/utility.h"
 
 class CppInterface : public QObject {
   Q_OBJECT
@@ -15,11 +17,16 @@ class CppInterface : public QObject {
   QML_SINGLETON
 
  public:
-  // Call be called from qml
-  Q_INVOKABLE void callMe()
+  Q_INVOKABLE bool loginConnection(const QString &username, const QString &password)
 
   {
-    std::cout << "Hello_World" << std::endl;
+    std::string raw = (username + password).toStdString();
+    std::size_t hash = std::hash<std::string>{}(raw);
+    if (Utility::Login::isValid(hash)) {
+      return true;
+    }
+
+    return false;
   };
 
   // Member getter and setter access from qml

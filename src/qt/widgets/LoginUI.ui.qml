@@ -15,9 +15,12 @@ import QtQuick.Controls.Material 2.3
 Rectangle {
     // Alias example
     property alias login_btn : login_btn
+    property alias contact_btn : contact_btn
+    property alias username : username
+    property alias password : password
 
-    width: 640
-    height: 480
+    width: window._LOGIN_WIDTH
+    height: window._LOGIN_HEIGHT
 
     color: "#c2c2c2"
 
@@ -107,7 +110,7 @@ Rectangle {
         }
 
         Button {
-            id: button1
+            id: contact_btn
             x: 108
             y: 250
             width: 105
