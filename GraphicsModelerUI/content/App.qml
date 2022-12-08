@@ -29,6 +29,7 @@
 
 import QtQuick 6.4
 import QtQuick.Window 6.4
+import QtQuick.Controls 6.4
 
 Window {
     width: mainScreen.width
@@ -42,8 +43,17 @@ Window {
     visible: true
     title: "Graphics Modeler"
 
-    MainWindow {
+
+
+    Login01 {
         id: mainScreen
+
+        buttonBruh{
+            onClicked: popup.open()
+        }
+
+
+
     }
 
 }

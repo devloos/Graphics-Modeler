@@ -17,6 +17,9 @@ Rectangle {
     height: 480
 
     color: "#c2c2c2"
+    property alias buttonBruh: buttonBruh
+
+    property alias popup: popup
 
     Material.theme: Material.Dark
     Material.accent: Material.Purple
@@ -102,9 +105,8 @@ Rectangle {
             wrapMode: Text.Wrap
             font.bold: true
         }
-
         Button {
-            id: button1
+            id: buttonBruh
             x: 108
             y: 250
             width: 105
@@ -151,17 +153,30 @@ Rectangle {
         border.width: 0
         z: 0
     }
-    states: [
-        State {
-            name: "clicked"
-            when: button.checked
-        }
-    ]
-}
 
-/*##^##
-Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:9}D{i:13}
-}
-##^##*/
+    Rectangle {
+        id: rectangleBruh
+        x: 28
+        y: 28
+        width: 584
+        height: 424
+        color: "#6f4b75"
+        radius: 22
+        border.color: "#ffffff"
+        border.width: 0
+        z: 3
+    }
 
+    Popup {
+        id: popup
+        x: 100
+        y: 100
+        width: 500
+        height: 300
+        modal: true
+        focus: true
+        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
+    }
+
+
+}

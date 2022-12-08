@@ -12,6 +12,7 @@ import QtQuick.Window 6.4
 import QtQuick.Controls.Material 2.3
 
 Rectangle {
+
     id: rectangle
     width: 640
     height: 480
@@ -42,69 +43,101 @@ Rectangle {
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.top: parent.top
+            topInset: 0
+            rightPadding: 0
+            bottomInset: 0
+            z: 1
             wheelEnabled: false
             flat: true
-            spacing: 0.1
+            spacing: 0
             anchors.rightMargin: 0
             anchors.leftMargin: 0
             anchors.topMargin: 0
         }
     }
 
-    ToolBar {
-        id: toolBar
-        height: 26
-        position: ToolBar.Header
-        anchors.left: rectangle1.right
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.rightMargin: 0
-        anchors.leftMargin: 0
-        anchors.topMargin: 0
+    MenuBar {
+        x: 133
+        y: 32
+        width: 310
+        height: 40
 
-        ToolButton {
-            id: toolButton
-            x: 0
-            width: 43
-            text: qsTr("File")
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
-            checked: false
-            checkable: true
-            anchors.bottomMargin: 0
-            anchors.topMargin: 0
-        }
+        MenuBarItem {}
 
-        ToolButton {
-            id: toolButton1
-            width: 43
-            text: qsTr("Edit")
-            anchors.left: toolButton.right
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
-            highlighted: false
-            flat: false
-            down: false
-            checkable: true
-            anchors.leftMargin: 0
-            anchors.bottomMargin: 0
-            anchors.topMargin: 0
-        }
-
-        ToolButton {
-            id: toolButton2
-            width: 51
-            text: qsTr("AUX")
-            anchors.left: toolButton1.right
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
-            checkable: true
-            anchors.leftMargin: 0
-            anchors.bottomMargin: 0
-            anchors.topMargin: 0
-        }
+        //        Menu {
+        //            title: qsTr("&File")
+        //            Action {
+        //                text: qsTr("&New...")
+        //            }
+        //            Action {
+        //                text: qsTr("&Open...")
+        //            }
+        //            Action {
+        //                text: qsTr("&Save")
+        //            }
+        //            Action {
+        //                text: qsTr("Save &As...")
+        //            }
+        //            MenuSeparator {}
+        //            Action {
+        //                text: qsTr("&Quit")
+        //            }
+        //        }
     }
 
+    //    ToolBar {
+    //        id: toolBar
+    //        height: 26
+    //        position: ToolBar.Header
+    //        anchors.left: rectangle1.right
+    //        anchors.right: parent.right
+    //        anchors.top: parent.top
+    //        anchors.rightMargin: 0
+    //        anchors.leftMargin: 0
+    //        anchors.topMargin: 0
+
+    //        ToolButton {
+    //            id: toolButton
+    //            x: 0
+    //            width: 43
+    //            text: qsTr("File")
+    //            anchors.top: parent.top
+    //            anchors.bottom: parent.bottom
+    //            checked: false
+    //            checkable: true
+    //            anchors.bottomMargin: 0
+    //            anchors.topMargin: 0
+    //        }
+
+    //        ToolButton {
+    //            id: toolButton1
+    //            width: 43
+    //            text: qsTr("Edit")
+    //            anchors.left: toolButton.right
+    //            anchors.top: parent.top
+    //            anchors.bottom: parent.bottom
+    //            highlighted: false
+    //            flat: false
+    //            down: false
+    //            checkable: true
+    //            anchors.leftMargin: 0
+    //            anchors.bottomMargin: 0
+    //            anchors.topMargin: 0
+    //        }
+
+    //        ToolButton {
+    //            id: toolButton2
+    //            width: 51
+    //            text: qsTr("AUX")
+    //            anchors.left: toolButton1.right
+    //            anchors.top: parent.top
+    //            anchors.bottom: parent.bottom
+    //            checkable: true
+    //            anchors.leftMargin: 0
+    //            anchors.bottomMargin: 0
+    //            anchors.topMargin: 0
+    //        }
+    //    }
     ScrollView {
         id: scrollView
         anchors.left: rectangle1.right
