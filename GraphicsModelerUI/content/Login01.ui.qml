@@ -160,7 +160,7 @@ Rectangle {
         y: 28
         width: 584
         height: 424
-        color: "#6f4b75"
+        color: "#bdbdbd"
         radius: 22
         border.color: "#ffffff"
         border.width: 0
@@ -177,6 +177,10 @@ Rectangle {
         focus: true
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
     }
-
-
 }
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+##^##*/
