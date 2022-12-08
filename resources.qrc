@@ -3,7 +3,7 @@
         <file alias="agile.png">assets/agile.png</file>
         <file alias="users.db">db/users.db</file>
         <file alias="shapes.db">db/shapes.db</file>
-        <file alias="LoginWindow.qml">src/qt/widgets/LoginWindow.qml</file>
-        <file alias="LoginUI.ui.qml">src/qt/widgets/LoginUI.ui.qml</file>
+        <file alias="Window.qml">src/qt/Window.qml</file>
+        <file alias="LoginUI.ui.qml">src/qt/LoginUI.ui.qml</file>
     </qresource>
 </RCC>

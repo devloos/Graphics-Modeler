@@ -1,4 +1,5 @@
 #pragma once
+
 #include <QAction>
 #include <QApplication>
 #include <QMessageBox>
@@ -17,9 +18,7 @@ class CppInterface : public QObject {
   QML_SINGLETON
 
  public:
-  Q_INVOKABLE bool loginConnection(const QString &username, const QString &password)
-
-  {
+  Q_INVOKABLE bool loginConnection(const QString &username, const QString &password) {
     std::string raw = (username + password).toStdString();
     std::size_t hash = std::hash<std::string>{}(raw);
     if (Utility::Login::isValid(hash)) {
