@@ -18,5 +18,5 @@ void selection_sort(GM::Vector<T> &vec) {
 }
 
 namespace Test {
-void ints();
+void ints();  //
 }  // namespace Test
