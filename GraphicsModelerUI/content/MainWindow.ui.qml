@@ -10,6 +10,7 @@ import QtQuick 6.4
 import QtQuick.Controls 6.4
 import QtQuick.Window 6.4
 import QtQuick.Controls.Material 2.3
+import QtQuick.Studio.Components 1.0
 
 Rectangle {
 
@@ -57,10 +58,14 @@ Rectangle {
     }
 
     MenuBar {
-        x: 95
-        y: 0
-        width: 353
+        id: menuBar
         height: 40
+        anchors.left: rectangle1.right
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.leftMargin: 0
+        anchors.rightMargin: 0
+        anchors.topMargin: 0
 
         Menu {
             title: qsTr("&File")
@@ -79,6 +84,39 @@ Rectangle {
             MenuSeparator {}
             Action {
                 text: qsTr("&Quit")
+            }
+        }
+        Menu {
+            title: qsTr("&Edit")
+            Action {
+                text: qsTr("&Left...")
+            }
+            Action {
+                text: qsTr("&Right...")
+            }
+        }
+        Menu {
+            title: qsTr("&View")
+            Action {
+                text: qsTr("&Shapes Selector...")
+                onTriggered: rectangle1.visible = !rectangle1.visible
+            }
+            Action {
+                text: qsTr("&Shape Properties...")
+                onTriggered: rectangle2.visible = !rectangle2.visible
+            }
+        }
+        Menu {
+            title: qsTr("&Misc")
+            Action {
+                text: qsTr("&Contact Us...")
+            }
+            Action {
+                text: qsTr("&Meet the Team...")
+            }
+            MenuSeparator {}
+            Action {
+                text: qsTr("&Logout...")
             }
         }
     }
@@ -138,24 +176,144 @@ Rectangle {
     //    }
     ScrollView {
         id: scrollView
-        anchors.left: rectangle1.right
+        anchors.left: parent.left
         anchors.right: parent.right
-        anchors.top: toolBar.bottom
+        anchors.top: menuBar.bottom
         anchors.bottom: parent.bottom
         anchors.rightMargin: 0
         anchors.leftMargin: 0
         anchors.bottomMargin: 0
         anchors.topMargin: 0
     }
+
+    Rectangle {
+        id: rectangle2
+        x: 1240
+        y: 227
+        width: 200
+        height: 200
+        color: "#1e1e1e"
+        anchors.right: parent.right
+        anchors.top: menuBar.bottom
+        anchors.bottom: parent.bottom
+        anchors.rightMargin: 0
+        anchors.bottomMargin: 0
+        anchors.topMargin: 0
+
+        Text {
+            id: text1
+            x: 3
+            y: 8
+            color: "#ffffff"
+            text: qsTr("Shape Properties")
+            font.pixelSize: 25
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignTop
+            font.family: "Arial"
+        }
+
+        RectangleItem {
+            id: rectangle3
+            x: 0
+            y: 42
+            width: 200
+            height: 4
+            strokeColor: "#ffffff"
+        }
+
+        Text {
+            id: text2
+            y: 52
+            width: 73
+            height: 17
+            color: "#ffffff"
+            text: qsTr("Shape ID:")
+            anchors.left: parent.left
+            font.pixelSize: 15
+            anchors.leftMargin: 0
+            font.family: "Arial"
+        }
+
+        Text {
+            id: text3
+            y: 52
+            color: "#ffffff"
+            text: qsTr("ID")
+            anchors.left: text2.right
+            font.pixelSize: 15
+            anchors.leftMargin: 0
+            font.family: "Arial"
+        }
+
+        Text {
+            id: text4
+            y: 75
+            width: 98
+            height: 17
+            color: "#ffffff"
+            text: qsTr("Shape Name:")
+            anchors.left: parent.left
+            font.pixelSize: 15
+            anchors.leftMargin: 0
+            font.family: "Arial"
+        }
+
+        Text {
+            id: text5
+            y: 75
+            color: "#ffffff"
+            text: qsTr("Name")
+            anchors.left: text4.right
+            font.pixelSize: 15
+            anchors.leftMargin: 0
+            font.family: "Arial"
+        }
+
+        Text {
+            id: text6
+            y: 98
+            width: 54
+            height: 17
+            color: "#ffffff"
+            text: qsTr("Length:")
+            anchors.left: parent.left
+            font.pixelSize: 15
+            anchors.leftMargin: 0
+            font.family: "Arial"
+        }
+
+        TextEdit {
+            id: textEdit
+            y: 98
+            width: 80
+            height: 20
+            color: "#ffffff"
+            text: qsTr("Edit Me")
+            anchors.left: text6.right
+            font.pixelSize: 15
+            anchors.leftMargin: 0
+            font.family: "Arial"
+        }
+    }
     states: [
         State {
             name: "State1"
-            when: comboBox.currentIndex == 1
+            when: !rectangle1.visible
 
             PropertyChanges {
-                target: scrollView
-                visible: true
+                target: menuBar
+                height: 40
+                anchors.rightMargin: 0
+                anchors.topMargin: 0
+                anchors.leftMargin: -95
             }
         }
     ]
 }
+
+/*##^##
+Designer {
+    D{i:0;formeditorZoom:0.66}D{i:3}D{i:26}D{i:27}D{i:28}D{i:29}D{i:30}D{i:31}
+}
+##^##*/
+
