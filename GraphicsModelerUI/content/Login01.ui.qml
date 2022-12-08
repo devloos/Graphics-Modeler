@@ -19,8 +19,6 @@ Rectangle {
     color: "#c2c2c2"
     property alias buttonBruh: buttonBruh
 
-    property alias popup: popup
-
     Material.theme: Material.Dark
     Material.accent: Material.Purple
 
@@ -153,30 +151,6 @@ Rectangle {
         border.width: 0
         z: 0
     }
-
-    Rectangle {
-        id: rectangleBruh
-        x: 28
-        y: 28
-        width: 584
-        height: 424
-        color: "#bdbdbd"
-        radius: 22
-        border.color: "#ffffff"
-        border.width: 0
-        z: 3
-    }
-
-    Popup {
-        id: popup
-        x: 100
-        y: 100
-        width: 500
-        height: 300
-        modal: true
-        focus: true
-        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
-    }
 }
 
 /*##^##
@@ -184,3 +158,4 @@ Designer {
     D{i:0;autoSize:true;height:480;width:640}
 }
 ##^##*/
+

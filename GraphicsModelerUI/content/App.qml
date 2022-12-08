@@ -48,11 +48,26 @@ Window {
     Login01 {
         id: mainScreen
 
+        Popup {
+            Material.theme: Material.Light
+            Material.accent: Material.Purple
+
+            id: popup
+            x: 0
+            y: 0
+            width: 0
+            height: 0
+            dim: true
+            modal: true
+            focus: true
+            closePolicy: Popup.CloseOnEscape //| Popup.CloseOnPressOutsideParent
+
+            LoginUIContactPop{}
+        }
+
         buttonBruh{
             onClicked: popup.open()
         }
-
-
 
     }
 
