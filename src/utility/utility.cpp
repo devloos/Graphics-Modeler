@@ -56,57 +56,57 @@ void deduceSpecifics(
     shapes[index]->pushPoint(point);
   };
 
-//  switch (strToShapeType.at(type)) {
-//    case GM::ShapeType::Line: {
-//      shapes.push_back(std::make_unique<Line>());
-//      nXY();
-//      break;
-//    }
-//    case GM::ShapeType::Polyline: {
-//      shapes.push_back(std::make_unique<Polyline>());
-//      nXY();
-//      break;
-//    }
-//    case GM::ShapeType::Polygon: {
-//      shapes.push_back(std::make_unique<Polygon>());
-//      nXY();
-//      break;
-//    }
-//    case GM::ShapeType::Rectangle: {
-//      shapes.push_back(std::make_unique<Rectangle>());
-//      setXY();
-//      // Read rectangle specifics
-//      break;
-//    }
-//    case GM::ShapeType::Square: {
-//      shapes.push_back(std::make_unique<Square>());
-//      setXY();
-//      // Read square specifics
-//      break;
-//    }
-//    case GM::ShapeType::Ellipse: {
-//      shapes.push_back(std::make_unique<Ellipse>());
-//      setXY();
-//      // Read ellipse specifics
-//      break;
-//    }
-//    case GM::ShapeType::Circle: {
-//      shapes.push_back(std::make_unique<Circle>());
-//      setXY();
-//      // Read circle specifics
-//      break;
-//    }
-//    case GM::ShapeType::Text: {
-//      shapes.push_back(std::make_unique<Text>());
-//      setXY();
-//      // Read text specifics
-//      break;
-//    }
-//    default: {
-//      Debug::log("Shape type invalid.");
-//      break;
-//    }
-//  }
+  //  switch (strToShapeType.at(type)) {
+  //    case GM::ShapeType::Line: {
+  //      shapes.push_back(std::make_unique<Line>());
+  //      nXY();
+  //      break;
+  //    }
+  //    case GM::ShapeType::Polyline: {
+  //      shapes.push_back(std::make_unique<Polyline>());
+  //      nXY();
+  //      break;
+  //    }
+  //    case GM::ShapeType::Polygon: {
+  //      shapes.push_back(std::make_unique<Polygon>());
+  //      nXY();
+  //      break;
+  //    }
+  //    case GM::ShapeType::Rectangle: {
+  //      shapes.push_back(std::make_unique<Rectangle>());
+  //      setXY();
+  //      // Read rectangle specifics
+  //      break;
+  //    }
+  //    case GM::ShapeType::Square: {
+  //      shapes.push_back(std::make_unique<Square>());
+  //      setXY();
+  //      // Read square specifics
+  //      break;
+  //    }
+  //    case GM::ShapeType::Ellipse: {
+  //      shapes.push_back(std::make_unique<Ellipse>());
+  //      setXY();
+  //      // Read ellipse specifics
+  //      break;
+  //    }
+  //    case GM::ShapeType::Circle: {
+  //      shapes.push_back(std::make_unique<Circle>());
+  //      setXY();
+  //      // Read circle specifics
+  //      break;
+  //    }
+  //    case GM::ShapeType::Text: {
+  //      shapes.push_back(std::make_unique<Text>());
+  //      setXY();
+  //      // Read text specifics
+  //      break;
+  //    }
+  //    default: {
+  //      Debug::log("Shape type invalid.");
+  //      break;
+  //    }
+  //  }
 
   shapes[index]->setShapeName(type.c_str());
   shapes[index]->setShapeId(std::stoi(id));
