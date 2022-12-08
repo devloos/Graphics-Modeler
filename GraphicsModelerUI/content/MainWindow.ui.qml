@@ -14,8 +14,8 @@ import QtQuick.Controls.Material 2.3
 Rectangle {
 
     id: rectangle
-    width: 640
-    height: 480
+    width: 1440
+    height: 720
 
     color: "#c2c2c2"
     border.color: "#ffffff"
@@ -57,32 +57,30 @@ Rectangle {
     }
 
     MenuBar {
-        x: 133
-        y: 32
-        width: 310
+        x: 95
+        y: 0
+        width: 353
         height: 40
 
-        MenuBarItem {}
-
-        //        Menu {
-        //            title: qsTr("&File")
-        //            Action {
-        //                text: qsTr("&New...")
-        //            }
-        //            Action {
-        //                text: qsTr("&Open...")
-        //            }
-        //            Action {
-        //                text: qsTr("&Save")
-        //            }
-        //            Action {
-        //                text: qsTr("Save &As...")
-        //            }
-        //            MenuSeparator {}
-        //            Action {
-        //                text: qsTr("&Quit")
-        //            }
-        //        }
+        Menu {
+            title: qsTr("&File")
+            Action {
+                text: qsTr("&New...")
+            }
+            Action {
+                text: qsTr("&Open...")
+            }
+            Action {
+                text: qsTr("&Save")
+            }
+            Action {
+                text: qsTr("Save &As...")
+            }
+            MenuSeparator {}
+            Action {
+                text: qsTr("&Quit")
+            }
+        }
     }
 
     //    ToolBar {
