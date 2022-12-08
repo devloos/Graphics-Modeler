@@ -3,8 +3,8 @@
 namespace Test {
 template <typename T>
 void print(const GM::Vector<T> &vec) {
-  for (auto itr = vec.begin(); itr != vec.end(); itr++) {
-    std::cout << *itr << " ";
+  for (auto itor = vec.begin(); itor != vec.end(); itor++) {
+    std::cout << *itor << " ";
   }
   std::cout << '\n';
 }
@@ -24,5 +24,4 @@ void ints() {
   std::cout << "Sorted Vector: ";
   print(test);
 }
-
 }  // namespace Test
