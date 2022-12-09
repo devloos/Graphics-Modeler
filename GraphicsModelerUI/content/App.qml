@@ -35,8 +35,8 @@ Window {
     width: mainScreen.width
     height: mainScreen.height
 
-    //maximumWidth: mainScreen.width
-    //maximumHeight: mainScreen.height
+    maximumWidth: mainScreen.width
+    maximumHeight: mainScreen.height
     minimumWidth: mainScreen.width
     minimumHeight: mainScreen.height
 

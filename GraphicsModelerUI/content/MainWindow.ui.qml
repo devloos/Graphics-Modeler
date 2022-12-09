@@ -15,18 +15,17 @@ import QtQuick.Studio.Components 1.0
 Rectangle {
 
     id: rectangle
-    width: 1440
+    width: 1080
     height: 720
 
     color: "#c2c2c2"
     border.color: "#ffffff"
-
     Material.theme: Material.Dark
     Material.accent: Material.Purple
 
     Rectangle {
         id: rectangle1
-        width: 95
+        width: 109
         color: "#1e1e1e"
         border.width: 0
         anchors.left: parent.left
@@ -36,6 +35,18 @@ Rectangle {
         anchors.bottomMargin: 0
         anchors.topMargin: 0
         z: 2
+        gradient: Gradient {
+            GradientStop {
+                position: 0
+                color: "#754878"
+            }
+
+            GradientStop {
+                position: 1
+                color: "#000000"
+            }
+            orientation: Gradient.Vertical
+        }
 
         ComboBox {
             id: comboBox
@@ -66,6 +77,8 @@ Rectangle {
         anchors.leftMargin: 0
         anchors.rightMargin: 0
         anchors.topMargin: 0
+        Material.theme: Material.Dark
+        Material.accent: Material.Purple
 
         Menu {
             title: qsTr("&File")
@@ -192,13 +205,25 @@ Rectangle {
         y: 227
         width: 200
         height: 200
-        color: "#1e1e1e"
+        color: "#754878"
         anchors.right: parent.right
         anchors.top: menuBar.bottom
         anchors.bottom: parent.bottom
         anchors.rightMargin: 0
         anchors.bottomMargin: 0
         anchors.topMargin: 0
+        gradient: Gradient {
+            GradientStop {
+                position: 0
+                color: "#754878"
+            }
+
+            GradientStop {
+                position: 1
+                color: "#000000"
+            }
+            orientation: Gradient.Vertical
+        }
 
         Text {
             id: text1
@@ -218,7 +243,9 @@ Rectangle {
             y: 42
             width: 200
             height: 4
-            strokeColor: "#ffffff"
+            strokeWidth: -1
+            fillColor: "#434343"
+            strokeColor: "#754878"
         }
 
         Text {
@@ -295,25 +322,11 @@ Rectangle {
             font.family: "Arial"
         }
     }
-    states: [
-        State {
-            name: "State1"
-            when: !rectangle1.visible
-
-            PropertyChanges {
-                target: menuBar
-                height: 40
-                anchors.rightMargin: 0
-                anchors.topMargin: 0
-                anchors.leftMargin: 0
-            }
-        }
-    ]
 }
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.66}D{i:3}D{i:26}D{i:27}D{i:28}D{i:29}D{i:30}D{i:31}
+    D{i:0;formeditorZoom:0.66}
 }
 ##^##*/
 
