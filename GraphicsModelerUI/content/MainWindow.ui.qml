@@ -244,7 +244,7 @@ Rectangle {
             width: 200
             height: 4
             strokeWidth: -1
-            fillColor: "#434343"
+            fillColor: "#000000"
             strokeColor: "#754878"
         }
 
