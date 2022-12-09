@@ -30,7 +30,7 @@ Rectangle {
         color: "#1e1e1e"
         border.width: 0
         anchors.left: parent.left
-        anchors.top: parent.top
+        anchors.top: menuBar.bottom
         anchors.bottom: parent.bottom
         anchors.leftMargin: 0
         anchors.bottomMargin: 0
@@ -60,7 +60,7 @@ Rectangle {
     MenuBar {
         id: menuBar
         height: 40
-        anchors.left: rectangle1.right
+        anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.leftMargin: 0
@@ -305,7 +305,7 @@ Rectangle {
                 height: 40
                 anchors.rightMargin: 0
                 anchors.topMargin: 0
-                anchors.leftMargin: -95
+                anchors.leftMargin: 0
             }
         }
     ]
