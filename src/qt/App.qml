@@ -7,10 +7,14 @@ import My.Singletons
 Window {
     readonly property int _LOGIN_WIDTH: 640
     readonly property int _LOGIN_HEIGHT: 480
+
     readonly property int _MAIN_WIDTH: 1440
     readonly property int _MAIN_HEIGHT: 720
 
+    readonly property int _WINDOW_TOP_LEVEL_Z: 100
+
     id: window
+    title: "Graphics Modeler"
 
     width: _LOGIN_WIDTH
     height: _LOGIN_HEIGHT
@@ -23,7 +27,6 @@ Window {
     y: Screen.height / 2 - _LOGIN_HEIGHT / 2
 
     visible: true
-    title: "Graphics Modeler"
 
     function validate(username, password) {
         if (CppInterface.loginConnection(username, password)) {
@@ -44,11 +47,32 @@ Window {
         }
     }
 
+
+    Popup {
+        Material.theme: Material.Light
+        Material.accent: Material.Purple
+
+        id: contact_us_popup
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+        dim: true
+        modal: true
+        focus: true
+        closePolicy: Popup.CloseOnEscape
+
+        ContactPopup {
+            back_btn.onClicked: contact_us_popup.close()
+        }
+    }
+
     LoginUI {
         id: login_ui
         visible: true
 
         login_btn.onClicked: window.validate(username.text, password.text)
+        contact_btn.onClicked: contact_us_popup.open()
     }
 
     MainUI {
