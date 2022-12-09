@@ -12,6 +12,6 @@
 
 #include "gm/vector.h"
 #include "models/shape.h"
-#include "qt/cpp-interface.h"
 #include "qt/painted-item.h"
+#include "qt/singleton/cpp-interface.h"
 #include "utility/utility.h"
