@@ -11,6 +11,8 @@ Window {
     readonly property int _MAIN_WIDTH: 1440
     readonly property int _MAIN_HEIGHT: 720
 
+    readonly property int _WINDOW_TOP_LEVEL_Z: 100
+
     id: window
     title: "Graphics Modeler"
 
@@ -44,6 +46,7 @@ Window {
             main_ui.visible = true
         }
     }
+
 
     Popup {
         Material.theme: Material.Light
