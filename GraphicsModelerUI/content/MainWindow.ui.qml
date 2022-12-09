@@ -69,53 +69,53 @@ Rectangle {
 
         Menu {
             title: qsTr("&File")
-            Action {
+            MenuItem {
                 text: qsTr("&New...")
             }
-            Action {
+            MenuItem {
                 text: qsTr("&Open...")
             }
-            Action {
+            MenuItem {
                 text: qsTr("&Save")
             }
-            Action {
+            MenuItem {
                 text: qsTr("Save &As...")
             }
             MenuSeparator {}
-            Action {
+            MenuItem {
                 text: qsTr("&Quit")
             }
         }
         Menu {
             title: qsTr("&Edit")
-            Action {
+            MenuItem {
                 text: qsTr("&Left...")
             }
-            Action {
+            MenuItem {
                 text: qsTr("&Right...")
             }
         }
         Menu {
             title: qsTr("&View")
-            Action {
+            MenuItem {
                 text: qsTr("&Shapes Selector...")
                 onTriggered: rectangle1.visible = !rectangle1.visible
             }
-            Action {
+            MenuItem {
                 text: qsTr("&Shape Properties...")
                 onTriggered: rectangle2.visible = !rectangle2.visible
             }
         }
         Menu {
             title: qsTr("&Misc")
-            Action {
+            MenuItem {
                 text: qsTr("&Contact Us...")
             }
-            Action {
+            MenuItem {
                 text: qsTr("&Meet the Team...")
             }
             MenuSeparator {}
-            Action {
+            MenuItem {
                 text: qsTr("&Logout...")
             }
         }
