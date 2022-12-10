@@ -13,7 +13,6 @@ import QtQuick.Controls.Material 2.3
 
 Rectangle {
 
-    id: rectangle
     width: 1080
     height: 720
 
@@ -44,6 +43,7 @@ Rectangle {
                 position: 1
                 color: "#000000"
             }
+
             orientation: Gradient.Vertical
         }
 
@@ -69,6 +69,7 @@ Rectangle {
 
     MenuBar {
         id: menuBar
+
         height: 40
         anchors.left: parent.left
         anchors.right: parent.right
@@ -76,6 +77,7 @@ Rectangle {
         anchors.leftMargin: 0
         anchors.rightMargin: 0
         anchors.topMargin: 0
+
         Material.theme: Material.Dark
         Material.accent: Material.Purple
 
@@ -133,61 +135,9 @@ Rectangle {
         }
     }
 
-    //    ToolBar {
-    //        id: toolBar
-    //        height: 26
-    //        position: ToolBar.Header
-    //        anchors.left: rectangle1.right
-    //        anchors.right: parent.right
-    //        anchors.top: parent.top
-    //        anchors.rightMargin: 0
-    //        anchors.leftMargin: 0
-    //        anchors.topMargin: 0
-
-    //        ToolButton {
-    //            id: toolButton
-    //            x: 0
-    //            width: 43
-    //            text: qsTr("File")
-    //            anchors.top: parent.top
-    //            anchors.bottom: parent.bottom
-    //            checked: false
-    //            checkable: true
-    //            anchors.bottomMargin: 0
-    //            anchors.topMargin: 0
-    //        }
-
-    //        ToolButton {
-    //            id: toolButton1
-    //            width: 43
-    //            text: qsTr("Edit")
-    //            anchors.left: toolButton.right
-    //            anchors.top: parent.top
-    //            anchors.bottom: parent.bottom
-    //            highlighted: false
-    //            flat: false
-    //            down: false
-    //            checkable: true
-    //            anchors.leftMargin: 0
-    //            anchors.bottomMargin: 0
-    //            anchors.topMargin: 0
-    //        }
-
-    //        ToolButton {
-    //            id: toolButton2
-    //            width: 51
-    //            text: qsTr("AUX")
-    //            anchors.left: toolButton1.right
-    //            anchors.top: parent.top
-    //            anchors.bottom: parent.bottom
-    //            checkable: true
-    //            anchors.leftMargin: 0
-    //            anchors.bottomMargin: 0
-    //            anchors.topMargin: 0
-    //        }
-    //    }
     ScrollView {
         id: scrollView
+
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: menuBar.bottom
@@ -200,10 +150,12 @@ Rectangle {
 
     Rectangle {
         id: rectangle2
+
         x: 880
         y: 227
         width: 200
         height: 200
+
         color: "#754878"
         anchors.right: parent.right
         anchors.top: menuBar.bottom
@@ -211,6 +163,7 @@ Rectangle {
         anchors.rightMargin: 0
         anchors.bottomMargin: 0
         anchors.topMargin: 0
+
         gradient: Gradient {
             GradientStop {
                 position: 0
@@ -221,6 +174,7 @@ Rectangle {
                 position: 1
                 color: "#000000"
             }
+
             orientation: Gradient.Vertical
         }
 
