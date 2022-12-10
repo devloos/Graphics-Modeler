@@ -3,13 +3,13 @@ import QtQuick.Controls 6.4
 import QtQuick.Controls.Material 2.3
 
 Rectangle {
-    property alias login_btn : login_btn
-    property alias contact_btn : contact_btn
-    property alias username : username
-    property alias password : password
+    property alias login_btn: login_btn
+    property alias contact_btn: contact_btn
+    property alias username: username
+    property alias password: password
 
-    width: window._LOGIN_WIDTH
-    height: window._LOGIN_HEIGHT
+    width: 640 //window._LOGIN_WIDTH
+    height: 480 //window._LOGIN_HEIGHT
 
     color: "#c2c2c2"
 
@@ -43,7 +43,7 @@ Rectangle {
             width: 173
             height: 46
             placeholderText: qsTr("Username")
-            onAccepted: window.validate(username.text, password.text)
+            //onAccepted: window.validate(username.text, password.text)
         }
 
         TextField {
@@ -53,7 +53,7 @@ Rectangle {
             width: 173
             height: 46
             placeholderText: qsTr("Password")
-            onAccepted: window.validate(username.text, password.text)
+            //onAccepted: window.validate(username.text, password.text)
         }
 
         Button {
@@ -163,9 +163,3 @@ Rectangle {
         }
     }
 }
-
-/*##^##
-Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:9}D{i:13}
-}
-##^##*/
