@@ -1,39 +1,33 @@
-
-
-/*
-This is a UI file (.ui.qml) that is intended to be edited in Qt Design Studio only.
-It is supposed to be strictly declarative and only uses a subset of QML. If you edit
-this file manually, you might introduce QML code that is not supported by Qt Design Studio.
-Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on .ui.qml files.
-*/
 import QtQuick 6.4
 import QtQuick.Controls 6.4
-import QtQuick.Window 6.4
 import QtQuick.Controls.Material 2.3
 
 Rectangle {
-    id: rectangle
-    width: 640
-    height: 480
+    property alias login_btn : login_btn
+    property alias contact_btn : contact_btn
+    property alias username : username
+    property alias password : password
+
+    width: window._LOGIN_WIDTH
+    height: window._LOGIN_HEIGHT
 
     color: "#c2c2c2"
-    property alias buttonBruh: buttonBruh
 
     Material.theme: Material.Dark
     Material.accent: Material.Purple
 
     Rectangle {
-        id: rectangle1
+        id: login_form
         x: 0
         y: 0
+        z: 2
         width: 320
         height: 480
         color: "#001f1f1f"
         border.width: 0
-        z: 2
 
         Label {
-            id: label
+            id: login_title
             x: 124
             y: 87
             color: "#ffffff"
@@ -43,32 +37,34 @@ Rectangle {
         }
 
         TextField {
-            id: textField
+            id: username
             x: 74
             y: 156
             width: 173
             height: 46
             placeholderText: qsTr("Username")
+            onAccepted: window.validate(username.text, password.text)
         }
 
         TextField {
-            id: textField1
+            id: password
             x: 74
             y: 208
             width: 173
             height: 46
             placeholderText: qsTr("Password")
+            onAccepted: window.validate(username.text, password.text)
         }
 
         Button {
-            id: button
+            id: login_btn
             x: 79
             y: 276
+            z: 0
             width: 162
             height: 48
             text: qsTr("Continue")
             font.letterSpacing: 0
-            z: 0
             font.capitalization: Font.Capitalize
             font.bold: true
             hoverEnabled: true
@@ -81,17 +77,17 @@ Rectangle {
     }
 
     Rectangle {
-        id: rectangle2
+        id: contact_info
         x: 320
         y: 0
+        z: 2
         width: 320
         height: 480
         color: "#00666666"
         border.width: 0
-        z: 2
 
         Text {
-            id: text1
+            id: contact_introduction
             x: 41
             y: 148
             width: 239
@@ -103,8 +99,9 @@ Rectangle {
             wrapMode: Text.Wrap
             font.bold: true
         }
+
         Button {
-            id: buttonBruh
+            id: contact_btn
             x: 108
             y: 250
             width: 105
@@ -119,13 +116,15 @@ Rectangle {
     }
 
     Rectangle {
-        id: rectangle4
+        id: login_background
         x: 0
         y: 0
+        z: 0
         width: 320
         height: 480
         color: "#1f1f1f"
         border.width: 0
+
         gradient: Gradient {
             GradientStop {
                 position: 0
@@ -138,20 +137,35 @@ Rectangle {
             }
             orientation: Gradient.Vertical
         }
-        z: 0
     }
 
     Rectangle {
-        id: rectangle5
+        id: contact_background
         x: 320
         y: 0
+        z: 0
         width: 320
         height: 480
         color: "#6f4b75"
         border.width: 0
-        z: 0
+
+        gradient: Gradient {
+            GradientStop {
+                position: 0
+                color: "#000000"
+            }
+
+            GradientStop {
+                position: 1
+                color: "#6f4b75"
+            }
+            orientation: Gradient.Vertical
+        }
     }
 }
 
-
-
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}D{i:9}D{i:13}
+}
+##^##*/
