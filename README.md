@@ -87,7 +87,7 @@ The following image shows an early design of the graphical user interface. Featu
 - [X] Use at least two overload operators
 - [X] At least one class using templates
 - [X] At least one class must contain a pointer (write copy constructor and test it)
-- [ ] Invalid inputs should be addressed.
+- [X] Invalid inputs should be addressed.
 - [ ] Doxygen documentation
 - [ ] Valgrind memory leak check
 - [ ] Guests should be able to enter "satisfied customer" testimonials that persist between executions.

@@ -1,11 +1,3 @@
-
-
-/*
-This is a UI file (.ui.qml) that is intended to be edited in Qt Design Studio only.
-It is supposed to be strictly declarative and only uses a subset of QML. If you edit
-this file manually, you might introduce QML code that is not supported by Qt Design Studio.
-Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on .ui.qml files.
-*/
 import QtQuick 6.4
 import QtQuick.Controls 6.4
 import QtQuick.Window 6.4
@@ -13,8 +5,8 @@ import QtQuick.Controls.Material 2.3
 
 Rectangle {
 
-    width: 1080
-    height: 720
+    width: 1080 //window._MAIN_WIDTH
+    height: 720 //window._MAIN_HEIGHT
 
     color: "#c2c2c2"
     border.color: "#ffffff"
@@ -48,7 +40,6 @@ Rectangle {
         }
 
         ComboBox {
-            id: comboBox
             height: 28
             model: ["Select", "Line", "Polyline", "Polygon", "Rectangle", "Square", "Ellipse", "Circle", "Text"]
             anchors.left: parent.left
@@ -136,8 +127,6 @@ Rectangle {
     }
 
     ScrollView {
-        id: scrollView
-
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: menuBar.bottom
@@ -179,7 +168,6 @@ Rectangle {
         }
 
         Text {
-            id: text1
             y: 8
             color: "#ffffff"
             text: qsTr("Shape Properties")
@@ -271,8 +259,6 @@ Rectangle {
             id: rectangle3
             y: 38
             height: 8
-            color: "#434343"
-            border.color: "#434343"
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.rightMargin: 7
@@ -283,7 +269,7 @@ Rectangle {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.66}D{i:30}
+    D{i:0;formeditorZoom:0.66}
 }
 ##^##*/
 
