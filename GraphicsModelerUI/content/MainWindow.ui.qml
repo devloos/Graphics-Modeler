@@ -10,7 +10,6 @@ import QtQuick 6.4
 import QtQuick.Controls 6.4
 import QtQuick.Window 6.4
 import QtQuick.Controls.Material 2.3
-import QtQuick.Studio.Components 1.0
 
 Rectangle {
 
@@ -314,23 +313,23 @@ Rectangle {
             font.family: "Arial"
         }
 
-        RectangleItem {
+        Rectangle {
             id: rectangle3
             y: 38
             height: 8
+            color: "#434343"
+            border.color: "#434343"
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.rightMargin: 7
             anchors.leftMargin: 7
-            strokeColor: "#434343"
-            fillColor: "#434343"
         }
     }
 }
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.66}D{i:30}D{i:37}
+    D{i:0;formeditorZoom:0.66}D{i:30}
 }
 ##^##*/
 
