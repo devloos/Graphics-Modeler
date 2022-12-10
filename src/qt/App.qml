@@ -3,6 +3,7 @@ import QtQuick.Window 6.4
 import QtQuick.Controls 6.4
 import QtQuick.Controls.Material 2.3
 import My.Singletons
+import My.Shapes
 
 Window {
     readonly property int _LOGIN_WIDTH: 640
@@ -28,22 +29,43 @@ Window {
 
     visible: true
 
+    function login() {
+        login_ui.visible = false
+
+        window.width = _MAIN_WIDTH
+        window.height = _MAIN_HEIGHT
+
+        window.maximumWidth = _MAIN_WIDTH
+        window.maximumHeight = _MAIN_HEIGHT
+        window.minimumWidth = _MAIN_WIDTH
+        window.minimumHeight = _MAIN_HEIGHT
+
+        window.x = Screen.width / 2 - _MAIN_WIDTH / 2
+        window.y = Screen.height / 2 - _MAIN_HEIGHT / 2
+
+        main_ui.visible = true
+    }
+
+    function logout() {
+        main_ui.visible = false
+
+        window.width = _LOGIN_WIDTH
+        window.height = _LOGIN_HEIGHT
+
+        window.maximumWidth = _LOGIN_WIDTH
+        window.maximumHeight = _LOGIN_HEIGHT
+        window.minimumWidth = _LOGIN_WIDTH
+        window.minimumHeight = _LOGIN_HEIGHT
+
+        window.x = Screen.width / 2 - _LOGIN_WIDTH / 2
+        window.y = Screen.height / 2 - _LOGIN_HEIGHT / 2
+
+        login_ui.visible = true
+    }
+
     function validate(username, password) {
         if (CppInterface.loginConnection(username, password)) {
-            login_ui.visible = false
-
-            window.width = _MAIN_WIDTH
-            window.height = _MAIN_HEIGHT
-
-            window.maximumWidth = _MAIN_WIDTH
-            window.maximumHeight = _MAIN_HEIGHT
-            window.minimumWidth = _MAIN_WIDTH
-            window.minimumHeight = _MAIN_HEIGHT
-
-            window.x = Screen.width / 2 - _MAIN_WIDTH / 2
-            window.y = Screen.height / 2 - _MAIN_HEIGHT / 2
-
-            main_ui.visible = true
+            window.login()
         }
     }
 

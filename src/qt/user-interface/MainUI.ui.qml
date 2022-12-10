@@ -14,17 +14,21 @@ Rectangle {
     Material.accent: Material.Purple
 
     Rectangle {
-        id: rectangle1
-        width: 109
+        id: left_side_bar
+
+        width: 135
+        z: 2
+
         color: "#1e1e1e"
         border.width: 0
+
         anchors.left: parent.left
-        anchors.top: menuBar.bottom
+        anchors.top: menu_bar.bottom
         anchors.bottom: parent.bottom
         anchors.leftMargin: 0
         anchors.bottomMargin: 0
         anchors.topMargin: 0
-        z: 2
+
         gradient: Gradient {
             GradientStop {
                 position: 0
@@ -41,27 +45,31 @@ Rectangle {
 
         ComboBox {
             height: 28
+            z: 1
+
             model: ["Select", "Line", "Polyline", "Polygon", "Rectangle", "Square", "Ellipse", "Circle", "Text"]
+
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.top: parent.top
-            topInset: 0
-            rightPadding: 0
-            bottomInset: 0
-            z: 1
-            wheelEnabled: false
-            flat: true
-            spacing: 0
             anchors.rightMargin: 0
             anchors.leftMargin: 0
             anchors.topMargin: 0
+
+            topInset: 0
+            rightPadding: 0
+            bottomInset: 0
+            wheelEnabled: false
+            flat: true
+            spacing: 0
         }
     }
 
     MenuBar {
-        id: menuBar
+        id: menu_bar
 
         height: 40
+
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
@@ -74,54 +82,73 @@ Rectangle {
 
         Menu {
             title: qsTr("&File")
+
             MenuItem {
                 text: qsTr("&New...")
             }
+
             MenuItem {
                 text: qsTr("&Open...")
             }
+
             MenuItem {
                 text: qsTr("&Save")
             }
+
             MenuItem {
                 text: qsTr("Save &As...")
             }
+
             MenuSeparator {}
+
             MenuItem {
                 text: qsTr("&Quit")
+                onTriggered: Qt.quit()
             }
         }
+
         Menu {
             title: qsTr("&Edit")
+
             MenuItem {
                 text: qsTr("&Left...")
             }
+
             MenuItem {
                 text: qsTr("&Right...")
             }
         }
+
         Menu {
             title: qsTr("&View")
+
             MenuItem {
-                text: qsTr("&Shapes Selector...")
-                onTriggered: rectangle1.visible = !rectangle1.visible
+                text: qsTr("&Toggle Selector...")
+                onTriggered: left_side_bar.visible = !left_side_bar.visible
             }
+
             MenuItem {
-                text: qsTr("&Shape Properties...")
-                onTriggered: rectangle2.visible = !rectangle2.visible
+                text: qsTr("&Toggle Properties...")
+                onTriggered: shape_properties_pane.visible = !shape_properties_pane.visible
             }
         }
+
         Menu {
             title: qsTr("&Misc")
+
             MenuItem {
                 text: qsTr("&Contact Us...")
             }
+
             MenuItem {
                 text: qsTr("&Meet the Team...")
             }
+
             MenuSeparator {}
+
             MenuItem {
                 text: qsTr("&Logout...")
+                onTriggered: window.logout()
             }
         }
     }
@@ -129,7 +156,7 @@ Rectangle {
     ScrollView {
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.top: menuBar.bottom
+        anchors.top: menu_bar.bottom
         anchors.bottom: parent.bottom
         anchors.rightMargin: 0
         anchors.leftMargin: 0
@@ -138,16 +165,17 @@ Rectangle {
     }
 
     Rectangle {
-        id: rectangle2
+        id: shape_properties_pane
 
         x: 880
         y: 227
-        width: 200
+        width: 275
         height: 200
 
         color: "#754878"
+
         anchors.right: parent.right
-        anchors.top: menuBar.bottom
+        anchors.top: menu_bar.bottom
         anchors.bottom: parent.bottom
         anchors.rightMargin: 0
         anchors.bottomMargin: 0
@@ -181,6 +209,7 @@ Rectangle {
             font.family: "Arial"
         }
 
+        // TODO: link all this properly
         Text {
             id: text2
             y: 52
@@ -195,7 +224,6 @@ Rectangle {
         }
 
         Text {
-            id: text3
             y: 52
             color: "#ffffff"
             text: qsTr("ID")
@@ -219,7 +247,6 @@ Rectangle {
         }
 
         Text {
-            id: text5
             y: 75
             color: "#ffffff"
             text: qsTr("Name")
@@ -243,7 +270,6 @@ Rectangle {
         }
 
         TextEdit {
-            id: textEdit
             y: 98
             width: 80
             height: 20
@@ -256,7 +282,6 @@ Rectangle {
         }
 
         Rectangle {
-            id: rectangle3
             y: 38
             height: 8
             anchors.left: parent.left
