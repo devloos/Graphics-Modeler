@@ -16,12 +16,12 @@ Window {
     id: window
     title: "Graphics Modeler"
 
-    width: _LOGIN_WIDTH
-    height: _LOGIN_HEIGHT
-    maximumWidth: _LOGIN_WIDTH
-    maximumHeight: _LOGIN_HEIGHT
-    minimumWidth: _LOGIN_WIDTH
-    minimumHeight: _LOGIN_HEIGHT
+    width: 1080//_LOGIN_WIDTH
+    height: 720//_LOGIN_HEIGHT
+    //maximumWidth: _LOGIN_WIDTH
+    //maximumHeight: _LOGIN_HEIGHT
+    //minimumWidth: _LOGIN_WIDTH
+    //minimumHeight: _LOGIN_HEIGHT
 
     x: Screen.width / 2 - _LOGIN_WIDTH / 2
     y: Screen.height / 2 - _LOGIN_HEIGHT / 2
@@ -69,7 +69,7 @@ Window {
 
     LoginUI {
         id: login_ui
-        visible: true
+        visible: false
 
         login_btn.onClicked: window.validate(username.text, password.text)
         contact_btn.onClicked: contact_us_popup.open()
@@ -77,6 +77,6 @@ Window {
 
     MainUI {
         id: main_ui
-        visible: false
+        visible: true
     }
 }
