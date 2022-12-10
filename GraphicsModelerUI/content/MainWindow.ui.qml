@@ -50,7 +50,7 @@ Rectangle {
 
         ComboBox {
             id: comboBox
-            height: 26
+            height: 28
             model: ["Select", "Line", "Polyline", "Polygon", "Rectangle", "Square", "Ellipse", "Circle", "Text"]
             anchors.left: parent.left
             anchors.right: parent.right
@@ -201,7 +201,7 @@ Rectangle {
 
     Rectangle {
         id: rectangle2
-        x: 1240
+        x: 880
         y: 227
         width: 200
         height: 200
@@ -227,25 +227,17 @@ Rectangle {
 
         Text {
             id: text1
-            x: 3
             y: 8
             color: "#ffffff"
             text: qsTr("Shape Properties")
+            anchors.left: parent.left
+            anchors.right: parent.right
             font.pixelSize: 25
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignTop
+            anchors.rightMargin: 3
+            anchors.leftMargin: 3
             font.family: "Arial"
-        }
-
-        RectangleItem {
-            id: rectangle3
-            x: 0
-            y: 42
-            width: 200
-            height: 4
-            strokeWidth: -1
-            fillColor: "#000000"
-            strokeColor: "#754878"
         }
 
         Text {
@@ -257,7 +249,7 @@ Rectangle {
             text: qsTr("Shape ID:")
             anchors.left: parent.left
             font.pixelSize: 15
-            anchors.leftMargin: 0
+            anchors.leftMargin: 6
             font.family: "Arial"
         }
 
@@ -281,7 +273,7 @@ Rectangle {
             text: qsTr("Shape Name:")
             anchors.left: parent.left
             font.pixelSize: 15
-            anchors.leftMargin: 0
+            anchors.leftMargin: 6
             font.family: "Arial"
         }
 
@@ -305,7 +297,7 @@ Rectangle {
             text: qsTr("Length:")
             anchors.left: parent.left
             font.pixelSize: 15
-            anchors.leftMargin: 0
+            anchors.leftMargin: 6
             font.family: "Arial"
         }
 
@@ -321,12 +313,24 @@ Rectangle {
             anchors.leftMargin: 0
             font.family: "Arial"
         }
+
+        RectangleItem {
+            id: rectangle3
+            y: 38
+            height: 8
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.rightMargin: 7
+            anchors.leftMargin: 7
+            strokeColor: "#434343"
+            fillColor: "#434343"
+        }
     }
 }
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.66}
+    D{i:0;formeditorZoom:0.66}D{i:30}D{i:37}
 }
 ##^##*/
 
