@@ -1,44 +1,275 @@
 import QtQuick 6.4
 import QtQuick.Controls 6.4
+import QtQuick.Window 6.4
 import QtQuick.Controls.Material 2.3
-import My.Shapes
 
 Rectangle {
-    property alias login_test_btn : login_test_btn
 
     width: window._MAIN_WIDTH
     height: window._MAIN_HEIGHT
 
     color: "#c2c2c2"
+    border.color: "#ffffff"
+    Material.theme: Material.Dark
+    Material.accent: Material.Purple
 
-    Ellipse {
-        id: ellipse
-        width: 400
-        height: 400
+    Rectangle {
+        id: rectangle1
+        width: 109
+        color: "#1e1e1e"
+        border.width: 0
+        anchors.left: parent.left
+        anchors.top: menuBar.bottom
+        anchors.bottom: parent.bottom
+        anchors.leftMargin: 0
+        anchors.bottomMargin: 0
+        anchors.topMargin: 0
+        z: 2
+        gradient: Gradient {
+            GradientStop {
+                position: 0
+                color: "#754878"
+            }
+
+            GradientStop {
+                position: 1
+                color: "#000000"
+            }
+
+            orientation: Gradient.Vertical
+        }
+
+        ComboBox {
+            height: 28
+            model: ["Select", "Line", "Polyline", "Polygon", "Rectangle", "Square", "Ellipse", "Circle", "Text"]
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: parent.top
+            topInset: 0
+            rightPadding: 0
+            bottomInset: 0
+            z: 1
+            wheelEnabled: false
+            flat: true
+            spacing: 0
+            anchors.rightMargin: 0
+            anchors.leftMargin: 0
+            anchors.topMargin: 0
+        }
     }
 
-    Button {
-        id: login_test_btn
-        x: 79
-        y: 276
-        z: 0
-        width: 162
-        height: 48
-        text: qsTr("render")
-        font.letterSpacing: 0
-        font.capitalization: Font.Capitalize
-        font.bold: true
-        hoverEnabled: true
-        checkable: false
-        flat: true
-        highlighted: true
-        down: false
-        checked: false
+    MenuBar {
+        id: menuBar
+
+        height: 40
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.leftMargin: 0
+        anchors.rightMargin: 0
+        anchors.topMargin: 0
+
+        Material.theme: Material.Dark
+        Material.accent: Material.Purple
+
+        Menu {
+            title: qsTr("&File")
+            MenuItem {
+                text: qsTr("&New...")
+            }
+            MenuItem {
+                text: qsTr("&Open...")
+            }
+            MenuItem {
+                text: qsTr("&Save")
+            }
+            MenuItem {
+                text: qsTr("Save &As...")
+            }
+            MenuSeparator {}
+            MenuItem {
+                text: qsTr("&Quit")
+            }
+        }
+        Menu {
+            title: qsTr("&Edit")
+            MenuItem {
+                text: qsTr("&Left...")
+            }
+            MenuItem {
+                text: qsTr("&Right...")
+            }
+        }
+        Menu {
+            title: qsTr("&View")
+            MenuItem {
+                text: qsTr("&Shapes Selector...")
+                onTriggered: rectangle1.visible = !rectangle1.visible
+            }
+            MenuItem {
+                text: qsTr("&Shape Properties...")
+                onTriggered: rectangle2.visible = !rectangle2.visible
+            }
+        }
+        Menu {
+            title: qsTr("&Misc")
+            MenuItem {
+                text: qsTr("&Contact Us...")
+            }
+            MenuItem {
+                text: qsTr("&Meet the Team...")
+            }
+            MenuSeparator {}
+            MenuItem {
+                text: qsTr("&Logout...")
+            }
+        }
+    }
+
+    ScrollView {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: menuBar.bottom
+        anchors.bottom: parent.bottom
+        anchors.rightMargin: 0
+        anchors.leftMargin: 0
+        anchors.bottomMargin: 0
+        anchors.topMargin: 0
+    }
+
+    Rectangle {
+        id: rectangle2
+
+        x: 880
+        y: 227
+        width: 200
+        height: 200
+
+        color: "#754878"
+        anchors.right: parent.right
+        anchors.top: menuBar.bottom
+        anchors.bottom: parent.bottom
+        anchors.rightMargin: 0
+        anchors.bottomMargin: 0
+        anchors.topMargin: 0
+
+        gradient: Gradient {
+            GradientStop {
+                position: 0
+                color: "#754878"
+            }
+
+            GradientStop {
+                position: 1
+                color: "#000000"
+            }
+
+            orientation: Gradient.Vertical
+        }
+
+        Text {
+            y: 8
+            color: "#ffffff"
+            text: qsTr("Shape Properties")
+            anchors.left: parent.left
+            anchors.right: parent.right
+            font.pixelSize: 25
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignTop
+            anchors.rightMargin: 3
+            anchors.leftMargin: 3
+            font.family: "Arial"
+        }
+
+        Text {
+            id: text2
+            y: 52
+            width: 73
+            height: 17
+            color: "#ffffff"
+            text: qsTr("Shape ID:")
+            anchors.left: parent.left
+            font.pixelSize: 15
+            anchors.leftMargin: 6
+            font.family: "Arial"
+        }
+
+        Text {
+            id: text3
+            y: 52
+            color: "#ffffff"
+            text: qsTr("ID")
+            anchors.left: text2.right
+            font.pixelSize: 15
+            anchors.leftMargin: 0
+            font.family: "Arial"
+        }
+
+        Text {
+            id: text4
+            y: 75
+            width: 98
+            height: 17
+            color: "#ffffff"
+            text: qsTr("Shape Name:")
+            anchors.left: parent.left
+            font.pixelSize: 15
+            anchors.leftMargin: 6
+            font.family: "Arial"
+        }
+
+        Text {
+            id: text5
+            y: 75
+            color: "#ffffff"
+            text: qsTr("Name")
+            anchors.left: text4.right
+            font.pixelSize: 15
+            anchors.leftMargin: 0
+            font.family: "Arial"
+        }
+
+        Text {
+            id: text6
+            y: 98
+            width: 54
+            height: 17
+            color: "#ffffff"
+            text: qsTr("Length:")
+            anchors.left: parent.left
+            font.pixelSize: 15
+            anchors.leftMargin: 6
+            font.family: "Arial"
+        }
+
+        TextEdit {
+            id: textEdit
+            y: 98
+            width: 80
+            height: 20
+            color: "#ffffff"
+            text: qsTr("Edit Me")
+            anchors.left: text6.right
+            font.pixelSize: 15
+            anchors.leftMargin: 0
+            font.family: "Arial"
+        }
+
+        Rectangle {
+            id: rectangle3
+            y: 38
+            height: 8
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.rightMargin: 7
+            anchors.leftMargin: 7
+        }
     }
 }
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:9}D{i:13}
+    D{i:0;formeditorZoom:0.66}D{i:30}D{i:37}
 }
 ##^##*/
+

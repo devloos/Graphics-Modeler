@@ -29,21 +29,46 @@
 
 import QtQuick 6.4
 import QtQuick.Window 6.4
+import QtQuick.Controls 6.4
 
 Window {
     width: mainScreen.width
     height: mainScreen.height
 
-    //maximumWidth: mainScreen.width
-    //maximumHeight: mainScreen.height
+    maximumWidth: mainScreen.width
+    maximumHeight: mainScreen.height
     minimumWidth: mainScreen.width
     minimumHeight: mainScreen.height
 
     visible: true
     title: "Graphics Modeler"
 
+
+
     MainWindow {
         id: mainScreen
+
+//        Popup {
+//            Material.theme: Material.Light
+//            Material.accent: Material.Purple
+
+//            id: popup
+//            x: 0
+//            y: 0
+//            width: 0
+//            height: 0
+//            dim: true
+//            modal: true
+//            focus: true
+//            closePolicy: Popup.CloseOnEscape //| Popup.CloseOnPressOutsideParent
+
+//            LoginUIContactPop{}
+//        }
+
+//        buttonBruh{
+//            onClicked: popup.open()
+//        }
+
     }
 
 }

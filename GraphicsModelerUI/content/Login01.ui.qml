@@ -17,6 +17,7 @@ Rectangle {
     height: 480
 
     color: "#c2c2c2"
+    property alias buttonBruh: buttonBruh
 
     Material.theme: Material.Dark
     Material.accent: Material.Purple
@@ -102,9 +103,8 @@ Rectangle {
             wrapMode: Text.Wrap
             font.bold: true
         }
-
         Button {
-            id: button1
+            id: buttonBruh
             x: 108
             y: 250
             width: 105
@@ -153,9 +153,5 @@ Rectangle {
     }
 }
 
-/*##^##
-Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:9}D{i:13}
-}
-##^##*/
+
 
