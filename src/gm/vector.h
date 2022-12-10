@@ -58,6 +58,14 @@ class Iterator {
     return !(*this == rhs);
   }
 
+  PointerType operator->() {
+    return it_;
+  }
+
+  const PointerType operator->() const {
+    return it_;
+  }
+
  private:
   PointerType it_ = nullptr;
 };

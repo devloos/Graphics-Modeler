@@ -33,8 +33,6 @@ class Shape {
  public:
   void pushPoint(QPoint newPoint);
   void popPoint();
-
- protected:
   virtual float area() const = 0;
   virtual float perimeter() const = 0;
   virtual void draw() const = 0;
