@@ -70,11 +70,12 @@ Window {
     }
 
 
+
     Popup {
         Material.theme: Material.Light
         Material.accent: Material.Purple
 
-        id: contact_us_popup
+        id: parent_contact_us
         x: 0
         y: 0
         width: 0
@@ -85,7 +86,15 @@ Window {
         closePolicy: Popup.CloseOnEscape
 
         ContactPopup {
-            back_btn.onClicked: contact_us_popup.close()
+            id: contact_us_popup
+
+            function open(width, height) {
+                contact_us_popup.x = width / 2 - contact_us_popup._CONTACT_WIDTH / 2
+                contact_us_popup.y = height / 2 - contact_us_popup._CONTACT_HEIGHT / 2 
+                parent_contact_us.open()
+            }
+
+            back_btn.onClicked: parent_contact_us.close()
         }
     }
 
@@ -94,7 +103,7 @@ Window {
         visible: true
 
         login_btn.onClicked: window.validate(username.text, password.text)
-        contact_btn.onClicked: contact_us_popup.open()
+        contact_btn.onClicked: contact_us_popup.open(window._LOGIN_WIDTH, window._LOGIN_HEIGHT)
     }
 
     MainUI {

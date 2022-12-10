@@ -13,8 +13,6 @@ Rectangle {
     Material.theme: Material.Dark
     Material.accent: Material.Purple
 
-    x: _LOGIN_WIDTH / 2 - _CONTACT_WIDTH / 2
-    y: _LOGIN_HEIGHT / 2 - _CONTACT_HEIGHT / 2
     width: _CONTACT_WIDTH
     height: _CONTACT_HEIGHT
 

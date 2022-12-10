@@ -53,6 +53,7 @@ Rectangle {
             width: 173
             height: 46
             placeholderText: qsTr("Password")
+            echoMode: TextInput.Password
             onAccepted: window.validate(username.text, password.text)
         }
 

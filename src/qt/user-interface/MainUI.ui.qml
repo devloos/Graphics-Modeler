@@ -138,6 +138,7 @@ Rectangle {
 
             MenuItem {
                 text: qsTr("&Contact Us...")
+                onTriggered: contact_us_popup.open(window._MAIN_WIDTH, window._MAIN_HEIGHT)
             }
 
             MenuItem {
