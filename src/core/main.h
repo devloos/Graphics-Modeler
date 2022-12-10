@@ -14,5 +14,4 @@
 #include "models/shape.h"
 #include "qt/painted-item.h"
 #include "qt/singleton/cpp-interface.h"
-#include "tests/selection-sort/selection-sort.h"
 #include "utility/utility.h"
