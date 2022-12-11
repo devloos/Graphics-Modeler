@@ -62,7 +62,7 @@ BrushStyle: SolidPattern
 
 ShapeId: 7
 ShapeType: Circle
-ShapeDimensions: 750, 150, 200
+ShapeDimensions: 500, 250, 200
 PenColor: black
 PenWidth: 12
 PenStyle: SolidLine

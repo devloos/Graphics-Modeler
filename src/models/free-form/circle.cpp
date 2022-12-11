@@ -21,5 +21,12 @@ float Circle::perimeter() const {
 }
 
 void Circle::paint(QPainter* painter) {
-  std::cout << "Circle\n";
+  Circle* circle = (Circle*)(shapes.at(6).get());
+
+  painter->setRenderHint(QPainter::Antialiasing, true);
+  painter->setPen(circle->pen_);
+  painter->setBrush(circle->pen_.brush());
+  painter->drawEllipse(
+      QPointF(circle->points_[0].x(), circle->points_[0].y()), circle->radius_,
+      circle->radius_);
 }
