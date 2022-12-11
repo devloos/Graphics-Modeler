@@ -145,8 +145,9 @@ void deduceSpecifics(
       cursor = parse(cursor);
       text->setText(cursor.c_str());
 
-      // TODO READ COLOR
       QT::getline(fin, cursor);
+      cursor = parse(cursor);
+      text->setColor(cursor);
 
       QT::getline(fin, cursor);
       cursor = parse(cursor);
