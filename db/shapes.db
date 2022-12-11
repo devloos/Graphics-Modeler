@@ -58,7 +58,7 @@ PenStyle: SolidLine
 PenCapStyle: FlatCap
 PenJoinStyle: MiterJoin
 BrushColor: white
-BrushStyle: NoBrush
+BrushStyle: SolidPattern
 
 ShapeId: 7
 ShapeType: Circle

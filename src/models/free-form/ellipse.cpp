@@ -30,4 +30,12 @@ float Ellipse::perimeter() const {
 
 void Ellipse::paint(QPainter* painter) {
   std::cout << "Ellipse\n";
+  Ellipse* ellipse = (Ellipse*)(shapes.at(5).get());
+
+  painter->setRenderHint(QPainter::Antialiasing, true);
+  painter->setPen(ellipse->pen_);
+  painter->setBrush(ellipse->pen_.brush());
+  painter->drawEllipse(
+      QPointF(ellipse->points_[0].x(), ellipse->points_[0].y()), ellipse->majorAxis_,
+      ellipse->minorAxis_);
 }
