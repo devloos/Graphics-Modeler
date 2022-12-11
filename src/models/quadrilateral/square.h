@@ -11,7 +11,15 @@ class Square : public Shape {
   Square();
   virtual ~Square() noexcept;
 
+ public:
+  void setLength(const int &length);
+  int getLength() const;
+
+ public:
   float area() const override;
   float perimeter() const override;
   void paint(QPainter* painter) override;
+
+ private:
+  int length_ = 0;
 };

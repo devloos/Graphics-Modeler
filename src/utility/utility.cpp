@@ -28,6 +28,8 @@ void deduceSpecifics(
   cursor = cursor.substr(cursor.find(':') + 2);
   std::stringstream sstream(cursor);
 
+  auto parse = [](std::string &raw) { return raw.substr(raw.find(':') + 2); };
+
   auto nXY = [&]() {
     while (!sstream.eof()) {
       QPoint point;
@@ -74,32 +76,98 @@ void deduceSpecifics(
     }
     case GM::ShapeType::Rectangle: {
       shapes.push_back(std::make_unique<Rectangle>());
+
+      Rectangle* rec = (Rectangle*)(shapes[index].get());
+
       setXY();
-      // Read rectangle specifics
+
+      std::getline(sstream, cursor, ',');
+      rec->setLength(std::stoi(cursor));
+
+      std::getline(sstream, cursor);
+      rec->setWidth(std::stoi(cursor));
+
       break;
     }
     case GM::ShapeType::Square: {
       shapes.push_back(std::make_unique<Square>());
+
+      Square* sqr = (Square*)(shapes[index].get());
+
       setXY();
-      // Read square specifics
+
+      std::getline(sstream, cursor);
+      sqr->setLength(std::stoi(cursor));
+
       break;
     }
     case GM::ShapeType::Ellipse: {
       shapes.push_back(std::make_unique<Ellipse>());
+
+      Ellipse* ellipse = (Ellipse*)(shapes[index].get());
+
       setXY();
-      // Read ellipse specifics
+
+      std::getline(sstream, cursor, ',');
+      ellipse->setMajorAxis(std::stoi(cursor));
+
+      std::getline(sstream, cursor);
+      ellipse->setMinorAxis(std::stoi(cursor));
+
       break;
     }
     case GM::ShapeType::Circle: {
       shapes.push_back(std::make_unique<Circle>());
+
+      Circle* circle = (Circle*)(shapes[index].get());
+
       setXY();
-      // Read circle specifics
+
+      std::getline(sstream, cursor);
+      circle->setRadius(std::stoi(cursor));
+
       break;
     }
     case GM::ShapeType::Text: {
       shapes.push_back(std::make_unique<Text>());
+
+      Text* text = (Text*)(shapes[index].get());
+
       setXY();
-      // Read text specifics
+
+      std::getline(sstream, cursor, ',');
+      text->setLength(std::stoi(cursor));
+
+      std::getline(sstream, cursor);
+      text->setWidth(std::stoi(cursor));
+
+      QT::getline(fin, cursor);
+      cursor = parse(cursor);
+      text->setText(cursor.c_str());
+
+      // TODO READ COLOR
+      QT::getline(fin, cursor);
+
+      QT::getline(fin, cursor);
+      cursor = parse(cursor);
+      text->setTextAlignment(strToTextAlignment.at(cursor));
+
+      QT::getline(fin, cursor);
+      cursor = parse(cursor);
+      text->setFontSize(std::stoi(cursor));
+
+      QT::getline(fin, cursor);
+      cursor = parse(cursor);
+      text->setFontFamily(cursor);
+
+      QT::getline(fin, cursor);
+      cursor = parse(cursor);
+      text->setFontStyle(strToFontStyle.at(cursor));
+
+      QT::getline(fin, cursor);
+      cursor = parse(cursor);
+      text->setFontWeight(strToFontWeight.at(cursor));
+
       break;
     }
     default: {

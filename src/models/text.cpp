@@ -23,18 +23,23 @@ void Text::paint(QPainter* painter) {
 void Text::setText(const QString &str) {
   text = str;
 }
+
 void Text::setTextAlignment(Qt::AlignmentFlag alignment) {
   textAlignment = alignment;
 }
+
 void Text::setFontSize(int size) {
   fontSize = size;
 }
+
 void Text::setFontFamily(std::string family) {
   fontFamily = family;
 }
+
 void Text::setFontStyle(QFont::Style style) {
   fontStyle = style;
 }
+
 void Text::setFontWeight(QFont::Weight weight) {
   fontWeight = weight;
 }
@@ -43,18 +48,39 @@ void Text::setFontWeight(QFont::Weight weight) {
 QString Text::getText() const {
   return text;
 }
+
 Qt::AlignmentFlag Text::getTextAlignment() const {
   return textAlignment;
 }
+
 int Text::getFontSize() const {
   return fontSize;
 }
+
 std::string Text::getFontFamily() const {
   return fontFamily;
 }
+
 QFont::Style Text::getFontStyle() const {
   return fontStyle;
 }
+
 QFont::Weight Text::getFontWeight() const {
   return fontWeight;
+}
+
+void Text::setLength(const int &length) {
+  length_ = length;
+}
+
+int Text::getLength() const {
+  return length_;
+}
+
+void Text::setWidth(const int &width) {
+  width_ = width;
+}
+
+int Text::getwidth() const {
+  return width_;
 }

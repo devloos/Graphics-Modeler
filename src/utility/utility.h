@@ -73,7 +73,40 @@ static const std::unordered_map<std::string, GM::ShapeType> strToShapeType(
      {"Rectangle", GM::ShapeType::Rectangle},
      {"Square", GM::ShapeType::Square},
      {"Ellipse", GM::ShapeType::Ellipse},
-     {"Circle", GM::ShapeType::Circle}});
+     {"Circle", GM::ShapeType::Circle},
+     {"Text", GM::ShapeType::Text}});
+
+static const std::unordered_map<std::string, Qt::AlignmentFlag> strToTextAlignment(
+    {{"AlignLeft", Qt::AlignmentFlag::AlignLeft},
+     {"AlignLeading", Qt::AlignmentFlag::AlignLeading},
+     {"AlignRight", Qt::AlignmentFlag::AlignRight},
+     {"AlignTrailing", Qt::AlignmentFlag::AlignTrailing},
+     {"AlignHCenter", Qt::AlignmentFlag::AlignHCenter},
+     {"AlignJustify", Qt::AlignmentFlag::AlignJustify},
+     {"AlignAbsolute", Qt::AlignmentFlag::AlignAbsolute},
+     {"AlignHorizontal_Mask", Qt::AlignmentFlag::AlignHorizontal_Mask},
+     {"AlignTop", Qt::AlignmentFlag::AlignTop},
+     {"AlignBottom", Qt::AlignmentFlag::AlignBottom},
+     {"AlignVCenter", Qt::AlignmentFlag::AlignVCenter},
+     {"AlignBaseline", Qt::AlignmentFlag::AlignBaseline},
+     {"AlignVertical_Mask", Qt::AlignmentFlag::AlignVertical_Mask},
+     {"AlignCenter", Qt::AlignmentFlag::AlignCenter}});
+
+static const std::unordered_map<std::string, QFont::Style> strToFontStyle(
+    {{"StyleNormal", QFont::Style::StyleNormal},
+     {"StyleItalic", QFont::Style::StyleItalic},
+     {"StyleOblique", QFont::Style::StyleOblique}});
+
+static const std::unordered_map<std::string, QFont::Weight> strToFontWeight(
+    {{"Thin", QFont::Weight::Thin},
+     {"ExtraLight", QFont::Weight::ExtraLight},
+     {"Light", QFont::Weight::Light},
+     {"Normal", QFont::Weight::Normal},
+     {"Medium", QFont::Weight::Medium},
+     {"DemiBold", QFont::Weight::DemiBold},
+     {"Bold", QFont::Weight::Bold},
+     {"ExtraBold", QFont::Weight::ExtraBold},
+     {"Black", QFont::Weight::Black}});
 
 namespace Debug {
 void log(const std::string &msg);

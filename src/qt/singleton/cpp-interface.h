@@ -37,6 +37,10 @@ class CppInterface : public QObject {
 
   // public:
   // QString coolString = "SDKJALSDJLSKJ";
+
+  // painter->setPen(QPen(Qt::white, 3, Qt::DashDotLine, Qt::RoundCap));
+  // painter->setBrush(QBrush(Qt::green, Qt::SolidPattern));
+  // painter->drawEllipse(0, 0, 240, 240);
 };
 
 // definition of the singleton type provider function (callback).

@@ -11,7 +11,15 @@ class Circle : public Shape {
   Circle();
   virtual ~Circle() noexcept;
 
+ public:
+  void setRadius(const int &radius);
+  int getRadius() const;
+
+ public:
   float area() const override;
   float perimeter() const override;
   void paint(QPainter* painter) override;
+
+ private:
+  int radius_ = 0;
 };

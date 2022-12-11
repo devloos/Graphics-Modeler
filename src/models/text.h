@@ -12,31 +12,43 @@ class Text : public Shape {
   Text(const QString &str);
   virtual ~Text() noexcept;
 
+ public:
+  void setText(const QString &str);
+  QString getText() const;
+
+  void setTextAlignment(Qt::AlignmentFlag alignment);
+  Qt::AlignmentFlag getTextAlignment() const;
+
+  void setFontSize(int size);
+  int getFontSize() const;
+
+  void setFontFamily(std::string family);
+  std::string getFontFamily() const;
+
+  void setFontStyle(QFont::Style style);
+  QFont::Style getFontStyle() const;
+
+  void setFontWeight(QFont::Weight weight);
+  QFont::Weight getFontWeight() const;
+
+  void setLength(const int &length);
+  int getLength() const;
+
+  void setWidth(const int &width);
+  int getwidth() const;
+
+ public:
   float area() const override;
   float perimeter() const override;
   void paint(QPainter* painter) override;
 
- public:
-  void setText(const QString &str);
-  void setTextAlignment(Qt::AlignmentFlag alignment);
-  void setFontSize(int size);
-  void setFontFamily(std::string family);
-  void setFontStyle(QFont::Style style);
-  void setFontWeight(QFont::Weight weight);
-
- public:
-  QString getText() const;
-  Qt::AlignmentFlag getTextAlignment() const;
-  int getFontSize() const;
-  std::string getFontFamily() const;
-  QFont::Style getFontStyle() const;
-  QFont::Weight getFontWeight() const;
-
  private:
   QString text;
   Qt::AlignmentFlag textAlignment;
-  int fontSize = 12;
   std::string fontFamily;
   QFont::Style fontStyle;
   QFont::Weight fontWeight;
+  int fontSize = 12;
+  int length_ = 0;
+  int width_ = 0;
 };

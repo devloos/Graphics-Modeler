@@ -70,3 +70,14 @@ PenCapStyle: FlatCap
 PenJoinStyle: MiterJoin
 BrushColor: magenta
 BrushStyle: SolidPattern
+
+ShapeId: 8
+ShapeType: Text
+ShapeDimensions: 250, 425, 500, 50
+TextString: Class Project 2 - 2D Graphics Modeler
+TextColor: blue
+TextAlignment: AlignCenter
+TextPointSize: 10
+TextFontFamily: Comic Sans MS
+TextFontStyle: StyleItalic
+TextFontWeight: Normal

@@ -1,5 +1,7 @@
 #include "main.h"
 
+std::vector<std::unique_ptr<Shape>> shapes;
+
 int main(int argc, char* argv[]) {
   QGuiApplication app(argc, argv);
 
@@ -36,8 +38,7 @@ int main(int argc, char* argv[]) {
   QCoreApplication::setApplicationName("Graphics Modeler");
   QCoreApplication::setApplicationVersion(QT_VERSION_STR);
 
-  // std::vector<std::unique_ptr<Shape>> shapes;
-  // Utility::Parser::parseShapes(shapes);
+  Utility::Parser::parseShapes(shapes);
 
   return app.exec();
 }

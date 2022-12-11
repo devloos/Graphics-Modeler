@@ -4,6 +4,14 @@ Square::Square() {}
 
 Square::~Square() noexcept {}
 
+void Square::setLength(const int &length) {
+  length_ = length;
+}
+
+int Square::getLength() const {
+  return length_;
+}
+
 float Square::area() const {
   return 0;
 }
