@@ -12,8 +12,6 @@ float Polygon::perimeter() const {
   return 0;
 }
 
-void Polygon::draw() const {
-  // getPoints and call QPainter.drawLine(Qpoint......)
+void Polygon::paint(QPainter* painter) {
+  std::cout << "Polygon\n";
 }
-
-void Polygon::move() {}

@@ -4,7 +4,6 @@ import QtQuick.Window 6.4
 import QtQuick.Controls.Material 2.3
 
 Rectangle {
-
     width: window._MAIN_WIDTH
     height: window._MAIN_HEIGHT
 
@@ -12,6 +11,7 @@ Rectangle {
     border.color: "#ffffff"
     Material.theme: Material.Dark
     Material.accent: Material.Purple
+
 
     Rectangle {
         id: left_side_bar
@@ -44,6 +44,7 @@ Rectangle {
         }
 
         ComboBox {
+            id: shape_selector
             height: 28
             z: 1
 
@@ -62,6 +63,55 @@ Rectangle {
             wheelEnabled: false
             flat: true
             spacing: 0
+
+            onActivated: (index) => {
+                switch (index) {
+                    case 1: {
+                        loader.sourceComponent = line
+                        break;
+                    }
+
+                    case 2: {
+                        loader.sourceComponent = polyline
+                        break;
+                    }
+
+                    case 3: {
+                        loader.sourceComponent = polygon
+                        break;
+                    }
+
+                    case 4: {
+                        loader.sourceComponent = rectangle
+                        break;
+                    }
+
+                    case 5: {
+                        loader.sourceComponent = square
+                        break;
+                    }
+
+                    case 6: {
+                        loader.sourceComponent = ellipse
+                        break;
+                    }
+
+                    case 7: {
+                        loader.sourceComponent = circle
+                        break;
+                    }
+
+                    case 8: {
+                        loader.sourceComponent = text
+                        break;
+                    }
+
+                    default: {
+                        loader.sourceComponent = undefined
+                        break;
+                    }
+                }
+            }
         }
     }
 

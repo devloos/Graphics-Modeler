@@ -69,8 +69,6 @@ Window {
         }
     }
 
-
-
     Popup {
         Material.theme: Material.Light
         Material.accent: Material.Purple
@@ -109,5 +107,74 @@ Window {
     MainUI {
         id: main_ui
         visible: false
+
+        Component {
+            id: line
+            GMLine {
+                width: window._MAIN_WIDTH
+                height: window._MAIN_HEIGHT
+            }
+        }
+
+        Component {
+            id: polyline
+            GMPolyline {
+                width: window._MAIN_WIDTH
+                height: window._MAIN_HEIGHT
+            }
+        }
+
+        Component {
+            id: polygon
+            GMPolygon {
+                width: window._MAIN_WIDTH
+                height: window._MAIN_HEIGHT
+            }
+        }
+
+        Component {
+            id: rectangle
+            GMRectangle {
+                width: window._MAIN_WIDTH
+                height: window._MAIN_HEIGHT
+            }
+        }
+
+        Component {
+            id: square 
+            GMSquare {
+                width: window._MAIN_WIDTH
+                height: window._MAIN_HEIGHT
+            }
+        }
+
+        Component {
+            id: ellipse
+            GMEllipse {
+                width: window._MAIN_WIDTH
+                height: window._MAIN_HEIGHT
+            }
+        }
+
+        Component {
+            id: circle
+            GMCircle {
+                width: window._MAIN_WIDTH
+                height: window._MAIN_HEIGHT
+            }
+        }
+
+        Component {
+            id: text
+            GMText {
+                width: window._MAIN_WIDTH
+                height: window._MAIN_HEIGHT
+            }
+        }
+
+        Loader {
+            id: loader
+            sourceComponent: undefined
+        }
     }
 }

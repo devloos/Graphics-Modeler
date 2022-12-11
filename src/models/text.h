@@ -1,5 +1,9 @@
 #pragma once
 
+#include <QBrush>
+#include <QPainter>
+#include <QPen>
+
 #include "shape.h"
 
 class Text : public Shape {
@@ -10,8 +14,7 @@ class Text : public Shape {
 
   float area() const override;
   float perimeter() const override;
-  void draw() const override;
-  void move() override;
+  void paint(QPainter* painter) override;
 
  public:
   void setText(const QString &str);

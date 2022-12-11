@@ -12,8 +12,6 @@ float Ellipse::perimeter() const {
   return 0;
 }
 
-void Ellipse::draw() const {
-  // getPoints and call QPainter.drawLine(Qpoint......)
+void Ellipse::paint(QPainter* painter) {
+  std::cout << "Ellipse\n";
 }
-
-void Ellipse::move() {}

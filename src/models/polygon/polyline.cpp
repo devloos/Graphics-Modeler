@@ -12,8 +12,6 @@ float Polyline::perimeter() const {
   return 0;
 }
 
-void Polyline::draw() const {
-  // getPoints and call QPainter.drawLine(Qpoint......)
+void Polyline::paint(QPainter* painter) {
+  std::cout << "Polyline\n";
 }
-
-void Polyline::move() {}

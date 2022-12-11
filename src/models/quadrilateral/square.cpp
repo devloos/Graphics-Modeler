@@ -12,8 +12,6 @@ float Square::perimeter() const {
   return 0;
 }
 
-void Square::draw() const {
-  // getPoints and call QPainter.drawLine(Qpoint......)
+void Square::paint(QPainter* painter) {
+  std::cout << "Square\n";
 }
-
-void Square::move() {}

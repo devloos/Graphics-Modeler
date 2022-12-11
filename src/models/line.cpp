@@ -12,8 +12,6 @@ float Line::perimeter() const {
   return 0;
 }
 
-void Line::draw() const {
-  // getPoints and call QPainter.drawLine(Qpoint......)
+void Line::paint(QPainter* painter) {
+  std::cout << "Line\n";
 }
-
-void Line::move() {}

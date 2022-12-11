@@ -12,8 +12,6 @@ float Rectangle::perimeter() const {
   return 0;
 }
 
-void Rectangle::draw() const {
-  // getPoints and call QPainter.drawLine(Qpoint......)
+void Rectangle::paint(QPainter* painter) {
+  std::cout << "Rectangle\n";
 }
-
-void Rectangle::move() {}

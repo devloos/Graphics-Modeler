@@ -1,5 +1,9 @@
 #pragma once
 
+#include <QBrush>
+#include <QPainter>
+#include <QPen>
+
 #include "models/shape.h"
 
 class Ellipse : public Shape {
@@ -9,6 +13,5 @@ class Ellipse : public Shape {
 
   float area() const override;
   float perimeter() const override;
-  void draw() const override;
-  void move() override;
+  void paint(QPainter* painter) override;
 };

@@ -1,6 +1,7 @@
 #include "shape.h"
 
-Shape::Shape() {}
+Shape::Shape(QQuickItem* parent) : QQuickPaintedItem(parent) {}
+
 Shape::~Shape() noexcept {}
 
 Shape::Shape(int id, const QString &name, const QPen &pen_) {

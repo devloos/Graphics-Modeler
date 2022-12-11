@@ -13,11 +13,9 @@ float Text::perimeter() const {
   return 0;
 }
 
-void Text::draw() const {
-  // getPoints and call QPainter.drawLine(Qpoint......)
+void Text::paint(QPainter* painter) {
+  std::cout << "Text\n";
 }
-
-void Text::move() {}
 
 // More text-specific --------------------------------------
 

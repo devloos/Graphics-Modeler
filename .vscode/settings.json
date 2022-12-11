@@ -74,6 +74,7 @@
     "filesystem": "cpp",
     "fstream": "cpp",
     "stack": "cpp",
-    "iomanip": "cpp"
+    "iomanip": "cpp",
+    "qpen": "cpp"
   }
 }

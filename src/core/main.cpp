@@ -14,7 +14,15 @@ int main(int argc, char* argv[]) {
       Qt::QueuedConnection);
 
   // Register C++ interface singleton and shapes to be accessible within qml
-  qmlRegisterType<PaintedItem>("My.Shapes", 1, 0, "Ellipse");
+  qmlRegisterType<Line>("My.Shapes", 1, 0, "GMLine");
+  qmlRegisterType<Polyline>("My.Shapes", 1, 0, "GMPolyline");
+  qmlRegisterType<Polygon>("My.Shapes", 1, 0, "GMPolygon");
+  qmlRegisterType<Rectangle>("My.Shapes", 1, 0, "GMRectangle");
+  qmlRegisterType<Square>("My.Shapes", 1, 0, "GMSquare");
+  qmlRegisterType<Ellipse>("My.Shapes", 1, 0, "GMEllipse");
+  qmlRegisterType<Circle>("My.Shapes", 1, 0, "GMCircle");
+  qmlRegisterType<Text>("My.Shapes", 1, 0, "GMText");
+
   qmlRegisterSingletonType<CppInterface>(
       "My.Singletons", 1, 0, "CppInterface", singletonProvider);
 
