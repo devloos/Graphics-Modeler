@@ -10,6 +10,7 @@ Shape::Shape(int id, const QString &name, const QPen &pen_) {
   this->pen_ = pen_;
 }
 
+// Setters
 void Shape::setPenStyle(Qt::PenStyle style) {
   this->pen_.setStyle(style);
 }
@@ -38,6 +39,7 @@ void Shape::setShapeId(int id) {
   this->id_ = id;
 }
 
+// Getters
 QPoint &Shape::getPointAt(int x) {
   return this->points_[x];
 }
