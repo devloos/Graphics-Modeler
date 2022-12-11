@@ -1,6 +1,6 @@
 ShapeId: 1
 ShapeType: Line
-ShapeDimensions: 20, 90, 100, 20
+ShapeDimensions: 250, 500, 100, 20
 PenColor: blue
 PenWidth: 2
 PenStyle: DashDotLine
