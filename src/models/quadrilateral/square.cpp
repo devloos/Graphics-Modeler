@@ -21,5 +21,10 @@ float Square::perimeter() const {
 }
 
 void Square::paint(QPainter* painter) {
-  std::cout << "Square\n";
+  Square* square = (Square*)(shapes.at(4).get());
+
+  painter->setPen(square->pen_);
+  painter->setBrush(square->pen_.brush());
+  painter->drawRect(
+      square->points_[0].x(), square->points_[0].y(), square->length_, square->length_);
 }
