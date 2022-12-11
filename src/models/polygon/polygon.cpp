@@ -13,5 +13,15 @@ float Polygon::perimeter() const {
 }
 
 void Polygon::paint(QPainter* painter) {
-  std::cout << "Polygon\n";
+  Polygon* polygon = (Polygon*)(shapes.at(2).get());
+
+  painter->setPen(polygon->pen_);
+  painter->setBrush(polygon->pen_.brush());
+
+  QList<QPoint> list;
+  for (const auto &point : polygon->points_) {
+    list.push_back(point);
+  }
+
+  painter->drawPolygon(QPolygon(list));
 }
