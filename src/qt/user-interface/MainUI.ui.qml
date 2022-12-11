@@ -50,6 +50,8 @@ Rectangle {
             popup.Material.foreground: "Black"
             Material.accent: "Black"
             Material.foreground: "Black"
+            font.bold: true
+            popup.font.bold: true
 
             background: Rectangle {
                 color:"grey"
@@ -267,6 +269,7 @@ Rectangle {
             anchors.rightMargin: 3
             anchors.leftMargin: 3
             font.family: "Helvetica"
+            font.bold: true
         }
 
         // TODO: link all this properly
@@ -281,6 +284,7 @@ Rectangle {
             font.pixelSize: 15
             anchors.leftMargin: 6
             font.family: "Arial"
+            font.bold: true
         }
 
         Text {
@@ -291,6 +295,7 @@ Rectangle {
             font.pixelSize: 15
             anchors.leftMargin: 0
             font.family: "Arial"
+            font.bold: true
         }
 
         Text {
@@ -304,6 +309,7 @@ Rectangle {
             font.pixelSize: 15
             anchors.leftMargin: 6
             font.family: "Arial"
+            font.bold: true
         }
 
         Text {
@@ -314,6 +320,7 @@ Rectangle {
             font.pixelSize: 15
             anchors.leftMargin: 0
             font.family: "Arial"
+            font.bold: true
         }
 
         Text {
@@ -327,6 +334,7 @@ Rectangle {
             font.pixelSize: 15
             anchors.leftMargin: 6
             font.family: "Arial"
+            font.bold: true
         }
 
         TextEdit {
@@ -339,6 +347,7 @@ Rectangle {
             font.pixelSize: 15
             anchors.leftMargin: 0
             font.family: "Arial"
+            font.bold: true
         }
 
         Rectangle {
