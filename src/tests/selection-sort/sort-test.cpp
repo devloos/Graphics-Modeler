@@ -19,7 +19,7 @@ namespace Test {
 //   std::cout << "\n"
 //             << "Unsorted Vector : ";
 //   print(test);
-//   selection_sort<Circle>(test, compare_shape_perimeter<Circle>);
+//   GM::selection_sort<Circle>(test, compare_shape_perimeter<Circle>);
 //   std::cout << "Sorted Vector   : ";
 //   print(test);
 // }
@@ -42,7 +42,7 @@ namespace Test {
 //   std::cout << "\n"
 //             << "Unsorted Vector : ";
 //   print(test);
-//   selection_sort<Circle>(test);
+//   GM::selection_sort<Circle>(test);
 //   std::cout << "Sorted Vector   : ";
 //   print(test);
 // }
