@@ -13,7 +13,6 @@ float Polyline::perimeter() const {
 }
 
 void Polyline::paint(QPainter* painter) {
-  std::cout << "Polyline\n";
   Polyline* polyline = (Polyline*)(shapes.at(1).get());
 
   painter->setPen(polyline->pen_);
