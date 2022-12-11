@@ -48,7 +48,7 @@ class Shape : public QQuickPaintedItem {
   virtual float area() const = 0;
   virtual float perimeter() const = 0;
 
- private:
+ protected:
   int id_ = 0;
   QString name_;
   QPen pen_;

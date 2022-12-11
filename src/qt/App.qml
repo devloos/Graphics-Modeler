@@ -110,65 +110,82 @@ Window {
 
         Component {
             id: line
+
             GMLine {
-                width: window._MAIN_WIDTH
-                height: window._MAIN_HEIGHT
+                x: 40
+                y: 110
+                width: 1000
+                height: 500
             }
         }
 
         Component {
             id: polyline
             GMPolyline {
-                width: window._MAIN_WIDTH
-                height: window._MAIN_HEIGHT
+                x: 40
+                y: 110
+                width: 1000
+                height: 500
             }
         }
 
         Component {
             id: polygon
             GMPolygon {
-                width: window._MAIN_WIDTH
-                height: window._MAIN_HEIGHT
+                x: 40
+                y: 110
+                width: 1000
+                height: 500
             }
         }
 
         Component {
             id: rectangle
             GMRectangle {
-                width: window._MAIN_WIDTH
-                height: window._MAIN_HEIGHT
+                x: 40
+                y: 110
+                width: 1000
+                height: 500
             }
         }
 
         Component {
             id: square 
             GMSquare {
-                width: window._MAIN_WIDTH
-                height: window._MAIN_HEIGHT
+                x: 40
+                y: 110
+                width: 1000
+                height: 500
             }
         }
 
         Component {
             id: ellipse
             GMEllipse {
-                width: window._MAIN_WIDTH
-                height: window._MAIN_HEIGHT
+                x: 40
+                y: 110
+                width: 1000
+                height: 500
             }
         }
 
         Component {
             id: circle
             GMCircle {
-                width: window._MAIN_WIDTH
-                height: window._MAIN_HEIGHT
+                x: 40
+                y: 110
+                width: 1000
+                height: 500
             }
         }
 
         Component {
             id: text
             GMText {
-                width: window._MAIN_WIDTH
-                height: window._MAIN_HEIGHT
+                x: 40
+                y: 110
+                width: 1000
+                height: 500
             }
         }
 
