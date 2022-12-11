@@ -3,8 +3,13 @@
 #include <QBrush>
 #include <QPainter>
 #include <QPen>
+#include <memory>
+#include <string>
+#include <vector>
 
 #include "shape.h"
+
+extern std::vector<std::unique_ptr<Shape>> shapes;
 
 class Text : public Shape {
  public:
@@ -35,7 +40,10 @@ class Text : public Shape {
   int getLength() const;
 
   void setWidth(const int &width);
-  int getwidth() const;
+  int getWidth() const;
+
+  void setColor(const std::string &color);
+  std::string getColor() const;
 
  public:
   float area() const override;
@@ -43,11 +51,12 @@ class Text : public Shape {
   void paint(QPainter* painter) override;
 
  private:
-  QString text;
+  QString text_;
   Qt::AlignmentFlag textAlignment;
   std::string fontFamily;
   QFont::Style fontStyle;
   QFont::Weight fontWeight;
+  std::string color_;
   int fontSize = 12;
   int length_ = 0;
   int width_ = 0;
