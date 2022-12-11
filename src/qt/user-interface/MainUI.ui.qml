@@ -19,7 +19,7 @@ Rectangle {
         width: 135
         z: 2
 
-        color: "#1e1e1e"
+        color: "#4D4949"
         border.width: 0
 
         anchors.left: parent.left
@@ -32,7 +32,7 @@ Rectangle {
         gradient: Gradient {
             GradientStop {
                 position: 0
-                color: "#754878"
+                color: "#646060"
             }
 
             GradientStop {
@@ -47,6 +47,17 @@ Rectangle {
             id: shape_selector
             height: 28
             z: 1
+            popup.Material.foreground: "Black"
+            Material.accent: "Black"
+            Material.foreground: "Black"
+            font.bold: true
+            popup.font.bold: true
+
+            background: Rectangle {
+                color:"grey"
+                border.width: parent && parent.activeFocus ? 2 : 1
+                border.color: parent && parent.activeFocus ? shape_selector.palette.highlight : shape_selector.palette.button
+    }
 
             model: ["Select", "Line", "Polyline", "Polygon", "Rectangle", "Square", "Ellipse", "Circle", "Text"]
 
@@ -223,7 +234,7 @@ Rectangle {
         width: 275
         height: 200
 
-        color: "#754878"
+        color: "#646060"
 
         anchors.right: parent.right
         anchors.top: menu_bar.bottom
@@ -235,7 +246,7 @@ Rectangle {
         gradient: Gradient {
             GradientStop {
                 position: 0
-                color: "#754878"
+                color: "#646060"
             }
 
             GradientStop {
@@ -257,7 +268,8 @@ Rectangle {
             verticalAlignment: Text.AlignTop
             anchors.rightMargin: 3
             anchors.leftMargin: 3
-            font.family: "Arial"
+            font.family: "Helvetica"
+            font.bold: true
         }
 
         // TODO: link all this properly
@@ -272,6 +284,7 @@ Rectangle {
             font.pixelSize: 15
             anchors.leftMargin: 6
             font.family: "Arial"
+            font.bold: true
         }
 
         Text {
@@ -282,6 +295,7 @@ Rectangle {
             font.pixelSize: 15
             anchors.leftMargin: 0
             font.family: "Arial"
+            font.bold: true
         }
 
         Text {
@@ -295,6 +309,7 @@ Rectangle {
             font.pixelSize: 15
             anchors.leftMargin: 6
             font.family: "Arial"
+            font.bold: true
         }
 
         Text {
@@ -305,6 +320,7 @@ Rectangle {
             font.pixelSize: 15
             anchors.leftMargin: 0
             font.family: "Arial"
+            font.bold: true
         }
 
         Text {
@@ -318,6 +334,7 @@ Rectangle {
             font.pixelSize: 15
             anchors.leftMargin: 6
             font.family: "Arial"
+            font.bold: true
         }
 
         TextEdit {
@@ -330,11 +347,12 @@ Rectangle {
             font.pixelSize: 15
             anchors.leftMargin: 0
             font.family: "Arial"
+            font.bold: true
         }
 
         Rectangle {
-            y: 38
-            height: 8
+            y: 44
+            height: 0.5
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.rightMargin: 7
