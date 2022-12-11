@@ -30,4 +30,9 @@ float Rectangle::perimeter() const {
 
 void Rectangle::paint(QPainter* painter) {
   std::cout << "Rectangle\n";
+  Rectangle* rec = (Rectangle*)(shapes.at(3).get());
+
+  painter->setPen(rec->pen_);
+  painter->setBrush(rec->pen_.brush());
+  painter->drawRect(rec->points_[0].x(), rec->points_[0].y(), rec->length_, rec->width_);
 }
