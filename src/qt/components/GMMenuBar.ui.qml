@@ -21,6 +21,7 @@ MenuBar {
 
         MenuItem {
             text: qsTr("&Open...")
+            onTriggered: fileDialog.open()
         }
 
         MenuItem {

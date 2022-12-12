@@ -44,7 +44,18 @@ int main(int argc, char* argv[]) {
   QCoreApplication::setApplicationName("Graphics Modeler");
   QCoreApplication::setApplicationVersion(QT_VERSION_STR);
 
-  Utility::Parser::parseShapes(shapes);
+  QFile file(":shapes.db");
+
+  if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    Utility::Debug::log("File was not able to be opened.");
+    return -1;
+  }
+
+  QTextStream fin(&file);
+
+  Utility::Parser::parseShapes(shapes, fin);
+
+  file.close();
 
   return app.exec();
 }

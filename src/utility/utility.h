@@ -132,7 +132,7 @@ std::size_t parseHashKey(const std::string &raw);
  *
  * @param shapes
  */
-void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes);
+void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes, QTextStream &fin);
 
 /**
  * @brief We are setting the specific porperties for each shape.
