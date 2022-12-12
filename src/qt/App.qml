@@ -14,6 +14,8 @@ Window {
 
     readonly property int _WINDOW_TOP_LEVEL_Z: 100
 
+    property var dynamicTypes: []
+
     id: window
     title: "Graphics Modeler"
 
@@ -108,90 +110,79 @@ Window {
         id: main_ui
         visible: false
 
-        Component {
-            id: line
-
-            GMLine {
-                x: 40
-                y: 110
-                width: 1000
-                height: 500
-            }
+        ShapeSelector {
+            id: left_side_bar
         }
 
-        Component {
-            id: polyline
-            GMPolyline {
-                x: 40
-                y: 110
-                width: 1000
-                height: 500
-            }
+        GMMenuBar {
+            id: menu_bar
         }
 
-        Component {
-            id: polygon
-            GMPolygon {
-                x: 40
-                y: 110
-                width: 1000
-                height: 500
-            }
-        }
+        ScrollView {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: menu_bar.bottom
+            anchors.bottom: parent.bottom
+            anchors.rightMargin: 0
+            anchors.leftMargin: 0
+            anchors.bottomMargin: 0
+            anchors.topMargin: 0
 
-        Component {
-            id: rectangle
-            GMRectangle {
-                x: 40
-                y: 110
-                width: 1000
-                height: 500
-            }
-        }
-
-        Component {
-            id: square 
-            GMSquare {
-                x: 40
-                y: 110
-                width: 1000
-                height: 500
-            }
-        }
-
-        Component {
-            id: ellipse
-            GMEllipse {
-                x: 40
-                y: 110
-                width: 1000
-                height: 500
-            }
-        }
-
-        Component {
-            id: circle
-            GMCircle {
-                x: 40
-                y: 110
-                width: 1000
-                height: 500
-            }
-        }
-
-        Component {
-            id: text
-            GMText {
-                x: 40
-                y: 110
-                width: 1000
-                height: 500
-            }
+            Component { id: line; GMLine { x: 40; y: 110; width: 1000; height: 500; } }
+            Component { id: polyline; GMPolyline { x: 40; y: 110; width: 1000; height: 500; } }
+            Component { id: polygon; GMPolygon { x: 40; y: 110; width: 1000; height: 500; } }
+            Component { id: rectangle; GMRectangle { x: 40; y: 110; width: 1000; height: 500; } }
+            Component { id: square; GMSquare { x: 40; y: 110; width: 1000; height: 500; } }
+            Component { id: ellipse; GMEllipse { x: 40; y: 110; width: 1000; height: 500; } }
+            Component { id: circle; GMCircle { x: 40; y: 110; width: 1000; height: 500; } }
+            Component { id: text; GMText { x: 40; y: 110; width: 1000; height: 500; } }
         }
 
         Loader {
             id: loader
             sourceComponent: undefined
+        }
+
+        ShapePropertiesPane {
+            id: shape_properties_pane
+        }
+
+        function clearProperties() {
+            dynamicTypes.forEach((type) => {
+                type.destroy(0);
+            });
+
+            dynamicTypes = [];
+        }
+
+        function renderProperties(index) {
+            main_ui.clearProperties();
+
+            const properties = CppInterface.getProperties(index);
+
+            let y = 50;
+            properties.forEach((property) => {
+                const type = Qt.createQmlObject(`
+                    import QtQuick 6.4
+
+                    Text {
+                        x: 10
+                        y: ${y}
+                        width: 265
+                        height: 25
+                        color: '#ffffff'
+                        text: '${property}'
+                        font.pixelSize: 15
+                        font.family: 'Arial'
+                        font.bold: true
+                    }
+                    `,
+                    shape_properties_pane,
+                );
+
+                dynamicTypes.push(type);
+                y += 25;
+            });
         }
     }
 }
