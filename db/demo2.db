@@ -1,24 +1,24 @@
 ShapeId: 1
 ShapeType: Line
-ShapeDimensions: 500, 50, 500, 500
-PenColor: blue
-PenWidth: 9
+ShapeDimensions: 500, 50, 900, 500
+PenColor: magenta
+PenWidth: 20
 PenStyle: SolidLine
-PenCapStyle: FlatCap
+PenCapStyle: SquareCap
 PenJoinStyle: MiterJoin
 
 ShapeId: 2
 ShapeType: Polyline
-ShapeDimensions: 200, 200, 400, 450, 400, 5
+ShapeDimensions: 200, 600, 400, 450, 400, 5
 PenColor: cyan
-PenWidth: 6
+PenWidth: 20
 PenStyle: SolidLine
 PenCapStyle: FlatCap
-PenJoinStyle: MiterJoin
+PenJoinStyle: BevelJoin
 
 ShapeId: 3
 ShapeType: Polygon
-ShapeDimensions: 300, 200, 510, 20, 570, 40, 580, 80
+ShapeDimensions: 300, 700, 510, 20, 470, 40, 580, 80
 PenColor: cyan
 PenWidth: 6
 PenStyle: DashDotDotLine
@@ -31,23 +31,23 @@ ShapeId: 4
 ShapeType: Rectangle
 ShapeDimensions: 150, 150, 500, 500 
 PenColor: blue
-PenWidth: 0
+PenWidth: 10
 PenStyle: DashLine
 PenCapStyle: RoundCap
 PenJoinStyle: RoundJoin
-BrushColor: blue
-BrushStyle: Dense1Pattern
+BrushColor: magenta
+BrushStyle: SolidPattern
 
 ShapeId: 5
 ShapeType: Square
 ShapeDimensions: 250, 150, 200
-PenColor: red
-PenWidth: 0
+PenColor: cyan
+PenWidth: 20
 PenStyle: SolidLine
 PenCapStyle: RoundCap
 PenJoinStyle: RoundJoin
-BrushColor: blue
-BrushStyle: SolidPattern
+BrushColor: yellow
+BrushStyle: Dense1Pattern
 
 ShapeId: 6
 ShapeType: Ellipse
@@ -55,29 +55,29 @@ ShapeDimensions: 420, 200, 170, 100
 PenColor: black
 PenWidth: 12
 PenStyle: SolidLine
-PenCapStyle: FlatCap
+PenCapStyle: SquareCap
 PenJoinStyle: MiterJoin
 BrushColor: purple
-BrushStyle: SolidPattern
+BrushStyle: Dense1Pattern
 
 ShapeId: 7
 ShapeType: Circle
-ShapeDimensions: 400, 250, 160
+ShapeDimensions: 400, 250, 300
 PenColor: black
-PenWidth: 12
-PenStyle: DashLine
+PenWidth: 20
+PenStyle: DotLine
 PenCapStyle: FlatCap
 PenJoinStyle: MiterJoin
-BrushColor: darkRed
+BrushColor: gray
 BrushStyle: Dense1Pattern
 
 ShapeId: 8
 ShapeType: Text
 ShapeDimensions: 180, 200, 500, 90
-TextString: Hello DRB from Connor, Carlos, Camaron, Liam, and Joseph! Demo
-TextColor: darkGreen
+TextString: Fall 2022 Agile Project - Scrummy Boys
+TextColor: darkRed
 TextAlignment: AlignCenter
-TextPointSize: 25
+TextPointSize: 30
 TextFontFamily: Helvetica
 TextFontStyle: StyleOblique
 TextFontWeight: Bold

@@ -4,6 +4,7 @@
         <file alias="users.db">db/users.db</file>
         <file alias="shapes.db">db/shapes.db</file>
         <file alias="demo.db">db/demo.db</file>
+        <file alias="demo2.db">db/demo2.db</file>
         <file alias="App.qml">src/qt/App.qml</file>
         <file alias="LoginUI.ui.qml">src/qt/user-interface/LoginUI.ui.qml</file>
         <file alias="MainUI.ui.qml">src/qt/user-interface/MainUI.ui.qml</file>

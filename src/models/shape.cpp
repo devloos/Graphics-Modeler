@@ -9,6 +9,9 @@ Shape::Shape(int id, const QString &name, const QPen &pen_) {
   this->name_ = name;
   this->pen_ = pen_;
 }
+bool Shape::operator<(const Shape &rhs) const {
+  return this->getShapeId() < rhs.getShapeId();
+}
 
 // Setters
 void Shape::setPenStyle(Qt::PenStyle style) {
