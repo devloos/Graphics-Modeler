@@ -224,7 +224,7 @@ void deduceFields(
 }
 
 void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes) {
-  QFile file(":shapes.db");
+  QFile file(":demo.db");
 
   if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
     Debug::log("File was not able to be opened.");

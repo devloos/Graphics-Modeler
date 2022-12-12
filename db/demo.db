@@ -1,16 +1,16 @@
 ShapeId: 1
 ShapeType: Line
-ShapeDimensions: 250, 500, 100, 20
+ShapeDimensions: 500, 50, 500, 500
 PenColor: blue
-PenWidth: 2
-PenStyle: DashDotLine
+PenWidth: 9
+PenStyle: SolidLine
 PenCapStyle: FlatCap
 PenJoinStyle: MiterJoin
 
 ShapeId: 2
 ShapeType: Polyline
-ShapeDimensions: 460, 90, 470, 20, 530, 40, 540, 80
-PenColor: green
+ShapeDimensions: 200, 200, 400, 450, 400, 5
+PenColor: cyan
 PenWidth: 6
 PenStyle: SolidLine
 PenCapStyle: FlatCap
@@ -18,18 +18,18 @@ PenJoinStyle: MiterJoin
 
 ShapeId: 3
 ShapeType: Polygon
-ShapeDimensions: 500, 90, 510, 20, 570, 40, 580, 80
+ShapeDimensions: 300, 200, 510, 20, 570, 40, 580, 80
 PenColor: cyan
 PenWidth: 6
 PenStyle: DashDotDotLine
 PenCapStyle: FlatCap
 PenJoinStyle: MiterJoin
-BrushColor: yellow
+BrushColor: gray
 BrushStyle: SolidPattern
 
 ShapeId: 4
 ShapeType: Rectangle
-ShapeDimensions: 400, 200, 170, 100
+ShapeDimensions: 150, 150, 500, 500 
 PenColor: blue
 PenWidth: 0
 PenStyle: DashLine
@@ -51,33 +51,33 @@ BrushStyle: SolidPattern
 
 ShapeId: 6
 ShapeType: Ellipse
-ShapeDimensions: 520, 200, 170, 100
+ShapeDimensions: 420, 200, 170, 100
 PenColor: black
 PenWidth: 12
 PenStyle: SolidLine
 PenCapStyle: FlatCap
 PenJoinStyle: MiterJoin
-BrushColor: white
+BrushColor: purple
 BrushStyle: SolidPattern
 
 ShapeId: 7
 ShapeType: Circle
-ShapeDimensions: 500, 250, 200
+ShapeDimensions: 400, 250, 160
 PenColor: black
 PenWidth: 12
-PenStyle: SolidLine
+PenStyle: DashLine
 PenCapStyle: FlatCap
 PenJoinStyle: MiterJoin
-BrushColor: magenta
-BrushStyle: SolidPattern
+BrushColor: darkRed
+BrushStyle: Dense1Pattern
 
 ShapeId: 8
 ShapeType: Text
-ShapeDimensions: 250, 425, 500, 50
-TextString: Class Project 2 - 2D Graphics Modeler
-TextColor: blue
+ShapeDimensions: 180, 200, 500, 90
+TextString: Hello DRB from Connor, Carlos, Camaron, Liam, and Joseph! Demo #1
+TextColor: darkGreen
 TextAlignment: AlignCenter
-TextPointSize: 10
+TextPointSize: 25
 TextFontFamily: Comic Sans MS
 TextFontStyle: StyleItalic
 TextFontWeight: Normal
