@@ -3,10 +3,12 @@
 #include <QAction>
 #include <QApplication>
 #include <QBrush>
+#include <QFile>
 #include <QMessageBox>
 #include <QPen>
 #include <QQmlEngine>
 #include <QString>
+#include <QTextStream>
 #include <QVariantList>
 #include <QtQmlIntegration>
 #include <QtWidgets>
@@ -37,6 +39,22 @@ class CppInterface : public QObject {
 
     return false;
   };
+
+  Q_INVOKABLE void openFile(const QString &str) {
+    QFile file(":demo.db");
+
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+      Utility::Debug::log("File was not able to be opened.");
+      return;
+    }
+
+    QTextStream fin(&file);
+
+    shapes.clear();
+    Utility::Parser::parseShapes(shapes, fin);
+
+    file.close();
+  }
 
   Q_INVOKABLE QVariantList getProperties(const int &SHAPE) {
     QVariantList list;

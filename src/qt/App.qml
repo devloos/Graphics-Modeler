@@ -2,6 +2,7 @@ import QtQuick 6.4
 import QtQuick.Window 6.4
 import QtQuick.Controls 6.4
 import QtQuick.Controls.Material 2.3
+import QtQuick.Dialogs 6.4
 import My.Singletons
 import My.Shapes
 
@@ -109,6 +110,21 @@ Window {
     MainUI {
         id: main_ui
         visible: false
+
+        FileDialog {
+            id: fileDialog
+            title: "Please choose a file"
+            nameFilters: [ "DB files (*.db)" ]
+            onAccepted: {
+                console.log("You chose: " + fileDialog.currentFile);
+                fileDialog.close()
+            }
+
+            onRejected: {
+                console.log("Canceled");
+                fileDialog.close();
+            }
+        }
 
         ShapeSelector {
             id: left_side_bar

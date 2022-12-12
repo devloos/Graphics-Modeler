@@ -223,16 +223,7 @@ void deduceFields(
   }
 }
 
-void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes) {
-  QFile file(":shapes.db");
-
-  if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-    Debug::log("File was not able to be opened.");
-    return;
-  }
-
-  QTextStream fin(&file);
-
+void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes, QTextStream &fin) {
   std::string id;
   std::string type;
   int index = 0;
@@ -245,8 +236,9 @@ void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes) {
     QT::getline(fin, type);
     type = parse(type);
 
-    // TODO: read text specifics
     deduceSpecifics(shapes, fin, id, type, index);
+
+    // Reason is text is parsed in deduceSpecifics
     if (strToShapeType.at(type) != GM::ShapeType::Text) {
       deduceFields(shapes, fin, type, index);
     }
@@ -255,8 +247,6 @@ void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes) {
 
     ++index;
   }
-
-  file.close();
 }
 }  // namespace Parser
 
