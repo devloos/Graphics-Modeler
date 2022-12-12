@@ -63,6 +63,8 @@ class CppInterface : public QObject {
           "TextFontStyle: " + QVariant::fromValue(text->getFontStyle()).toString()));
       list.push_back(QVariant(
           "TextFontWeight: " + QVariant::fromValue(text->getFontWeight()).toString()));
+      list.push_back(QVariant(("Width: " + std::to_string(text->getWidth())).c_str()));
+      list.push_back(QVariant(("Length: " + std::to_string(text->getLength())).c_str()));
 
       return list;
     }
@@ -85,29 +87,41 @@ class CppInterface : public QObject {
           QVariant("BrushStyle: " + QVariant::fromValue(brush.style()).toString()));
     }
 
-    // switch (SHAPE) {
-    //   case GM::LINE:
-    //   case GM::POLYLINE: {
-    //     list.push_back(QVariant("PenColor: " + ))
-    //     break;
-    //   }
+    switch (SHAPE) {
+      case GM::RECTANGLE: {
+        Rectangle* rec = (Rectangle*)(shapes.at(SHAPE).get());
+        list.push_back(QVariant(("Width: " + std::to_string(rec->getWidth())).c_str()));
+        list.push_back(QVariant(("Length: " + std::to_string(rec->getLength())).c_str()));
+        break;
+      }
 
-    //   case GM::POLYGON:
-    //   case GM::RECTANGLE:
-    //   case GM::SQUARE:
-    //   case GM::ELLIPSE:
-    //   case GM::CIRCLE: {
-    //     break;
-    //   }
+      case GM::SQUARE: {
+        Square* square = (Square*)(shapes.at(SHAPE).get());
+        list.push_back(
+            QVariant(("Length: " + std::to_string(square->getLength())).c_str()));
+        break;
+      }
 
-    //   case GM::TEXT: {
-    //     break;
-    //   }
+      case GM::ELLIPSE: {
+        Ellipse* ellipse = (Ellipse*)(shapes.at(SHAPE).get());
+        list.push_back(QVariant(
+            ("SemiMajorAxis: " + std::to_string(ellipse->getMajorAxis())).c_str()));
+        list.push_back(QVariant(
+            ("SemiMinorAxis: " + std::to_string(ellipse->getMinorAxis())).c_str()));
+        break;
+      }
 
-    //   default: {
-    //     break;
-    //   }
-    // }
+      case GM::CIRCLE: {
+        Circle* circle = (Circle*)(shapes.at(SHAPE).get());
+        list.push_back(
+            QVariant(("Radius: " + std::to_string(circle->getRadius())).c_str()));
+        break;
+      }
+
+      default: {
+        break;
+      }
+    }
 
     return list;
   }
