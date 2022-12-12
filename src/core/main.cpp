@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * @brief The reason that we have a global vector that is MUTABLE,
+ * is because it holds the state of the current shapes in the application,
+ * this is vital to stay alive during eecution becuase qml has to attach
+ * and use said properties.
+ */
 std::vector<std::unique_ptr<Shape>> shapes;
 
 int main(int argc, char* argv[]) {

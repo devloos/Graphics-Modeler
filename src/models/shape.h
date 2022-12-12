@@ -9,6 +9,7 @@
 #include <QQuickPaintedItem>
 #include <QString>
 #include <QtWidgets>
+#include <cmath>
 #include <string>
 
 #include "gm/vector.h"
@@ -18,30 +19,13 @@ class Shape : public QQuickPaintedItem {
   Q_OBJECT
 
  public:
-  /**
-   * @brief Construct a new Shape object
-   *
-   * @param parent
-   */
   explicit Shape(QQuickItem* parent = 0);
-
-  /**
-   * @brief Construct a new Shape object
-   *
-   * @param id
-   * @param name
-   * @param pen
-   */
   Shape(int id, const QString &name, const QPen &pen);
-
-  /**
-   * @brief Destroy the Shape object
-   *
-   */
   virtual ~Shape() noexcept;
 
  public:
   // Setters
+
   void setPenStyle(Qt::PenStyle style);
   void setPenCap(Qt::PenCapStyle cap);
   void setPenColor(QColor color);
@@ -53,6 +37,7 @@ class Shape : public QQuickPaintedItem {
 
  public:
   // Getters
+
   QPoint &getPointAt(int x);
   GM::Vector<QPoint> &getPoints();
   int getShapeId() const;
@@ -77,6 +62,12 @@ class Shape : public QQuickPaintedItem {
  public:
   /**
    * @brief PURE VIRTUAL
+   * Gets called on instatiation of the
+   * object from qml. Uses QPainter to render the
+   * properties of the shape.
+   * IMPORTANT: Not using the propertes of the instantiated
+   * object. Using the properties of the current shape
+   * selected in the global (extern) vector.
    *
    * @param painter
    */

@@ -20,9 +20,4 @@ enum struct ShapeType {
   Circle,
   Text
 };
-
-namespace Window {
-static const int WIDTH = 640;
-static const int HEIGHT = 480;
-}  // namespace Window
 }  // namespace GM

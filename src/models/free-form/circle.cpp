@@ -13,11 +13,11 @@ int Circle::getRadius() const {
 }
 
 float Circle::area() const {
-  return 0;
+  return M_PI * pow(radius_, 2);
 }
 
 float Circle::perimeter() const {
-  return 0;
+  return 2 * M_PI * radius_;
 }
 
 void Circle::paint(QPainter* painter) {

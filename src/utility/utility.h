@@ -23,6 +23,7 @@
 #include "shapes.h"
 
 namespace Utility {
+// MAPPING - START
 static const std::unordered_map<std::string, Qt::PenStyle> strToPenStyle(
     {{"NoPen", Qt::PenStyle::NoPen},
      {"SolidLine", Qt::PenStyle::SolidLine},
@@ -107,6 +108,7 @@ static const std::unordered_map<std::string, QFont::Weight> strToFontWeight(
      {"Bold", QFont::Weight::Bold},
      {"ExtraBold", QFont::Weight::ExtraBold},
      {"Black", QFont::Weight::Black}});
+// MAPPING - END
 
 namespace Debug {
 void log(const std::string &msg);
@@ -117,17 +119,59 @@ void getline(QTextStream &fin, std::string &value);
 }
 
 namespace Parser {
+/**
+ * @brief We give it a string and it gives us back
+ * a hashed string.
+ *
+ * @param raw
+ * @return std::size_t
+ */
 std::size_t parseHashKey(const std::string &raw);
+/**
+ * @brief Parses Shapes
+ *
+ * @param shapes
+ */
 void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes);
+
+/**
+ * @brief We are setting the specific porperties for each shape.
+ * We are using QText tream instead of fstream because we are using a
+ * functionality of QT called qrc loader.
+ *
+ * @param shapes
+ * @param fin
+ * @param id
+ * @param type
+ * @param index
+ */
 void deduceSpecifics(
     std::vector<std::unique_ptr<Shape>> &shapes, QTextStream &fin, const std::string &id,
     const std::string &type, const int &index);
+
+/**
+ * @brief Deducing the generic shape properties.
+ * We are using QText tream instead of fstream because we are using a
+ * functionality of QT called qrc loader.
+ *
+ * @param shapes
+ * @param fin
+ * @param type
+ * @param index
+ */
 void deduceFields(
     std::vector<std::unique_ptr<Shape>> &shapes, QTextStream &fin,
     const std::string &type, const int &index);
 }  // namespace Parser
 
 namespace Login {
+/**
+ * @brief Validates login
+ *
+ * @param hash
+ * @return true
+ * @return false
+ */
 bool isValid(const std::size_t &hash);
-}
+}  // namespace Login
 }  // namespace Utility

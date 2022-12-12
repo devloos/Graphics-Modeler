@@ -5,11 +5,11 @@ Line::Line() {}
 Line::~Line() noexcept {}
 
 float Line::area() const {
-  return 0;
+  return -1;
 }
 
 float Line::perimeter() const {
-  return 0;
+  return -1;
 }
 
 void Line::paint(QPainter* painter) {

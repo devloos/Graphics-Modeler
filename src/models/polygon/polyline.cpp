@@ -5,11 +5,11 @@ Polyline::Polyline() {}
 Polyline::~Polyline() noexcept {}
 
 float Polyline::area() const {
-  return 0;
+  return -1;
 }
 
 float Polyline::perimeter() const {
-  return 0;
+  return -1;
 }
 
 void Polyline::paint(QPainter* painter) {

@@ -5,11 +5,11 @@ Polygon::Polygon() {}
 Polygon::~Polygon() noexcept {}
 
 float Polygon::area() const {
-  return 0;
+  return -1;
 }
 
 float Polygon::perimeter() const {
-  return 0;
+  return -1;
 }
 
 void Polygon::paint(QPainter* painter) {
