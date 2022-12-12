@@ -287,6 +287,11 @@ class Vector {
     return data_[index];
   }
 
+  T &at(const int &index) {
+    assert(index >= 0 && index < size_);
+    return data_[index];
+  }
+
   /**
    * @brief Returns the number of elements in the vector.
    *
@@ -383,6 +388,14 @@ class Vector {
     data_[size_++] = value;
   }
 
+  void push_back(T &&value) {
+    if (size_ >= capacity_) {
+      Vector::realloc((capacity_ + 1) + (capacity_ / 2));
+    }
+
+    data_[size_++] = std::move(value);
+  }
+
   /**
    * @brief Removes the last element in the vector,
    * effectively reducing the container size by one.
@@ -465,7 +478,7 @@ class Vector {
    */
   void deepcpy(T* dest, const T* src, const int &size) {
     for (int i = 0; i < size; i++) {
-      dest[i] = src[i];
+      dest[i] = std::move(src[i]);
     }
   }
 

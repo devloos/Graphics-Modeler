@@ -90,7 +90,6 @@ float Text::perimeter() const {
 }
 
 void Text::paint(QPainter* painter) {
-  std::cout << "Text\n";
   Text* text = (Text*)(shapes.at(7).get());
 
   painter->setFont(
