@@ -120,10 +120,10 @@ namespace Parser {
 std::size_t parseHashKey(const std::string &raw);
 void parseShapes(std::vector<std::unique_ptr<Shape>> &shapes);
 void deduceSpecifics(
-    std::vector<std::unique_ptr<Shape>> &shapes, std::fstream &fin, const std::string &id,
+    std::vector<std::unique_ptr<Shape>> &shapes, QTextStream &fin, const std::string &id,
     const std::string &type, const int &index);
 void deduceFields(
-    std::vector<std::unique_ptr<Shape>> &shapes, std::fstream &fin,
+    std::vector<std::unique_ptr<Shape>> &shapes, QTextStream &fin,
     const std::string &type, const int &index);
 }  // namespace Parser
 

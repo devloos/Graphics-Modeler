@@ -58,6 +58,7 @@ class Shape : public QQuickPaintedItem {
   int getShapeId() const;
   QString getShapeName() const;
   QBrush getPenBrush() const;
+  QPen &getPen();
 
  public:
   /**

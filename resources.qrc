@@ -6,7 +6,7 @@
         <file alias="App.qml">src/qt/App.qml</file>
         <file alias="LoginUI.ui.qml">src/qt/user-interface/LoginUI.ui.qml</file>
         <file alias="MainUI.ui.qml">src/qt/user-interface/MainUI.ui.qml</file>
-        <file alias="ContactPopup.ui.qml">src/qt/user-interface/ContactPopup.ui.qml</file>
+        <file alias="ContactPopup.ui.qml">src/qt/components/ContactPopup.ui.qml</file>
         <file alias="LoadingScreen.ui.qml">src/qt/components/LoadingScreen.ui.qml</file>
         <file alias="GMMenuBar.ui.qml">src/qt/components/GMMenuBar.ui.qml</file>
         <file alias="ShapeSelector.ui.qml">src/qt/components/ShapeSelector.ui.qml</file>

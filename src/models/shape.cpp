@@ -71,3 +71,7 @@ void Shape::setPenBrush(const QBrush &brush) {
 QBrush Shape::getPenBrush() const {
   return this->pen_.brush();
 }
+
+QPen &Shape::getPen() {
+  return pen_;
+}
