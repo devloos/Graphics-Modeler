@@ -13,6 +13,8 @@ extern std::vector<std::unique_ptr<Shape>> shapes;
 class Polyline : public Shape {
  public:
   Polyline();
+  Polyline(const Polyline &) = delete;
+  Polyline &operator=(const Polyline &) = delete;
   virtual ~Polyline() noexcept;
 
   /**

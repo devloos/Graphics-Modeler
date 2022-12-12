@@ -14,6 +14,8 @@ extern std::vector<std::unique_ptr<Shape>> shapes;
 class Ellipse : public Shape {
  public:
   Ellipse();
+  Ellipse(const Ellipse &) = delete;
+  Ellipse &operator=(const Ellipse &) = delete;
   virtual ~Ellipse() noexcept;
 
  public:

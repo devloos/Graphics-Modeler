@@ -13,6 +13,8 @@ extern std::vector<std::unique_ptr<Shape>> shapes;
 class Polygon : public Shape {
  public:
   Polygon();
+  Polygon(const Polygon &) = delete;
+  Polygon &operator=(const Polygon &) = delete;
   virtual ~Polygon() noexcept;
 
   /**

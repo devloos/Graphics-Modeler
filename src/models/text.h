@@ -15,6 +15,8 @@ class Text : public Shape {
  public:
   Text();
   Text(const QString &str);
+  Text(const Text &) = delete;
+  Text &operator=(const Text &) = delete;
   virtual ~Text() noexcept;
 
  public:

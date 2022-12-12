@@ -13,6 +13,8 @@ extern std::vector<std::unique_ptr<Shape>> shapes;
 class Rectangle : public Shape {
  public:
   Rectangle();
+  Rectangle(const Rectangle &) = delete;
+  Rectangle &operator=(const Rectangle &) = delete;
   virtual ~Rectangle() noexcept;
 
  public:
