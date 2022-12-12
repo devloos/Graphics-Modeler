@@ -21,11 +21,11 @@ int Rectangle::getWidth() const {
 }
 
 float Rectangle::area() const {
-  return 0;
+  return length_ * width_;
 }
 
 float Rectangle::perimeter() const {
-  return 0;
+  return 2 * (length_ + width_);
 }
 
 void Rectangle::paint(QPainter* painter) {

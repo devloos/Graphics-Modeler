@@ -13,11 +13,11 @@ int Square::getLength() const {
 }
 
 float Square::area() const {
-  return 0;
+  return pow(length_, 2);
 }
 
 float Square::perimeter() const {
-  return 0;
+  return 4 * length_;
 }
 
 void Square::paint(QPainter* painter) {

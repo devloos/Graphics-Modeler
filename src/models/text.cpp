@@ -82,11 +82,11 @@ std::string Text::getColor() const {
 }
 
 float Text::area() const {
-  return 0;
+  return -1;
 }
 
 float Text::perimeter() const {
-  return 0;
+  return -1;
 }
 
 void Text::paint(QPainter* painter) {

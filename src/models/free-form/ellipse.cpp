@@ -21,11 +21,19 @@ int Ellipse::getMinorAxis() const {
 }
 
 float Ellipse::area() const {
-  return 0;
+  return M_PI * majorAxis_ * minorAxis_;
 }
 
 float Ellipse::perimeter() const {
-  return 0;
+  // Note: there is no easy and accurate way to
+  // calculate the perimeter of an ellipse without
+  // using infinite sums and integrals, so this is
+  // an approximation within 5% of true value so long
+  // as a is not 3 times longer than b.
+  float a = pow(majorAxis_, 2);
+  float b = pow(minorAxis_, 2);
+  float radicand = (a + b) / 2;
+  return 2 * M_PI * sqrt(radicand);
 }
 
 void Ellipse::paint(QPainter* painter) {
