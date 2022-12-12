@@ -41,7 +41,7 @@ class CppInterface : public QObject {
   };
 
   Q_INVOKABLE void openFile(const QString &str) {
-    QFile file(":demo.db");
+    QFile file(QUrl(str).toLocalFile());
 
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
       Utility::Debug::log("File was not able to be opened.");

@@ -16,6 +16,7 @@ Window {
     readonly property int _WINDOW_TOP_LEVEL_Z: 100
 
     property var dynamicTypes: []
+    property var shapeIds: [line, polyline, polygon, rectangle, square, ellipse, circle, text]
 
     id: window
     title: "Graphics Modeler"
@@ -116,18 +117,31 @@ Window {
             title: "Please choose a file"
             nameFilters: [ "DB files (*.db)" ]
             onAccepted: {
-                console.log("You chose: " + fileDialog.currentFile);
+                CppInterface.openFile(fileDialog.currentFile);
+                left_side_bar.loadShape(shape_selector.currentIndex - 1);
                 fileDialog.close()
             }
 
             onRejected: {
-                console.log("Canceled");
                 fileDialog.close();
             }
         }
 
         ShapeSelector {
             id: left_side_bar
+
+            GMComboBox {
+                id: shape_selector
+            }
+
+            function loadShape(index) {
+                // reseting component
+                loader.sourceComponent = undefined;
+
+                main_ui.renderProperties(index);
+                loader.sourceComponent = shapeIds[index];
+            }
+
         }
 
         GMMenuBar {

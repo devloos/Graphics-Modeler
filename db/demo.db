@@ -74,7 +74,7 @@ BrushStyle: Dense1Pattern
 ShapeId: 8
 ShapeType: Text
 ShapeDimensions: 180, 200, 500, 90
-TextString: Hello DRB from Connor, Carlos, Camaron, Liam, and Joseph! Demo #1
+TextString: Hello DRB from Connor, Carlos, Camaron, Liam, and Joseph! Demo
 TextColor: darkGreen
 TextAlignment: AlignCenter
 TextPointSize: 25
