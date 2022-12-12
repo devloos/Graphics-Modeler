@@ -13,6 +13,8 @@ extern std::vector<std::unique_ptr<Shape>> shapes;
 class Line : public Shape {
  public:
   Line();
+  Line(const Line &) = delete;
+  Line &operator=(const Line &) = delete;
   virtual ~Line() noexcept;
 
   /**

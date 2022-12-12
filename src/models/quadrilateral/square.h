@@ -13,6 +13,8 @@ extern std::vector<std::unique_ptr<Shape>> shapes;
 class Square : public Shape {
  public:
   Square();
+  Square(const Square &) = delete;
+  Square &operator=(const Square &) = delete;
   virtual ~Square() noexcept;
 
  public:

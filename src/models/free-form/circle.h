@@ -13,6 +13,8 @@ extern std::vector<std::unique_ptr<Shape>> shapes;
 class Circle : public Shape {
  public:
   Circle();
+  Circle(const Circle &) = delete;
+  Circle &operator=(const Circle &) = delete;
   virtual ~Circle() noexcept;
 
  public:
