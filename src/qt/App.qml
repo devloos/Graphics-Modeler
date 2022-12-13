@@ -100,6 +100,26 @@ Window {
         }
     }
 
+    Popup {
+        Material.theme: Material.Light
+        Material.accent: Material.Purple
+
+        id: parent_meet_the_team
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+        dim: true
+        modal: true
+        focus: true
+        closePolicy: Popup.CloseOnEscape
+
+        MeetTheTeamPopup {
+            id: meet_the_team_popup
+            meet_the_team_back_btn.onClicked: parent_meet_the_team.close()
+        }
+    }
+
     LoginUI {
         id: login_ui
         visible: true
@@ -135,17 +155,24 @@ Window {
             }
 
             function loadShape(index) {
+                if (index < 0 || index > 7) {
+                    return;
+                }
+
                 // reseting component
                 loader.sourceComponent = undefined;
 
                 main_ui.renderProperties(index);
                 loader.sourceComponent = shapeIds[index];
             }
-
         }
 
         GMMenuBar {
             id: menu_bar
+
+            function runReport() {
+                CppInterface.runReport();
+            }
         }
 
         ScrollView {

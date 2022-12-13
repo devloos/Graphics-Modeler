@@ -12,12 +12,14 @@
 #include <QVariantList>
 #include <QtQmlIntegration>
 #include <QtWidgets>
+#include <fstream>
 #include <iostream>
 #include <memory>
 #include <string>
 #include <vector>
 
 #include "gm/gm.h"
+#include "gm/vector.h"
 #include "models/shape.h"
 #include "qtmetamacros.h"
 #include "utility/utility.h"
@@ -143,6 +145,45 @@ class CppInterface : public QObject {
 
     return list;
   }
+
+  Q_INVOKABLE void runReport() {
+    QFile file("qrc:/report.txt");
+
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+      Utility::Debug::log("File was not able to be opened.");
+      return;
+    }
+
+    QTextStream fout(&file);
+
+    selection_sort(shapes);
+
+    for (const auto &shape : shapes) {
+      QVariantList list = getProperties(shape->getShapeId() - 1);
+
+      for (const auto &property : list) {
+        fout << property.toString() << "\n";
+      }
+      fout << "\n";
+    }
+
+    file.close();
+  }
+
+  void selection_sort(std::vector<std::unique_ptr<Shape>> &vec) {
+    using it = typename std::vector<std::unique_ptr<Shape>>::iterator;
+    for (it itor = vec.begin(); itor != vec.end(); ++itor) {
+      it minItor = itor;
+      for (it i = itor + 1; i != vec.end(); ++i) {
+        if (i->get()->getShapeId() < minItor->get()->getShapeId()) {
+          minItor = i;
+        }
+      }
+      if (minItor != itor) {
+        std::iter_swap(itor, minItor);
+      }
+    }
+  }
 };
 
 // definition of the singleton type provider function (callback).
@@ -150,6 +191,6 @@ static QObject* singletonProvider(QQmlEngine* engine, QJSEngine* scriptEngine) {
   Q_UNUSED(engine)
   Q_UNUSED(scriptEngine)
 
-  CppInterface* example = new CppInterface();
-  return example;
+  CppInterface* singleton = new CppInterface();
+  return singleton;
 }

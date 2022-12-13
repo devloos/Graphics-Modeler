@@ -1,17 +1,30 @@
 <RCC>
     <qresource prefix="/">
-        <file alias="spinning-donut.gif">assets/spinning-donut.gif</file>
+        <!-- Main App -->
+        <file alias="App.qml">src/qt/App.qml</file>
+        <!-- Database -->
         <file alias="users.db">db/users.db</file>
         <file alias="shapes.db">db/shapes.db</file>
         <file alias="demo.db">db/demo.db</file>
-        <file alias="App.qml">src/qt/App.qml</file>
+        <file alias="report.txt">reports/report.txt</file>
+        <!-- User Interface -->
         <file alias="LoginUI.ui.qml">src/qt/user-interface/LoginUI.ui.qml</file>
         <file alias="MainUI.ui.qml">src/qt/user-interface/MainUI.ui.qml</file>
+        <!-- Components -->
         <file alias="ContactPopup.ui.qml">src/qt/components/ContactPopup.ui.qml</file>
+        <file alias="MeetTheTeamPopup.ui.qml">src/qt/components/MeetTheTeamPopup.ui.qml</file>
         <file alias="LoadingScreen.ui.qml">src/qt/components/LoadingScreen.ui.qml</file>
         <file alias="GMMenuBar.ui.qml">src/qt/components/GMMenuBar.ui.qml</file>
         <file alias="GMComboBox.ui.qml">src/qt/components/GMComboBox.ui.qml</file>
         <file alias="ShapeSelector.ui.qml">src/qt/components/ShapeSelector.ui.qml</file>
         <file alias="ShapePropertiesPane.ui.qml">src/qt/components/ShapePropertiesPane.ui.qml</file>
+        <!-- Assets -->
+        <file alias="spinning-donut.gif">assets/spinning-donut.gif</file>
+        <file alias="Cameron.png">assets/team/Cameron.png</file>
+        <file alias="Carlos.png">assets/team/Carlos.png</file>
+        <file alias="Connor.png">assets/team/Connor.png</file>
+        <file alias="Liam.png">assets/team/Liam.png</file>
+        <file alias="Joseph.png">assets/team/Joseph.png</file>
+        <file alias="shadow.png">assets/team/shadow.png</file>
     </qresource>
 </RCC>

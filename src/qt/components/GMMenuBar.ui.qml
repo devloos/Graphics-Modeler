@@ -41,10 +41,11 @@ MenuBar {
     }
 
     Menu {
-        title: qsTr("&Edit")
+        title: qsTr("&Reports")
 
         MenuItem {
-            text: qsTr("&Feature Coming...")
+            text: qsTr("&Run Report...")
+            onTriggered: menu_bar.runReport()
         }
     }
 
@@ -72,6 +73,7 @@ MenuBar {
 
         MenuItem {
             text: qsTr("&Meet the Team...")
+            onTriggered: parent_meet_the_team.open()
         }
 
         MenuSeparator {}
