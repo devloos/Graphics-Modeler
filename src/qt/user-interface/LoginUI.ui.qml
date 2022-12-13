@@ -104,7 +104,7 @@ Rectangle {
             down: false
             highlighted: true
             flat: false
-            onClicked: contact_us_popup.open(window._LOGIN_WIDTH, window._LOGIN_HEIGHT)
+            onClicked: contact_us_popup.open()
         }
     }
 
