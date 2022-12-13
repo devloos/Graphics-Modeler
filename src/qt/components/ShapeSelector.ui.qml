@@ -10,12 +10,11 @@ Rectangle {
       color: "#4D4949"
       border.width: 0
 
-      anchors.left: parent.left
-      anchors.top: menu_bar.bottom
-      anchors.bottom: parent.bottom
-      anchors.leftMargin: 0
-      anchors.bottomMargin: 0
-      anchors.topMargin: 0
+      anchors {
+        left: parent.left
+        top: menu_bar.bottom
+        bottom: parent.bottom
+      }
 
       gradient: Gradient {
           GradientStop {

@@ -4,8 +4,6 @@ import QtQuick.Window 6.4
 import QtQuick.Controls.Material 2.3
 
 Rectangle {
-    property alias meet_the_team_back_btn: meet_the_team_back_btn
-
     readonly property int _MEET_THE_TEAM_WIDTH: 580
     readonly property int _MEET_THE_TEAM_HEIGHT: 420
 
@@ -44,7 +42,6 @@ Rectangle {
         }
 
         Button {
-            id: meet_the_team_back_btn
             x: 483
             y: 348
             width: 72
@@ -59,10 +56,10 @@ Rectangle {
             checked: false
             flat: true
             highlighted: true
+            onClicked: parent_meet_the_team.close()
         }
 
         Image {
-            id: cameronImage
             x: 292
             y: 162
             width: 100
@@ -71,21 +68,10 @@ Rectangle {
             z: 0
             fillMode: Image.PreserveAspectFit
 
-            Image {
-                id: image1
-                x: 6
-                y: 6
-                width: 100
-                height: 100
-                opacity: 0.3
-                source: "shadow.png"
-                z: -1
-                fillMode: Image.PreserveAspectFit
-            }
+            ImageShadow {}
         }
 
         Image {
-            id: carlosImage
             x: 292
             y: 56
             width: 100
@@ -93,21 +79,11 @@ Rectangle {
             source: "Carlos.png"
             z: 0
             fillMode: Image.PreserveAspectFit
-            Image {
-                id: image2
-                x: 6
-                y: 6
-                width: 100
-                height: 100
-                opacity: 0.3
-                source: "shadow.png"
-                z: -1
-                fillMode: Image.PreserveAspectFit
-            }
+
+            ImageShadow {}
         }
 
         Image {
-            id: liamImage
             x: 34
             y: 162
             width: 100
@@ -115,21 +91,11 @@ Rectangle {
             source: "Liam.png"
             z: 0
             fillMode: Image.PreserveAspectFit
-            Image {
-                id: image3
-                x: 6
-                y: 6
-                width: 100
-                height: 100
-                opacity: 0.3
-                source: "shadow.png"
-                z: -1
-                fillMode: Image.PreserveAspectFit
-            }
+
+            ImageShadow {}
         }
 
         Image {
-            id: connorImage
             x: 34
             y: 56
             width: 100
@@ -137,21 +103,11 @@ Rectangle {
             source: "Connor.png"
             z: 0
             fillMode: Image.PreserveAspectFit
-            Image {
-                id: image4
-                x: 6
-                y: 6
-                width: 100
-                height: 100
-                opacity: 0.3
-                source: "shadow.png"
-                z: -1
-                fillMode: Image.PreserveAspectFit
-            }
+
+            ImageShadow {}
         }
 
         Image {
-            id: josephImage
             x: 34
             y: 268
             width: 100
@@ -159,21 +115,11 @@ Rectangle {
             source: "Joseph.png"
             z: 0
             fillMode: Image.PreserveAspectFit
-            Image {
-                id: image5
-                x: 6
-                y: 6
-                width: 100
-                height: 100
-                opacity: 0.3
-                source: "shadow.png"
-                z: -1
-                fillMode: Image.PreserveAspectFit
-            }
+
+            ImageShadow {}
         }
 
         Label {
-            id: label
             x: 140
             y: 94
             text: qsTr("Connor  D.")
@@ -181,7 +127,6 @@ Rectangle {
         }
 
         Label {
-            id: label1
             x: 398
             y: 94
             text: qsTr("Carlos A.")
@@ -189,7 +134,6 @@ Rectangle {
         }
 
         Label {
-            id: label2
             x: 140
             y: 198
             text: qsTr("Liam E.")
@@ -197,7 +141,6 @@ Rectangle {
         }
 
         Label {
-            id: label3
             x: 398
             y: 198
             text: qsTr("Cameron R.")
@@ -205,7 +148,6 @@ Rectangle {
         }
 
         Label {
-            id: label4
             x: 140
             y: 306
             text: qsTr("Joseph B.")
@@ -213,7 +155,6 @@ Rectangle {
         }
 
         Text {
-            id: text1
             x: 272
             y: 268
             color: "#ffffff"

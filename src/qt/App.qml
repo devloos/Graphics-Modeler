@@ -93,8 +93,6 @@ Window {
                 contact_us_popup.y = height / 2 - contact_us_popup._CONTACT_HEIGHT / 2 
                 parent_contact_us.open()
             }
-
-            back_btn.onClicked: parent_contact_us.close()
         }
     }
 
@@ -114,16 +112,12 @@ Window {
 
         MeetTheTeamPopup {
             id: meet_the_team_popup
-            meet_the_team_back_btn.onClicked: parent_meet_the_team.close()
         }
     }
 
     LoginUI {
         id: login_ui
         visible: true
-
-        login_btn.onClicked: window.validate(username.text, password.text)
-        contact_btn.onClicked: contact_us_popup.open(window._LOGIN_WIDTH, window._LOGIN_HEIGHT)
     }
 
     MainUI {

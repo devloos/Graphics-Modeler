@@ -6,12 +6,11 @@ import QtQuick.Controls.Material 2.3
 MenuBar {
     height: 40
 
-    anchors.left: parent.left
-    anchors.right: parent.right
-    anchors.top: parent.top
-    anchors.leftMargin: 0
-    anchors.rightMargin: 0
-    anchors.topMargin: 0
+    anchors {
+        left: parent.left
+        right: parent.right
+        top: parent.top
+    }
 
     Material.theme: Material.Dark
     Material.accent: Material.Purple

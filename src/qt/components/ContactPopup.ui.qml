@@ -5,8 +5,6 @@ import QtQuick.Controls.Material 2.3
 
 
 Rectangle {
-    property alias back_btn : back_btn
-
     readonly property int _CONTACT_WIDTH: 580
     readonly property int _CONTACT_HEIGHT: 420
 
@@ -72,7 +70,6 @@ Rectangle {
         }
 
         Button {
-            id: back_btn
             x: 476
             y: 340
             width: 72
@@ -87,6 +84,7 @@ Rectangle {
             checked: false
             flat: true
             highlighted: true
+            onClicked: parent_contact_us.close()
         }
 
         gradient: Gradient {

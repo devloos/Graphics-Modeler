@@ -11,12 +11,11 @@ Rectangle {
 
     color: "#646060"
 
-    anchors.right: parent.right
-    anchors.top: menu_bar.bottom
-    anchors.bottom: parent.bottom
-    anchors.rightMargin: 0
-    anchors.bottomMargin: 0
-    anchors.topMargin: 0
+    anchors {
+        right: parent.right
+        top: menu_bar.bottom
+        bottom: parent.bottom
+    }
 
     gradient: Gradient {
         GradientStop {
@@ -34,25 +33,34 @@ Rectangle {
 
     Text {
         y: 8
+        anchors {
+            left: parent.left
+            right: parent.right
+            rightMargin: 3
+            leftMargin: 3
+        }
+
         color: "#ffffff"
         text: qsTr("Shape Properties")
-        anchors.left: parent.left
-        anchors.right: parent.right
-        font.pixelSize: 25
+
+        font {
+            family: "Helvetica"
+            bold: true
+            pixelSize: 25
+        }
+
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignTop
-        anchors.rightMargin: 3
-        anchors.leftMargin: 3
-        font.family: "Helvetica"
-        font.bold: true
     }
 
     Rectangle {
         y: 44
         height: 0.5
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.rightMargin: 7
-        anchors.leftMargin: 7
+        anchors {
+            left: parent.left
+            right: parent.right
+            rightMargin: 7
+            leftMargin: 7
+        }
     }
 }

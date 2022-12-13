@@ -17,6 +17,7 @@
         <file alias="GMComboBox.ui.qml">src/qt/components/GMComboBox.ui.qml</file>
         <file alias="ShapeSelector.ui.qml">src/qt/components/ShapeSelector.ui.qml</file>
         <file alias="ShapePropertiesPane.ui.qml">src/qt/components/ShapePropertiesPane.ui.qml</file>
+        <file alias="ImageShadow.ui.qml">src/qt/components/ImageShadow.ui.qml</file>
         <!-- Assets -->
         <file alias="spinning-donut.gif">assets/spinning-donut.gif</file>
         <file alias="Cameron.png">assets/team/Cameron.png</file>
