@@ -47,9 +47,7 @@ The following image shows an early design of the graphical user interface. Featu
 - A collapsable side navigation bar to modify any default attribute of a given shape
 - Settings header pane for user settings, contact information, and save and exit
 
-<img src="assets/readme-images/EarlyInterfaceDesign.jpeg"
-     alt="Early Interface Design"
-     width=65% />
+<video src="assets/readme-videos/demo.mp4" controls></video>
 
 ## Sprints
 
