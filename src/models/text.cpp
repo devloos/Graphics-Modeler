@@ -13,23 +13,23 @@ void Text::setText(const QString &str) {
 }
 
 void Text::setTextAlignment(Qt::AlignmentFlag alignment) {
-  textAlignment = alignment;
+  textAlignment_ = alignment;
 }
 
 void Text::setFontSize(int size) {
-  fontSize = size;
+  fontSize_ = size;
 }
 
 void Text::setFontFamily(std::string family) {
-  fontFamily = family;
+  fontFamily_ = family;
 }
 
 void Text::setFontStyle(QFont::Style style) {
-  fontStyle = style;
+  fontStyle_ = style;
 }
 
 void Text::setFontWeight(QFont::Weight weight) {
-  fontWeight = weight;
+  fontWeight_ = weight;
 }
 
 // Getters
@@ -38,23 +38,23 @@ QString Text::getText() const {
 }
 
 Qt::AlignmentFlag Text::getTextAlignment() const {
-  return textAlignment;
+  return textAlignment_;
 }
 
 int Text::getFontSize() const {
-  return fontSize;
+  return fontSize_;
 }
 
 std::string Text::getFontFamily() const {
-  return fontFamily;
+  return fontFamily_;
 }
 
 QFont::Style Text::getFontStyle() const {
-  return fontStyle;
+  return fontStyle_;
 }
 
 QFont::Weight Text::getFontWeight() const {
-  return fontWeight;
+  return fontWeight_;
 }
 
 void Text::setLength(const int &length) {
@@ -92,8 +92,8 @@ float Text::perimeter() const {
 void Text::paint(QPainter* painter) {
   Text* text = (Text*)(shapes.at(7).get());
 
-  painter->setFont(
-      QFont(text->fontFamily.c_str(), text->fontSize, text->fontWeight, text->fontStyle));
+  painter->setFont(QFont(
+      text->fontFamily_.c_str(), text->fontSize_, text->fontWeight_, text->fontStyle_));
   painter->setPen(QColor(text->color_.c_str()));
   painter->drawText(
       QRect(text->points_[0].x(), text->points_[0].y(), text->length_, text->width_),

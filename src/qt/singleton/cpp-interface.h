@@ -58,9 +58,13 @@ class CppInterface : public QObject {
     file.close();
   }
 
+  // gets converted into a javascript array when called from qml
+  // we then use the js array to create types in qml with correct
+  // properties at runtime
   Q_INVOKABLE QVariantList getProperties(const int &SHAPE) {
     QVariantList list;
 
+    // GENERIC SHAPE PROPERTIES
     Shape* generic = shapes.at(SHAPE).get();
     list.push_back(QVariant(("Shape ID: " + std::to_string(SHAPE)).c_str()));
     list.push_back(QVariant(("Shape Name: " + generic->getShapeName())));
@@ -70,7 +74,9 @@ class CppInterface : public QObject {
       points.append(std::to_string(point.x()) + ", " + std::to_string(point.y()) + ", ");
     }
     list.push_back(QVariant(points.c_str()));
+    // GENERIC SHAPE PROPERTIES
 
+    // TEXT SPECFIC PROPERTIES
     if (SHAPE == GM::TEXT) {
       Text* text = (Text*)(shapes.at(SHAPE).get());
       list.push_back(QVariant(("TextColor: " + text->getColor()).c_str()));
@@ -88,7 +94,9 @@ class CppInterface : public QObject {
 
       return list;
     }
+    // TEXT SPECFIC PROPERTIES
 
+    // GENERIC SHAPE PROPERTIES
     QPen pen = generic->getPen();
 
     list.push_back(QVariant("PenColor: " + QVariant::fromValue(pen.color()).toString()));
@@ -106,7 +114,9 @@ class CppInterface : public QObject {
       list.push_back(
           QVariant("BrushStyle: " + QVariant::fromValue(brush.style()).toString()));
     }
+    // GENERIC SHAPE PROPERTIES
 
+    // SHAPE SPECIFIC PROPERTIES
     switch (SHAPE) {
       case GM::RECTANGLE: {
         Rectangle* rec = (Rectangle*)(shapes.at(SHAPE).get());
@@ -142,6 +152,7 @@ class CppInterface : public QObject {
         break;
       }
     }
+    // SHAPE SPECIFIC PROPERTIES
 
     return list;
   }
@@ -170,6 +181,7 @@ class CppInterface : public QObject {
     file.close();
   }
 
+  // imported from selection-sort.h
   void selection_sort(std::vector<std::unique_ptr<Shape>> &vec) {
     using it = typename std::vector<std::unique_ptr<Shape>>::iterator;
     for (it itor = vec.begin(); itor != vec.end(); ++itor) {

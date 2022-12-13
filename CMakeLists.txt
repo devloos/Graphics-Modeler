@@ -14,6 +14,10 @@ endif (APPLE)
 
 project(Graphics-Modeler)
 
+if (UNIX)
+  list(APPEND CMAKE_PREFIX_PATH "~/Qt/6.4.1/gcc_64")
+endif(UNIX)
+
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets Gui Qml Quick)
 
 # Graphics Modelers
@@ -34,10 +38,5 @@ target_include_directories(
 if (APPLE)
   target_include_directories(${PROJECT_NAME} PUBLIC /opt/homebrew/include)
 endif (APPLE)
-
-if (WIN32)
-  # Not in use rn
-  # target_include_directories(${PROJECT_NAME} PUBLIC /opt/homebrew/include)
-endif (WIN32)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Core Qt6::Widgets Qt6::Gui Qt6::Qml Qt6::Quick)

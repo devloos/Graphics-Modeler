@@ -20,12 +20,11 @@ ComboBox {
 
     model: ["Select", "Line", "Polyline", "Polygon", "Rectangle", "Square", "Ellipse", "Circle", "Text"]
 
-    anchors.left: parent.left
-    anchors.right: parent.right
-    anchors.top: parent.top
-    anchors.rightMargin: 0
-    anchors.leftMargin: 0
-    anchors.topMargin: 0
+    anchors {
+        left: parent.left
+        right: parent.right
+        top: parent.top
+    }
 
     topInset: 0
     rightPadding: 0

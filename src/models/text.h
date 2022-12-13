@@ -84,12 +84,12 @@ class Text : public Shape {
 
  private:
   QString text_;
-  Qt::AlignmentFlag textAlignment;
-  std::string fontFamily;
-  QFont::Style fontStyle;
-  QFont::Weight fontWeight;
+  Qt::AlignmentFlag textAlignment_;
+  std::string fontFamily_;
+  QFont::Style fontStyle_;
+  QFont::Weight fontWeight_;
   std::string color_;
-  int fontSize = 12;
+  int fontSize_ = 12;
   int length_ = 0;
   int width_ = 0;
 };

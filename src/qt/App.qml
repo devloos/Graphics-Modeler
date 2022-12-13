@@ -13,8 +13,6 @@ Window {
     readonly property int _MAIN_WIDTH: 1080
     readonly property int _MAIN_HEIGHT: 720
 
-    readonly property int _WINDOW_TOP_LEVEL_Z: 100
-
     property var dynamicTypes: []
     property var shapeIds: [line, polyline, polygon, rectangle, square, ellipse, circle, text]
 
@@ -176,14 +174,12 @@ Window {
         }
 
         ScrollView {
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.top: menu_bar.bottom
-            anchors.bottom: parent.bottom
-            anchors.rightMargin: 0
-            anchors.leftMargin: 0
-            anchors.bottomMargin: 0
-            anchors.topMargin: 0
+            anchors {
+                top: menu_bar.bottom
+                left: parent.left
+                right: parent.right
+                bottom: parent.bottom
+            }
 
             Component { id: line; GMLine { x: 40; y: 110; width: 1000; height: 500; } }
             Component { id: polyline; GMPolyline { x: 40; y: 110; width: 1000; height: 500; } }

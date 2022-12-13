@@ -28,10 +28,6 @@ MenuBar {
             text: qsTr("&Save...")
         }
 
-        MenuItem {
-            text: qsTr("Save and &Load...")
-        }
-
         MenuSeparator {}
 
         MenuItem {
