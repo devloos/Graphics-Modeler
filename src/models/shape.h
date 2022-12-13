@@ -27,6 +27,7 @@ class Shape : public QQuickPaintedItem {
 
  public:
   bool operator<(const Shape &rhs) const;
+  bool operator==(const Shape &rhs) const;
 
  public:
   // Setters
