@@ -63,12 +63,12 @@ MenuBar {
 
         MenuItem {
             text: qsTr("&Contact Us...")
-            onTriggered: contact_us_popup.open(window._MAIN_WIDTH, window._MAIN_HEIGHT)
+            onTriggered: contact_us_popup.open()
         }
 
         MenuItem {
             text: qsTr("&Meet the Team...")
-            onTriggered: parent_meet_the_team.open()
+            onTriggered: meet_the_team_popup.open()
         }
 
         MenuSeparator {}

@@ -76,8 +76,8 @@ Window {
         Material.accent: Material.Purple
 
         id: parent_contact_us
-        x: 0
-        y: 0
+        x:0
+        y:0
         width: 0
         height: 0
         dim: true
@@ -88,9 +88,10 @@ Window {
         ContactPopup {
             id: contact_us_popup
 
-            function open(width, height) {
-                contact_us_popup.x = width / 2 - contact_us_popup._CONTACT_WIDTH / 2
-                contact_us_popup.y = height / 2 - contact_us_popup._CONTACT_HEIGHT / 2 
+            function open() {
+
+                parent_contact_us.x =  window.width / 2 - contact_us_popup.width / 2
+                parent_contact_us.y = window.height / 2 - contact_us_popup.height / 2
                 parent_contact_us.open()
             }
         }
@@ -110,7 +111,16 @@ Window {
         focus: true
         closePolicy: Popup.CloseOnEscape
 
-        MeetTheTeamPopup {}
+        MeetTheTeamPopup {
+            id: meet_the_team_popup
+
+            function open() {
+
+                parent_meet_the_team.x =  window.width / 2 - meet_the_team_popup.width / 2
+                parent_meet_the_team.y = window.height / 2 - meet_the_team_popup.height / 2
+                parent_meet_the_team.open()
+            }
+        }
     }
 
     LoginUI {
