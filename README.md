@@ -67,13 +67,13 @@ The following image shows an early design of the graphical user interface. Featu
   | (Sprint #2) Estimated Time: 3 weeks |
   | :---------------------------------: |
   
-- [ ] Complete implementation of shape abc interface & inheritance hierarchy (line, polyline ...)
-- [ ] Ability to render 2d shapes (2d modeler qt project)
-- [ ] Renderarea widget (inherits from qwidget like qt 2d rendering demo project) can dislpay all geometric shapes
-- [ ] Ability to render all shapes from shapes.txt in renderarea widget (2d modeler qt project)
-- [ ] Reports to display shapes, shape perimeter & area (2d modeler qt project)
-- [ ] Update 2d shapes (i.e. add, remove or move) via rendering widget forms (2d modeler qt project)
-- [ ] Persist changes to shapes.txt file
+- [X] Complete implementation of shape abc interface & inheritance hierarchy (line, polyline ...)
+- [X] Ability to render 2d shapes (2d modeler qt project)
+- [X] Renderarea widget (inherits from qwidget like qt 2d rendering demo project) can dislpay all geometric shapes
+- [X] Ability to render all shapes from shapes.txt in renderarea widget (2d modeler qt project)
+- [X] Reports to display shapes, shape perimeter & area (2d modeler qt project)
+- [X] Update 2d shapes (i.e. add, remove or move) via rendering widget forms (2d modeler qt project)
+- [X] Persist changes to shapes.txt file
 
 <br />
 
@@ -88,7 +88,7 @@ The following image shows an early design of the graphical user interface. Featu
 - [X] At least one class using templates
 - [X] At least one class must contain a pointer (write copy constructor and test it)
 - [X] Invalid inputs should be addressed.
-- [ ] Doxygen documentation
+- [X] Doxygen documentation
 - [ ] Valgrind memory leak check
 - [ ] Guests should be able to enter "satisfied customer" testimonials that persist between executions.
 - [X] Provide "Contact us" method with team name and logo
