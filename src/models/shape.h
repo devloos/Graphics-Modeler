@@ -22,11 +22,11 @@ class Shape : public QQuickPaintedItem {
   explicit Shape(QQuickItem* parent = 0);
   Shape(int id, const QString &name, const QPen &pen);
   Shape(const Shape &) = delete;
-  Shape &operator=(const Shape &) = delete;
   virtual ~Shape() noexcept;
 
  public:
   bool operator<(const Shape &rhs) const;
+  bool operator==(const Shape &rhs) const;
 
  public:
   // Setters

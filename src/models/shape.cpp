@@ -10,7 +10,11 @@ Shape::Shape(int id, const QString &name, const QPen &pen_) {
   this->pen_ = pen_;
 }
 bool Shape::operator<(const Shape &rhs) const {
-  return this->getShapeId() < rhs.getShapeId();
+  return this->id_ < rhs.id_;
+}
+
+bool Shape::operator==(const Shape &rhs) const {
+  return this->id_ == rhs.id_;
 }
 
 // Setters
