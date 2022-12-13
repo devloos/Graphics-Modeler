@@ -147,7 +147,7 @@ class CppInterface : public QObject {
   }
 
   Q_INVOKABLE void runReport() {
-    QFile file("qrc:/report.txt");
+    QFile file("report.txt");
 
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
       Utility::Debug::log("File was not able to be opened.");
