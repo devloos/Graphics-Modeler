@@ -3,9 +3,8 @@ import QtQuick.Controls 6.4
 import QtQuick.Window 6.4
 import QtQuick.Controls.Material 2.3
 
-
 Rectangle {
-    property alias back_btn : back_btn
+    property alias back_btn: back_btn
 
     readonly property int _CONTACT_WIDTH: 580
     readonly property int _CONTACT_HEIGHT: 420
@@ -19,23 +18,24 @@ Rectangle {
     color: "#00bdbdbd"
 
     Rectangle {
-        x: -12
-        y: -12
+        x: parent.x / 2
+        y: parent.y / 2
         width: _CONTACT_WIDTH
         height: _CONTACT_HEIGHT
 
         color: "#2f2f2f"
         radius: 14
-        border.color: "#bdbdbd"
+        border.color: "#ce93d8"
         border.width: 4
 
         Label {
-            x: _CONTACT_WIDTH / 2 - 105
-            y: 38
+            x: 0
+            y: 40
             color: "#ffffff"
             text: qsTr("Give us your Feedback")
             font.pointSize: 20
             font.bold: true
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
         TextField {
@@ -44,6 +44,7 @@ Rectangle {
             width: 332
             height: 46
             placeholderText: qsTr("Email")
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
         TextArea {
@@ -52,6 +53,7 @@ Rectangle {
             width: 332
             height: 172
             placeholderText: qsTr("Write something . . .")
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
         Button {
@@ -69,6 +71,7 @@ Rectangle {
             flat: true
             checked: false
             highlighted: true
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
         Button {
@@ -103,10 +106,3 @@ Rectangle {
         }
     }
 }
-
-/*##^##
-Designer {
-    D{i:0;autoSize:true;height:480;width:640}
-}
-##^##*/
-

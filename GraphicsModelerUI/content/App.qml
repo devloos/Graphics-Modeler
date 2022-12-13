@@ -53,8 +53,8 @@ Window {
         Material.accent: Material.Purple
 
         id: contact_us_popup
-        x: 0
-        y: 0
+        x: parent.x / 2
+        y: parent.y / 2
         width: 0
         height: 0
         dim: true
@@ -62,7 +62,9 @@ Window {
         focus: true
         closePolicy: Popup.CloseOnEscape
 
-        MeetTheTeamPopup {
+        ContactPopup {
+            x: parent.x
+            y: parent.y
             back_btn.onClicked: contact_us_popup.close()
         }
     }

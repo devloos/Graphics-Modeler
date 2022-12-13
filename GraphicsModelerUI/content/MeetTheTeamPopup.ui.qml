@@ -20,10 +20,10 @@ Rectangle {
     border.width: 0
 
     Rectangle {
-        x: 0 //-12
-        y: 0 //-12
-        width: 580 //_CONTACT_WIDTH
-        height: 420 //_CONTACT_HEIGHT
+        x: parent.x / 2
+        y: parent.y / 2
+        width: _CONTACT_WIDTH
+        height: _CONTACT_HEIGHT
 
         color: "#2f2f2f"
         radius: 14
