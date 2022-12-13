@@ -8,9 +8,8 @@ Rectangle {
     readonly property int _CONTACT_WIDTH: 580
     readonly property int _CONTACT_HEIGHT: 420
 
-    //anchors.centerIn: parent
-    x:-12
-    y:-12
+    x: -12
+    y: -12
     width: _CONTACT_WIDTH
     height: _CONTACT_HEIGHT
 

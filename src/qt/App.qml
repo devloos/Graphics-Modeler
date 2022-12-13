@@ -89,7 +89,6 @@ Window {
             id: contact_us_popup
 
             function open() {
-
                 parent_contact_us.x =  window.width / 2 - contact_us_popup.width / 2
                 parent_contact_us.y = window.height / 2 - contact_us_popup.height / 2
                 parent_contact_us.open()
@@ -115,7 +114,6 @@ Window {
             id: meet_the_team_popup
 
             function open() {
-
                 parent_meet_the_team.x =  window.width / 2 - meet_the_team_popup.width / 2
                 parent_meet_the_team.y = window.height / 2 - meet_the_team_popup.height / 2
                 parent_meet_the_team.open()
