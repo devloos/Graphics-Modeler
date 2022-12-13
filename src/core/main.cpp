@@ -8,6 +8,14 @@
  */
 std::vector<std::unique_ptr<Shape>> shapes;
 
+void deallocateResources(QGuiApplication &app, QQmlApplicationEngine &engine) {
+  app.deleteLater();
+  engine.quit();
+  engine.deleteLater();
+  QCoreApplication::processEvents();
+  QGuiApplication::processEvents();
+}
+
 int main(int argc, char* argv[]) {
   QGuiApplication app(argc, argv);
 
@@ -57,5 +65,9 @@ int main(int argc, char* argv[]) {
 
   file.close();
 
-  return app.exec();
+  int endingState = app.exec();
+
+  deallocateResources(app, engine);
+
+  return endingState;
 }

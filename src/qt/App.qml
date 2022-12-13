@@ -110,9 +110,7 @@ Window {
         focus: true
         closePolicy: Popup.CloseOnEscape
 
-        MeetTheTeamPopup {
-            id: meet_the_team_popup
-        }
+        MeetTheTeamPopup {}
     }
 
     LoginUI {

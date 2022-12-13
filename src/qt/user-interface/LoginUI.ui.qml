@@ -22,7 +22,6 @@ Rectangle {
         border.width: 0
 
         Label {
-            id: login_title
             x: 124
             y: 87
             color: "#ffffff"
@@ -73,7 +72,6 @@ Rectangle {
     }
 
     Rectangle {
-        id: contact_info
         x: 320
         y: 0
         z: 2
@@ -83,7 +81,6 @@ Rectangle {
         border.width: 0
 
         Text {
-            id: contact_introduction
             x: 41
             y: 148
             width: 239
@@ -112,7 +109,6 @@ Rectangle {
     }
 
     Rectangle {
-        id: login_background
         x: 0
         y: 0
         z: 0
@@ -136,7 +132,6 @@ Rectangle {
     }
 
     Rectangle {
-        id: contact_background
         x: 320
         y: 0
         z: 0
