@@ -62,14 +62,14 @@ Window {
         focus: true
         closePolicy: Popup.CloseOnEscape
 
-        ContactPopup {
+        MeetTheTeamPopup {
             back_btn.onClicked: contact_us_popup.close()
         }
     }
 
     LoginUI {
         id: login_ui
-        visible: false
+        visible: true
 
         login_btn.onClicked: window.validate(username.text, password.text)
         contact_btn.onClicked: contact_us_popup.open()
@@ -77,6 +77,6 @@ Window {
 
     MainUI {
         id: main_ui
-        visible: true
+        visible: false
     }
 }
