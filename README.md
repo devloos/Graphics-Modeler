@@ -51,8 +51,6 @@ Our team has strongly enforced an agile development methodology. These methods i
 - A collapsable side navigation bar to modify any default attribute of a given shape
 - Settings header pane for user settings, contact information, and save and exit
 
-<img src="assets/readme-videos/demo.gif"></img>
-
 ## Sprints
 
 | (Sprint #1) Estimated Time: 3 weeks |
